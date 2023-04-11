@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'red-flag': '#FF0000',
+        'red-flag': '#C8102E',
         'blue-flag': '#003DA5'
       }
     },
