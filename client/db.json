@@ -1,0 +1,5003 @@
+{
+"words": [
+    {
+      "_id": 1,
+      "Dutch": "als",
+      "English": "as"
+    },
+    {
+      "_id": 2,
+      "Dutch": "I",
+      "English": "I"
+    },
+    {
+      "_id": 3,
+      "Dutch": "zijn",
+      "English": "his"
+    },
+    {
+      "_id": 4,
+      "Dutch": "dat",
+      "English": "that"
+    },
+    {
+      "_id": 5,
+      "Dutch": "hij",
+      "English": "he"
+    },
+    {
+      "_id": 6,
+      "Dutch": "was",
+      "English": "was"
+    },
+    {
+      "_id": 7,
+      "Dutch": "voor",
+      "English": "for"
+    },
+    {
+      "_id": 8,
+      "Dutch": "op",
+      "English": "on"
+    },
+    {
+      "_id": 9,
+      "Dutch": "zijn",
+      "English": "are"
+    },
+    {
+      "_id": 10,
+      "Dutch": "met",
+      "English": "with"
+    },
+    {
+      "_id": 11,
+      "Dutch": "ze",
+      "English": "they"
+    },
+    {
+      "_id": 12,
+      "Dutch": "zijn",
+      "English": "be"
+    },
+    {
+      "_id": 13,
+      "Dutch": "bij",
+      "English": "at"
+    },
+    {
+      "_id": 14,
+      "Dutch": "een",
+      "English": "one"
+    },
+    {
+      "_id": 15,
+      "Dutch": "hebben",
+      "English": "have"
+    },
+    {
+      "_id": 16,
+      "Dutch": "deze",
+      "English": "this"
+    },
+    {
+      "_id": 17,
+      "Dutch": "van",
+      "English": "from"
+    },
+    {
+      "_id": 18,
+      "Dutch": "door",
+      "English": "by"
+    },
+    {
+      "_id": 19,
+      "Dutch": "heet",
+      "English": "hot"
+    },
+    {
+      "_id": 20,
+      "Dutch": "woord",
+      "English": "word"
+    },
+    {
+      "_id": 21,
+      "Dutch": "maar",
+      "English": "but"
+    },
+    {
+      "_id": 22,
+      "Dutch": "wat",
+      "English": "what"
+    },
+    {
+      "_id": 23,
+      "Dutch": "sommige",
+      "English": "some"
+    },
+    {
+      "_id": 24,
+      "Dutch": "is",
+      "English": "is"
+    },
+    {
+      "_id": 25,
+      "Dutch": "het",
+      "English": "it"
+    },
+    {
+      "_id": 26,
+      "Dutch": "u",
+      "English": "you"
+    },
+    {
+      "_id": 27,
+      "Dutch": "of",
+      "English": "or"
+    },
+    {
+      "_id": 28,
+      "Dutch": "had",
+      "English": "had"
+    },
+    {
+      "_id": 29,
+      "Dutch": "de",
+      "English": "the"
+    },
+    {
+      "_id": 30,
+      "Dutch": "van",
+      "English": "of"
+    },
+    {
+      "_id": 31,
+      "Dutch": "aan",
+      "English": "to"
+    },
+    {
+      "_id": 32,
+      "Dutch": "en",
+      "English": "and"
+    },
+    {
+      "_id": 33,
+      "Dutch": "een",
+      "English": "a"
+    },
+    {
+      "_id": 34,
+      "Dutch": "in",
+      "English": "in"
+    },
+    {
+      "_id": 35,
+      "Dutch": "we",
+      "English": "we"
+    },
+    {
+      "_id": 36,
+      "Dutch": "kan",
+      "English": "can"
+    },
+    {
+      "_id": 37,
+      "Dutch": "uit",
+      "English": "out"
+    },
+    {
+      "_id": 38,
+      "Dutch": "andere",
+      "English": "other"
+    },
+    {
+      "_id": 39,
+      "Dutch": "waren",
+      "English": "were"
+    },
+    {
+      "_id": 40,
+      "Dutch": "die",
+      "English": "which"
+    },
+    {
+      "_id": 41,
+      "Dutch": "doen",
+      "English": "do"
+    },
+    {
+      "_id": 42,
+      "Dutch": "hun",
+      "English": "their"
+    },
+    {
+      "_id": 43,
+      "Dutch": "tijd",
+      "English": "time"
+    },
+    {
+      "_id": 44,
+      "Dutch": "indien",
+      "English": "if"
+    },
+    {
+      "_id": 45,
+      "Dutch": "zal",
+      "English": "will"
+    },
+    {
+      "_id": 46,
+      "Dutch": "hoe",
+      "English": "how"
+    },
+    {
+      "_id": 47,
+      "Dutch": "zei",
+      "English": "said"
+    },
+    {
+      "_id": 48,
+      "Dutch": "een",
+      "English": "an"
+    },
+    {
+      "_id": 49,
+      "Dutch": "elk",
+      "English": "each"
+    },
+    {
+      "_id": 50,
+      "Dutch": "vertellen",
+      "English": "tell"
+    },
+    {
+      "_id": 51,
+      "Dutch": "doet",
+      "English": "does"
+    },
+    {
+      "_id": 52,
+      "Dutch": "set",
+      "English": "set"
+    },
+    {
+      "_id": 53,
+      "Dutch": "drie",
+      "English": "three"
+    },
+    {
+      "_id": 54,
+      "Dutch": "willen",
+      "English": "want"
+    },
+    {
+      "_id": 55,
+      "Dutch": "lucht",
+      "English": "air"
+    },
+    {
+      "_id": 56,
+      "Dutch": "goed",
+      "English": "well"
+    },
+    {
+      "_id": 57,
+      "Dutch": "ook",
+      "English": "also"
+    },
+    {
+      "_id": 58,
+      "Dutch": "spelen",
+      "English": "play"
+    },
+    {
+      "_id": 59,
+      "Dutch": "klein",
+      "English": "small"
+    },
+    {
+      "_id": 60,
+      "Dutch": "end",
+      "English": "end"
+    },
+    {
+      "_id": 61,
+      "Dutch": "zetten",
+      "English": "put"
+    },
+    {
+      "_id": 62,
+      "Dutch": "thuis",
+      "English": "home"
+    },
+    {
+      "_id": 63,
+      "Dutch": "lezen",
+      "English": "read"
+    },
+    {
+      "_id": 64,
+      "Dutch": "de hand",
+      "English": "hand"
+    },
+    {
+      "_id": 65,
+      "Dutch": "poort",
+      "English": "port"
+    },
+    {
+      "_id": 66,
+      "Dutch": "grote",
+      "English": "large"
+    },
+    {
+      "_id": 67,
+      "Dutch": "spell",
+      "English": "spell"
+    },
+    {
+      "_id": 68,
+      "Dutch": "toevoegen",
+      "English": "add"
+    },
+    {
+      "_id": 69,
+      "Dutch": "zelfs",
+      "English": "even"
+    },
+    {
+      "_id": 70,
+      "Dutch": "land",
+      "English": "land"
+    },
+    {
+      "_id": 71,
+      "Dutch": "hier",
+      "English": "here"
+    },
+    {
+      "_id": 72,
+      "Dutch": "moet",
+      "English": "must"
+    },
+    {
+      "_id": 73,
+      "Dutch": "grote",
+      "English": "big"
+    },
+    {
+      "_id": 74,
+      "Dutch": "hoog",
+      "English": "high"
+    },
+    {
+      "_id": 75,
+      "Dutch": "dergelijke",
+      "English": "such"
+    },
+    {
+      "_id": 76,
+      "Dutch": "volgen",
+      "English": "follow"
+    },
+    {
+      "_id": 77,
+      "Dutch": "act",
+      "English": "act"
+    },
+    {
+      "_id": 78,
+      "Dutch": "waarom",
+      "English": "why"
+    },
+    {
+      "_id": 79,
+      "Dutch": "vragen",
+      "English": "ask"
+    },
+    {
+      "_id": 80,
+      "Dutch": "mannen",
+      "English": "men"
+    },
+    {
+      "_id": 81,
+      "Dutch": "verandering",
+      "English": "change"
+    },
+    {
+      "_id": 82,
+      "Dutch": "ging",
+      "English": "went"
+    },
+    {
+      "_id": 83,
+      "Dutch": "licht",
+      "English": "light"
+    },
+    {
+      "_id": 84,
+      "Dutch": "soort",
+      "English": "kind"
+    },
+    {
+      "_id": 85,
+      "Dutch": "uitgeschakeld",
+      "English": "off"
+    },
+    {
+      "_id": 86,
+      "Dutch": "nodig hebben",
+      "English": "need"
+    },
+    {
+      "_id": 87,
+      "Dutch": "huis",
+      "English": "house"
+    },
+    {
+      "_id": 88,
+      "Dutch": "afbeelding",
+      "English": "picture"
+    },
+    {
+      "_id": 89,
+      "Dutch": "proberen",
+      "English": "try"
+    },
+    {
+      "_id": 90,
+      "Dutch": "ons",
+      "English": "us"
+    },
+    {
+      "_id": 91,
+      "Dutch": "weer",
+      "English": "again"
+    },
+    {
+      "_id": 92,
+      "Dutch": "dier",
+      "English": "animal"
+    },
+    {
+      "_id": 93,
+      "Dutch": "punt",
+      "English": "point"
+    },
+    {
+      "_id": 94,
+      "Dutch": "moeder",
+      "English": "mother"
+    },
+    {
+      "_id": 95,
+      "Dutch": "wereld",
+      "English": "world"
+    },
+    {
+      "_id": 96,
+      "Dutch": "dichtbij",
+      "English": "near"
+    },
+    {
+      "_id": 97,
+      "Dutch": "bouwen",
+      "English": "build"
+    },
+    {
+      "_id": 98,
+      "Dutch": "zelf",
+      "English": "self"
+    },
+    {
+      "_id": 99,
+      "Dutch": "aarde",
+      "English": "earth"
+    },
+    {
+      "_id": 100,
+      "Dutch": "vader",
+      "English": "father"
+    },
+    {
+      "_id": 101,
+      "Dutch": "een",
+      "English": "any"
+    },
+    {
+      "_id": 102,
+      "Dutch": "nieuwe",
+      "English": "new"
+    },
+    {
+      "_id": 103,
+      "Dutch": "werk",
+      "English": "work"
+    },
+    {
+      "_id": 104,
+      "Dutch": "deel",
+      "English": "part"
+    },
+    {
+      "_id": 105,
+      "Dutch": "nemen",
+      "English": "take"
+    },
+    {
+      "_id": 106,
+      "Dutch": "krijgen",
+      "English": "get"
+    },
+    {
+      "_id": 107,
+      "Dutch": "plaats",
+      "English": "place"
+    },
+    {
+      "_id": 108,
+      "Dutch": "gemaakt",
+      "English": "made"
+    },
+    {
+      "_id": 109,
+      "Dutch": "wonen",
+      "English": "live"
+    },
+    {
+      "_id": 110,
+      "Dutch": "waar",
+      "English": "where"
+    },
+    {
+      "_id": 111,
+      "Dutch": "na",
+      "English": "after"
+    },
+    {
+      "_id": 112,
+      "Dutch": "terug",
+      "English": "back"
+    },
+    {
+      "_id": 113,
+      "Dutch": "weinig",
+      "English": "little"
+    },
+    {
+      "_id": 114,
+      "Dutch": "alleen",
+      "English": "only"
+    },
+    {
+      "_id": 115,
+      "Dutch": "ronde",
+      "English": "round"
+    },
+    {
+      "_id": 116,
+      "Dutch": "man",
+      "English": "man"
+    },
+    {
+      "_id": 117,
+      "Dutch": "jaar",
+      "English": "year"
+    },
+    {
+      "_id": 118,
+      "Dutch": "kwam",
+      "English": "came"
+    },
+    {
+      "_id": 119,
+      "Dutch": "Show",
+      "English": "show"
+    },
+    {
+      "_id": 120,
+      "Dutch": "elke",
+      "English": "every"
+    },
+    {
+      "_id": 121,
+      "Dutch": "goed",
+      "English": "good"
+    },
+    {
+      "_id": 122,
+      "Dutch": "mij",
+      "English": "me"
+    },
+    {
+      "_id": 123,
+      "Dutch": "geven",
+      "English": "give"
+    },
+    {
+      "_id": 124,
+      "Dutch": "onze",
+      "English": "our"
+    },
+    {
+      "_id": 125,
+      "Dutch": "onder",
+      "English": "under"
+    },
+    {
+      "_id": 126,
+      "Dutch": "naam",
+      "English": "name"
+    },
+    {
+      "_id": 127,
+      "Dutch": "zeer",
+      "English": "very"
+    },
+    {
+      "_id": 128,
+      "Dutch": "door",
+      "English": "through"
+    },
+    {
+      "_id": 129,
+      "Dutch": "gewoon",
+      "English": "just"
+    },
+    {
+      "_id": 130,
+      "Dutch": "vorm",
+      "English": "form"
+    },
+    {
+      "_id": 131,
+      "Dutch": "zin",
+      "English": "sentence"
+    },
+    {
+      "_id": 132,
+      "Dutch": "grote",
+      "English": "great"
+    },
+    {
+      "_id": 133,
+      "Dutch": "denken",
+      "English": "think"
+    },
+    {
+      "_id": 134,
+      "Dutch": "zeggen",
+      "English": "say"
+    },
+    {
+      "_id": 135,
+      "Dutch": "helpen",
+      "English": "help"
+    },
+    {
+      "_id": 136,
+      "Dutch": "laag",
+      "English": "low"
+    },
+    {
+      "_id": 137,
+      "Dutch": "lijn",
+      "English": "line"
+    },
+    {
+      "_id": 138,
+      "Dutch": "verschillen",
+      "English": "differ"
+    },
+    {
+      "_id": 139,
+      "Dutch": "beurt",
+      "English": "turn"
+    },
+    {
+      "_id": 140,
+      "Dutch": "oorzaak",
+      "English": "cause"
+    },
+    {
+      "_id": 141,
+      "Dutch": "veel",
+      "English": "much"
+    },
+    {
+      "_id": 142,
+      "Dutch": "betekenen",
+      "English": "mean"
+    },
+    {
+      "_id": 143,
+      "Dutch": "voor",
+      "English": "before"
+    },
+    {
+      "_id": 144,
+      "Dutch": "verhuizing",
+      "English": "move"
+    },
+    {
+      "_id": 145,
+      "Dutch": "rechts",
+      "English": "right"
+    },
+    {
+      "_id": 146,
+      "Dutch": "jongen",
+      "English": "boy"
+    },
+    {
+      "_id": 147,
+      "Dutch": "oude",
+      "English": "old"
+    },
+    {
+      "_id": 148,
+      "Dutch": "ook",
+      "English": "too"
+    },
+    {
+      "_id": 149,
+      "Dutch": "hetzelfde",
+      "English": "same"
+    },
+    {
+      "_id": 150,
+      "Dutch": "ze",
+      "English": "she"
+    },
+    {
+      "_id": 151,
+      "Dutch": "alle",
+      "English": "all"
+    },
+    {
+      "_id": 152,
+      "Dutch": "er",
+      "English": "there"
+    },
+    {
+      "_id": 153,
+      "Dutch": "wanneer",
+      "English": "when"
+    },
+    {
+      "_id": 154,
+      "Dutch": "omhoog",
+      "English": "up"
+    },
+    {
+      "_id": 155,
+      "Dutch": "gebruiken",
+      "English": "use"
+    },
+    {
+      "_id": 156,
+      "Dutch": "uw",
+      "English": "your"
+    },
+    {
+      "_id": 157,
+      "Dutch": "manier",
+      "English": "way"
+    },
+    {
+      "_id": 158,
+      "Dutch": "over",
+      "English": "about"
+    },
+    {
+      "_id": 159,
+      "Dutch": "veel",
+      "English": "many"
+    },
+    {
+      "_id": 160,
+      "Dutch": "dan",
+      "English": "then"
+    },
+    {
+      "_id": 161,
+      "Dutch": "hen",
+      "English": "them"
+    },
+    {
+      "_id": 162,
+      "Dutch": "schrijven",
+      "English": "write"
+    },
+    {
+      "_id": 163,
+      "Dutch": "zou",
+      "English": "would"
+    },
+    {
+      "_id": 164,
+      "Dutch": "zoals",
+      "English": "like"
+    },
+    {
+      "_id": 165,
+      "Dutch": "dus",
+      "English": "so"
+    },
+    {
+      "_id": 166,
+      "Dutch": "deze",
+      "English": "these"
+    },
+    {
+      "_id": 167,
+      "Dutch": "haar",
+      "English": "her"
+    },
+    {
+      "_id": 168,
+      "Dutch": "lang",
+      "English": "long"
+    },
+    {
+      "_id": 169,
+      "Dutch": "maken",
+      "English": "make"
+    },
+    {
+      "_id": 170,
+      "Dutch": "ding",
+      "English": "thing"
+    },
+    {
+      "_id": 171,
+      "Dutch": "zien",
+      "English": "see"
+    },
+    {
+      "_id": 172,
+      "Dutch": "hem",
+      "English": "him"
+    },
+    {
+      "_id": 173,
+      "Dutch": "twee",
+      "English": "two"
+    },
+    {
+      "_id": 174,
+      "Dutch": "heeft",
+      "English": "has"
+    },
+    {
+      "_id": 175,
+      "Dutch": "kijken",
+      "English": "look"
+    },
+    {
+      "_id": 176,
+      "Dutch": "meer",
+      "English": "more"
+    },
+    {
+      "_id": 177,
+      "Dutch": "dag",
+      "English": "day"
+    },
+    {
+      "_id": 178,
+      "Dutch": "kon",
+      "English": "could"
+    },
+    {
+      "_id": 179,
+      "Dutch": "gaan",
+      "English": "go"
+    },
+    {
+      "_id": 180,
+      "Dutch": "komen",
+      "English": "come"
+    },
+    {
+      "_id": 181,
+      "Dutch": "deed",
+      "English": "did"
+    },
+    {
+      "_id": 182,
+      "Dutch": "aantal",
+      "English": "number"
+    },
+    {
+      "_id": 183,
+      "Dutch": "klinken",
+      "English": "sound"
+    },
+    {
+      "_id": 184,
+      "Dutch": "geen",
+      "English": "no"
+    },
+    {
+      "_id": 185,
+      "Dutch": "meest",
+      "English": "most"
+    },
+    {
+      "_id": 186,
+      "Dutch": "mensen",
+      "English": "people"
+    },
+    {
+      "_id": 187,
+      "Dutch": "mijn",
+      "English": "my"
+    },
+    {
+      "_id": 188,
+      "Dutch": "meer dan",
+      "English": "over"
+    },
+    {
+      "_id": 189,
+      "Dutch": "weten",
+      "English": "know"
+    },
+    {
+      "_id": 190,
+      "Dutch": "water",
+      "English": "water"
+    },
+    {
+      "_id": 191,
+      "Dutch": "dan",
+      "English": "than"
+    },
+    {
+      "_id": 192,
+      "Dutch": "roep",
+      "English": "call"
+    },
+    {
+      "_id": 193,
+      "Dutch": "eerste",
+      "English": "first"
+    },
+    {
+      "_id": 194,
+      "Dutch": "die",
+      "English": "who"
+    },
+    {
+      "_id": 195,
+      "Dutch": "kan",
+      "English": "may"
+    },
+    {
+      "_id": 196,
+      "Dutch": "naar beneden",
+      "English": "down"
+    },
+    {
+      "_id": 197,
+      "Dutch": "kant",
+      "English": "side"
+    },
+    {
+      "_id": 198,
+      "Dutch": "geweest",
+      "English": "been"
+    },
+    {
+      "_id": 199,
+      "Dutch": "nu",
+      "English": "now"
+    },
+    {
+      "_id": 200,
+      "Dutch": "vinden",
+      "English": "find"
+    },
+    {
+      "_id": 201,
+      "Dutch": "hoofd",
+      "English": "head"
+    },
+    {
+      "_id": 202,
+      "Dutch": "staan",
+      "English": "stand"
+    },
+    {
+      "_id": 203,
+      "Dutch": "eigen",
+      "English": "own"
+    },
+    {
+      "_id": 204,
+      "Dutch": "pagina",
+      "English": "page"
+    },
+    {
+      "_id": 205,
+      "Dutch": "moeten",
+      "English": "should"
+    },
+    {
+      "_id": 206,
+      "Dutch": "land",
+      "English": "country"
+    },
+    {
+      "_id": 207,
+      "Dutch": "gevonden",
+      "English": "found"
+    },
+    {
+      "_id": 208,
+      "Dutch": "antwoord",
+      "English": "answer"
+    },
+    {
+      "_id": 209,
+      "Dutch": "de school",
+      "English": "school"
+    },
+    {
+      "_id": 210,
+      "Dutch": "groeien",
+      "English": "grow"
+    },
+    {
+      "_id": 211,
+      "Dutch": "studie",
+      "English": "study"
+    },
+    {
+      "_id": 212,
+      "Dutch": "nog",
+      "English": "still"
+    },
+    {
+      "_id": 213,
+      "Dutch": "leren",
+      "English": "learn"
+    },
+    {
+      "_id": 214,
+      "Dutch": "planten",
+      "English": "plant"
+    },
+    {
+      "_id": 215,
+      "Dutch": "afdekking",
+      "English": "cover"
+    },
+    {
+      "_id": 216,
+      "Dutch": "voedsel",
+      "English": "food"
+    },
+    {
+      "_id": 217,
+      "Dutch": "zon",
+      "English": "sun"
+    },
+    {
+      "_id": 218,
+      "Dutch": "vier",
+      "English": "four"
+    },
+    {
+      "_id": 219,
+      "Dutch": "tussen",
+      "English": "between"
+    },
+    {
+      "_id": 220,
+      "Dutch": "staat",
+      "English": "state"
+    },
+    {
+      "_id": 221,
+      "Dutch": "houden",
+      "English": "keep"
+    },
+    {
+      "_id": 222,
+      "Dutch": "oog",
+      "English": "eye"
+    },
+    {
+      "_id": 223,
+      "Dutch": "nooit",
+      "English": "never"
+    },
+    {
+      "_id": 224,
+      "Dutch": "laatste",
+      "English": "last"
+    },
+    {
+      "_id": 225,
+      "Dutch": "laten",
+      "English": "let"
+    },
+    {
+      "_id": 226,
+      "Dutch": "gedachte",
+      "English": "thought"
+    },
+    {
+      "_id": 227,
+      "Dutch": "stad",
+      "English": "city"
+    },
+    {
+      "_id": 228,
+      "Dutch": "boom",
+      "English": "tree"
+    },
+    {
+      "_id": 229,
+      "Dutch": "oversteken",
+      "English": "cross"
+    },
+    {
+      "_id": 230,
+      "Dutch": "boerderij",
+      "English": "farm"
+    },
+    {
+      "_id": 231,
+      "Dutch": "hard",
+      "English": "hard"
+    },
+    {
+      "_id": 232,
+      "Dutch": "begin",
+      "English": "start"
+    },
+    {
+      "_id": 233,
+      "Dutch": "zou",
+      "English": "might"
+    },
+    {
+      "_id": 234,
+      "Dutch": "verhaal",
+      "English": "story"
+    },
+    {
+      "_id": 235,
+      "Dutch": "zaag",
+      "English": "saw"
+    },
+    {
+      "_id": 236,
+      "Dutch": "ver",
+      "English": "far"
+    },
+    {
+      "_id": 237,
+      "Dutch": "zee",
+      "English": "sea"
+    },
+    {
+      "_id": 238,
+      "Dutch": "tekenen",
+      "English": "draw"
+    },
+    {
+      "_id": 239,
+      "Dutch": "links",
+      "English": "left"
+    },
+    {
+      "_id": 240,
+      "Dutch": "laat",
+      "English": "late"
+    },
+    {
+      "_id": 241,
+      "Dutch": "lopen",
+      "English": "run"
+    },
+    {
+      "_id": 242,
+      "Dutch": "niet",
+      "English": "don’t"
+    },
+    {
+      "_id": 243,
+      "Dutch": "terwijl",
+      "English": "while"
+    },
+    {
+      "_id": 244,
+      "Dutch": "pers",
+      "English": "press"
+    },
+    {
+      "_id": 245,
+      "Dutch": "dicht",
+      "English": "close"
+    },
+    {
+      "_id": 246,
+      "Dutch": "nacht",
+      "English": "night"
+    },
+    {
+      "_id": 247,
+      "Dutch": "echt",
+      "English": "real"
+    },
+    {
+      "_id": 248,
+      "Dutch": "leven",
+      "English": "life"
+    },
+    {
+      "_id": 249,
+      "Dutch": "weinig",
+      "English": "few"
+    },
+    {
+      "_id": 250,
+      "Dutch": "noorden",
+      "English": "north"
+    },
+    {
+      "_id": 251,
+      "Dutch": "boek",
+      "English": "book"
+    },
+    {
+      "_id": 252,
+      "Dutch": "dragen",
+      "English": "carry"
+    },
+    {
+      "_id": 253,
+      "Dutch": "nam",
+      "English": "took"
+    },
+    {
+      "_id": 254,
+      "Dutch": "wetenschap",
+      "English": "science"
+    },
+    {
+      "_id": 255,
+      "Dutch": "eet",
+      "English": "eat"
+    },
+    {
+      "_id": 256,
+      "Dutch": "kamer",
+      "English": "room"
+    },
+    {
+      "_id": 257,
+      "Dutch": "vriend",
+      "English": "friend"
+    },
+    {
+      "_id": 258,
+      "Dutch": "begon",
+      "English": "began"
+    },
+    {
+      "_id": 259,
+      "Dutch": "idee",
+      "English": "idea"
+    },
+    {
+      "_id": 260,
+      "Dutch": "vis",
+      "English": "fish"
+    },
+    {
+      "_id": 261,
+      "Dutch": "berg",
+      "English": "mountain"
+    },
+    {
+      "_id": 262,
+      "Dutch": "stop",
+      "English": "stop"
+    },
+    {
+      "_id": 263,
+      "Dutch": "eenmaal",
+      "English": "once"
+    },
+    {
+      "_id": 264,
+      "Dutch": "base",
+      "English": "base"
+    },
+    {
+      "_id": 265,
+      "Dutch": "hear",
+      "English": "hear"
+    },
+    {
+      "_id": 266,
+      "Dutch": "paard",
+      "English": "horse"
+    },
+    {
+      "_id": 267,
+      "Dutch": "gesneden",
+      "English": "cut"
+    },
+    {
+      "_id": 268,
+      "Dutch": "zeker",
+      "English": "sure"
+    },
+    {
+      "_id": 269,
+      "Dutch": "kijken",
+      "English": "watch"
+    },
+    {
+      "_id": 270,
+      "Dutch": "kleur",
+      "English": "color"
+    },
+    {
+      "_id": 271,
+      "Dutch": "gezicht",
+      "English": "face"
+    },
+    {
+      "_id": 272,
+      "Dutch": "hout",
+      "English": "wood"
+    },
+    {
+      "_id": 273,
+      "Dutch": "belangrijkste",
+      "English": "main"
+    },
+    {
+      "_id": 274,
+      "Dutch": "geopend",
+      "English": "open"
+    },
+    {
+      "_id": 275,
+      "Dutch": "lijken",
+      "English": "seem"
+    },
+    {
+      "_id": 276,
+      "Dutch": "samen",
+      "English": "together"
+    },
+    {
+      "_id": 277,
+      "Dutch": "volgende",
+      "English": "next"
+    },
+    {
+      "_id": 278,
+      "Dutch": "wit",
+      "English": "white"
+    },
+    {
+      "_id": 279,
+      "Dutch": "kinderen",
+      "English": "children"
+    },
+    {
+      "_id": 280,
+      "Dutch": "beginnen",
+      "English": "begin"
+    },
+    {
+      "_id": 281,
+      "Dutch": "kreeg",
+      "English": "got"
+    },
+    {
+      "_id": 282,
+      "Dutch": "lopen",
+      "English": "walk"
+    },
+    {
+      "_id": 283,
+      "Dutch": "voorbeeld",
+      "English": "example"
+    },
+    {
+      "_id": 284,
+      "Dutch": "gemak",
+      "English": "ease"
+    },
+    {
+      "_id": 285,
+      "Dutch": "papier",
+      "English": "paper"
+    },
+    {
+      "_id": 286,
+      "Dutch": "groep",
+      "English": "group"
+    },
+    {
+      "_id": 287,
+      "Dutch": "altijd",
+      "English": "always"
+    },
+    {
+      "_id": 288,
+      "Dutch": "muziek",
+      "English": "music"
+    },
+    {
+      "_id": 289,
+      "Dutch": "die",
+      "English": "those"
+    },
+    {
+      "_id": 290,
+      "Dutch": "beide",
+      "English": "both"
+    },
+    {
+      "_id": 291,
+      "Dutch": "mark",
+      "English": "mark"
+    },
+    {
+      "_id": 292,
+      "Dutch": "vaak",
+      "English": "often"
+    },
+    {
+      "_id": 293,
+      "Dutch": "brief",
+      "English": "letter"
+    },
+    {
+      "_id": 294,
+      "Dutch": "tot",
+      "English": "until"
+    },
+    {
+      "_id": 295,
+      "Dutch": "mijl",
+      "English": "mile"
+    },
+    {
+      "_id": 296,
+      "Dutch": "rivier",
+      "English": "river"
+    },
+    {
+      "_id": 297,
+      "Dutch": "auto",
+      "English": "car"
+    },
+    {
+      "_id": 298,
+      "Dutch": "voeten",
+      "English": "feet"
+    },
+    {
+      "_id": 299,
+      "Dutch": "zorg",
+      "English": "care"
+    },
+    {
+      "_id": 300,
+      "Dutch": "tweede",
+      "English": "second"
+    },
+    {
+      "_id": 301,
+      "Dutch": "genoeg",
+      "English": "enough"
+    },
+    {
+      "_id": 302,
+      "Dutch": "vlakte",
+      "English": "plain"
+    },
+    {
+      "_id": 303,
+      "Dutch": "meisje",
+      "English": "girl"
+    },
+    {
+      "_id": 304,
+      "Dutch": "gebruikelijke",
+      "English": "usual"
+    },
+    {
+      "_id": 305,
+      "Dutch": "jonge",
+      "English": "young"
+    },
+    {
+      "_id": 306,
+      "Dutch": "klaar",
+      "English": "ready"
+    },
+    {
+      "_id": 307,
+      "Dutch": "boven",
+      "English": "above"
+    },
+    {
+      "_id": 308,
+      "Dutch": "ooit",
+      "English": "ever"
+    },
+    {
+      "_id": 309,
+      "Dutch": "rood",
+      "English": "red"
+    },
+    {
+      "_id": 310,
+      "Dutch": "lijst",
+      "English": "list"
+    },
+    {
+      "_id": 311,
+      "Dutch": "hoewel",
+      "English": "though"
+    },
+    {
+      "_id": 312,
+      "Dutch": "voelen",
+      "English": "feel"
+    },
+    {
+      "_id": 313,
+      "Dutch": "Overleg",
+      "English": "talk"
+    },
+    {
+      "_id": 314,
+      "Dutch": "vogel",
+      "English": "bird"
+    },
+    {
+      "_id": 315,
+      "Dutch": "spoedig",
+      "English": "soon"
+    },
+    {
+      "_id": 316,
+      "Dutch": "lichaam",
+      "English": "body"
+    },
+    {
+      "_id": 317,
+      "Dutch": "hond",
+      "English": "dog"
+    },
+    {
+      "_id": 318,
+      "Dutch": "familie",
+      "English": "family"
+    },
+    {
+      "_id": 319,
+      "Dutch": "rechtstreeks",
+      "English": "direct"
+    },
+    {
+      "_id": 320,
+      "Dutch": "pose",
+      "English": "pose"
+    },
+    {
+      "_id": 321,
+      "Dutch": "vertrekken",
+      "English": "leave"
+    },
+    {
+      "_id": 322,
+      "Dutch": "lied",
+      "English": "song"
+    },
+    {
+      "_id": 323,
+      "Dutch": "meten",
+      "English": "measure"
+    },
+    {
+      "_id": 324,
+      "Dutch": "deur",
+      "English": "door"
+    },
+    {
+      "_id": 325,
+      "Dutch": "artikel",
+      "English": "product"
+    },
+    {
+      "_id": 326,
+      "Dutch": "zwart",
+      "English": "black"
+    },
+    {
+      "_id": 327,
+      "Dutch": "korte",
+      "English": "short"
+    },
+    {
+      "_id": 328,
+      "Dutch": "cijfer",
+      "English": "numeral"
+    },
+    {
+      "_id": 329,
+      "Dutch": "klasse",
+      "English": "class"
+    },
+    {
+      "_id": 330,
+      "Dutch": "wind",
+      "English": "wind"
+    },
+    {
+      "_id": 331,
+      "Dutch": "vraag",
+      "English": "question"
+    },
+    {
+      "_id": 332,
+      "Dutch": "gebeuren",
+      "English": "happen"
+    },
+    {
+      "_id": 333,
+      "Dutch": "compleet",
+      "English": "complete"
+    },
+    {
+      "_id": 334,
+      "Dutch": "schip",
+      "English": "ship"
+    },
+    {
+      "_id": 335,
+      "Dutch": "gebied",
+      "English": "area"
+    },
+    {
+      "_id": 336,
+      "Dutch": "helft",
+      "English": "half"
+    },
+    {
+      "_id": 337,
+      "Dutch": "rots",
+      "English": "rock"
+    },
+    {
+      "_id": 338,
+      "Dutch": "orde",
+      "English": "order"
+    },
+    {
+      "_id": 339,
+      "Dutch": "brand",
+      "English": "fire"
+    },
+    {
+      "_id": 340,
+      "Dutch": "zuiden",
+      "English": "south"
+    },
+    {
+      "_id": 341,
+      "Dutch": "probleem",
+      "English": "problem"
+    },
+    {
+      "_id": 342,
+      "Dutch": "stuk",
+      "English": "piece"
+    },
+    {
+      "_id": 343,
+      "Dutch": "vertelde",
+      "English": "told"
+    },
+    {
+      "_id": 344,
+      "Dutch": "wist",
+      "English": "knew"
+    },
+    {
+      "_id": 345,
+      "Dutch": "passeren",
+      "English": "pass"
+    },
+    {
+      "_id": 346,
+      "Dutch": "sinds",
+      "English": "since"
+    },
+    {
+      "_id": 347,
+      "Dutch": "boven",
+      "English": "top"
+    },
+    {
+      "_id": 348,
+      "Dutch": "geheel",
+      "English": "whole"
+    },
+    {
+      "_id": 349,
+      "Dutch": "king",
+      "English": "king"
+    },
+    {
+      "_id": 350,
+      "Dutch": "straat",
+      "English": "street"
+    },
+    {
+      "_id": 351,
+      "Dutch": "inch",
+      "English": "inch"
+    },
+    {
+      "_id": 352,
+      "Dutch": "vermenigvuldigen",
+      "English": "multiply"
+    },
+    {
+      "_id": 353,
+      "Dutch": "niets",
+      "English": "nothing"
+    },
+    {
+      "_id": 354,
+      "Dutch": "cursus",
+      "English": "course"
+    },
+    {
+      "_id": 355,
+      "Dutch": "blijven",
+      "English": "stay"
+    },
+    {
+      "_id": 356,
+      "Dutch": "wiel",
+      "English": "wheel"
+    },
+    {
+      "_id": 357,
+      "Dutch": "volledige",
+      "English": "full"
+    },
+    {
+      "_id": 358,
+      "Dutch": "kracht",
+      "English": "force"
+    },
+    {
+      "_id": 359,
+      "Dutch": "blauw",
+      "English": "blue"
+    },
+    {
+      "_id": 360,
+      "Dutch": "object",
+      "English": "object"
+    },
+    {
+      "_id": 361,
+      "Dutch": "beslissen",
+      "English": "decide"
+    },
+    {
+      "_id": 362,
+      "Dutch": "oppervlak",
+      "English": "surface"
+    },
+    {
+      "_id": 363,
+      "Dutch": "diepe",
+      "English": "deep"
+    },
+    {
+      "_id": 364,
+      "Dutch": "maan",
+      "English": "moon"
+    },
+    {
+      "_id": 365,
+      "Dutch": "eiland",
+      "English": "island"
+    },
+    {
+      "_id": 366,
+      "Dutch": "voet",
+      "English": "foot"
+    },
+    {
+      "_id": 367,
+      "Dutch": "systeem",
+      "English": "system"
+    },
+    {
+      "_id": 368,
+      "Dutch": "drukke",
+      "English": "busy"
+    },
+    {
+      "_id": 369,
+      "Dutch": "toets",
+      "English": "test"
+    },
+    {
+      "_id": 370,
+      "Dutch": "opnemen",
+      "English": "record"
+    },
+    {
+      "_id": 371,
+      "Dutch": "boot",
+      "English": "boat"
+    },
+    {
+      "_id": 372,
+      "Dutch": "gemeenschappelijke",
+      "English": "common"
+    },
+    {
+      "_id": 373,
+      "Dutch": "goud",
+      "English": "gold"
+    },
+    {
+      "_id": 374,
+      "Dutch": "mogelijk",
+      "English": "possible"
+    },
+    {
+      "_id": 375,
+      "Dutch": "vliegtuig",
+      "English": "plane"
+    },
+    {
+      "_id": 376,
+      "Dutch": "plaats",
+      "English": "stead"
+    },
+    {
+      "_id": 377,
+      "Dutch": "droge",
+      "English": "dry"
+    },
+    {
+      "_id": 378,
+      "Dutch": "afvragen",
+      "English": "wonder"
+    },
+    {
+      "_id": 379,
+      "Dutch": "lachen",
+      "English": "laugh"
+    },
+    {
+      "_id": 380,
+      "Dutch": "duizend",
+      "English": "thousand"
+    },
+    {
+      "_id": 381,
+      "Dutch": "geleden",
+      "English": "ago"
+    },
+    {
+      "_id": 382,
+      "Dutch": "ran",
+      "English": "ran"
+    },
+    {
+      "_id": 383,
+      "Dutch": "controleren",
+      "English": "check"
+    },
+    {
+      "_id": 384,
+      "Dutch": "spel",
+      "English": "game"
+    },
+    {
+      "_id": 385,
+      "Dutch": "vorm",
+      "English": "shape"
+    },
+    {
+      "_id": 386,
+      "Dutch": "gelijk",
+      "English": "equate"
+    },
+    {
+      "_id": 387,
+      "Dutch": "heet",
+      "English": "hot"
+    },
+    {
+      "_id": 388,
+      "Dutch": "miss",
+      "English": "miss"
+    },
+    {
+      "_id": 389,
+      "Dutch": "bracht",
+      "English": "brought"
+    },
+    {
+      "_id": 390,
+      "Dutch": "warmte",
+      "English": "heat"
+    },
+    {
+      "_id": 391,
+      "Dutch": "sneeuw",
+      "English": "snow"
+    },
+    {
+      "_id": 392,
+      "Dutch": "band",
+      "English": "tire"
+    },
+    {
+      "_id": 393,
+      "Dutch": "brengen",
+      "English": "bring"
+    },
+    {
+      "_id": 394,
+      "Dutch": "ja",
+      "English": "yes"
+    },
+    {
+      "_id": 395,
+      "Dutch": "verre",
+      "English": "distant"
+    },
+    {
+      "_id": 396,
+      "Dutch": "vullen",
+      "English": "fill"
+    },
+    {
+      "_id": 397,
+      "Dutch": "oosten",
+      "English": "east"
+    },
+    {
+      "_id": 398,
+      "Dutch": "schilderen",
+      "English": "paint"
+    },
+    {
+      "_id": 399,
+      "Dutch": "taal",
+      "English": "language"
+    },
+    {
+      "_id": 400,
+      "Dutch": "onder",
+      "English": "among"
+    },
+    {
+      "_id": 401,
+      "Dutch": "eenheid",
+      "English": "unit"
+    },
+    {
+      "_id": 402,
+      "Dutch": "kracht",
+      "English": "power"
+    },
+    {
+      "_id": 403,
+      "Dutch": "stad",
+      "English": "town"
+    },
+    {
+      "_id": 404,
+      "Dutch": "fijne",
+      "English": "fine"
+    },
+    {
+      "_id": 405,
+      "Dutch": "bepaalde",
+      "English": "certain"
+    },
+    {
+      "_id": 406,
+      "Dutch": "vliegen",
+      "English": "fly"
+    },
+    {
+      "_id": 407,
+      "Dutch": "vallen",
+      "English": "fall"
+    },
+    {
+      "_id": 408,
+      "Dutch": "leiden",
+      "English": "lead"
+    },
+    {
+      "_id": 409,
+      "Dutch": "huilen",
+      "English": "cry"
+    },
+    {
+      "_id": 410,
+      "Dutch": "donker",
+      "English": "dark"
+    },
+    {
+      "_id": 411,
+      "Dutch": "apparaat",
+      "English": "machine"
+    },
+    {
+      "_id": 412,
+      "Dutch": "noot",
+      "English": "note"
+    },
+    {
+      "_id": 413,
+      "Dutch": "wachten",
+      "English": "wait"
+    },
+    {
+      "_id": 414,
+      "Dutch": "plannen",
+      "English": "plan"
+    },
+    {
+      "_id": 415,
+      "Dutch": "figuur",
+      "English": "figure"
+    },
+    {
+      "_id": 416,
+      "Dutch": "ster",
+      "English": "star"
+    },
+    {
+      "_id": 417,
+      "Dutch": "doos",
+      "English": "box"
+    },
+    {
+      "_id": 418,
+      "Dutch": "zelfstandig naamwoord",
+      "English": "noun"
+    },
+    {
+      "_id": 419,
+      "Dutch": "veld",
+      "English": "field"
+    },
+    {
+      "_id": 420,
+      "Dutch": "rest",
+      "English": "rest"
+    },
+    {
+      "_id": 421,
+      "Dutch": "juist",
+      "English": "correct"
+    },
+    {
+      "_id": 422,
+      "Dutch": "in staat",
+      "English": "able"
+    },
+    {
+      "_id": 423,
+      "Dutch": "pond",
+      "English": "pound"
+    },
+    {
+      "_id": 424,
+      "Dutch": "gedaan",
+      "English": "done"
+    },
+    {
+      "_id": 425,
+      "Dutch": "schoonheid",
+      "English": "beauty"
+    },
+    {
+      "_id": 426,
+      "Dutch": "rijden",
+      "English": "drive"
+    },
+    {
+      "_id": 427,
+      "Dutch": "stond",
+      "English": "stood"
+    },
+    {
+      "_id": 428,
+      "Dutch": "bevatten",
+      "English": "contain"
+    },
+    {
+      "_id": 429,
+      "Dutch": "voorzijde",
+      "English": "front"
+    },
+    {
+      "_id": 430,
+      "Dutch": "leren",
+      "English": "teach"
+    },
+    {
+      "_id": 431,
+      "Dutch": "week",
+      "English": "week"
+    },
+    {
+      "_id": 432,
+      "Dutch": "finale",
+      "English": "final"
+    },
+    {
+      "_id": 433,
+      "Dutch": "gaf",
+      "English": "gave"
+    },
+    {
+      "_id": 434,
+      "Dutch": "groen",
+      "English": "green"
+    },
+    {
+      "_id": 435,
+      "Dutch": "oh",
+      "English": "oh"
+    },
+    {
+      "_id": 436,
+      "Dutch": "snel",
+      "English": "quick"
+    },
+    {
+      "_id": 437,
+      "Dutch": "ontwikkelen",
+      "English": "develop"
+    },
+    {
+      "_id": 438,
+      "Dutch": "oceaan",
+      "English": "ocean"
+    },
+    {
+      "_id": 439,
+      "Dutch": "warme",
+      "English": "warm"
+    },
+    {
+      "_id": 440,
+      "Dutch": "gratis",
+      "English": "free"
+    },
+    {
+      "_id": 441,
+      "Dutch": "minuut",
+      "English": "minute"
+    },
+    {
+      "_id": 442,
+      "Dutch": "sterke",
+      "English": "strong"
+    },
+    {
+      "_id": 443,
+      "Dutch": "speciaal",
+      "English": "special"
+    },
+    {
+      "_id": 444,
+      "Dutch": "geest",
+      "English": "mind"
+    },
+    {
+      "_id": 445,
+      "Dutch": "achter",
+      "English": "behind"
+    },
+    {
+      "_id": 446,
+      "Dutch": "duidelijk",
+      "English": "clear"
+    },
+    {
+      "_id": 447,
+      "Dutch": "staart",
+      "English": "tail"
+    },
+    {
+      "_id": 448,
+      "Dutch": "produceren",
+      "English": "produce"
+    },
+    {
+      "_id": 449,
+      "Dutch": "feit",
+      "English": "fact"
+    },
+    {
+      "_id": 450,
+      "Dutch": "ruimte",
+      "English": "space"
+    },
+    {
+      "_id": 451,
+      "Dutch": "gehoord",
+      "English": "heard"
+    },
+    {
+      "_id": 452,
+      "Dutch": "best",
+      "English": "best"
+    },
+    {
+      "_id": 453,
+      "Dutch": "uur",
+      "English": "hour"
+    },
+    {
+      "_id": 454,
+      "Dutch": "beter",
+      "English": "better"
+    },
+    {
+      "_id": 455,
+      "Dutch": "ware",
+      "English": "true"
+    },
+    {
+      "_id": 456,
+      "Dutch": "tijdens",
+      "English": "during"
+    },
+    {
+      "_id": 457,
+      "Dutch": "honderd",
+      "English": "hundred"
+    },
+    {
+      "_id": 458,
+      "Dutch": "vijf",
+      "English": "five"
+    },
+    {
+      "_id": 459,
+      "Dutch": "onthouden",
+      "English": "remember"
+    },
+    {
+      "_id": 460,
+      "Dutch": "stap",
+      "English": "step"
+    },
+    {
+      "_id": 461,
+      "Dutch": "vroeg",
+      "English": "early"
+    },
+    {
+      "_id": 462,
+      "Dutch": "houden",
+      "English": "hold"
+    },
+    {
+      "_id": 463,
+      "Dutch": "west",
+      "English": "west"
+    },
+    {
+      "_id": 464,
+      "Dutch": "grond",
+      "English": "ground"
+    },
+    {
+      "_id": 465,
+      "Dutch": "rente",
+      "English": "interest"
+    },
+    {
+      "_id": 466,
+      "Dutch": "bereiken",
+      "English": "reach"
+    },
+    {
+      "_id": 467,
+      "Dutch": "snel",
+      "English": "fast"
+    },
+    {
+      "_id": 468,
+      "Dutch": "werkwoord",
+      "English": "verb"
+    },
+    {
+      "_id": 469,
+      "Dutch": "zingen",
+      "English": "sing"
+    },
+    {
+      "_id": 470,
+      "Dutch": "luisteren",
+      "English": "listen"
+    },
+    {
+      "_id": 471,
+      "Dutch": "zes",
+      "English": "six"
+    },
+    {
+      "_id": 472,
+      "Dutch": "tafel",
+      "English": "table"
+    },
+    {
+      "_id": 473,
+      "Dutch": "reizen",
+      "English": "travel"
+    },
+    {
+      "_id": 474,
+      "Dutch": "minder",
+      "English": "less"
+    },
+    {
+      "_id": 475,
+      "Dutch": "ochtend",
+      "English": "morning"
+    },
+    {
+      "_id": 476,
+      "Dutch": "tien",
+      "English": "ten"
+    },
+    {
+      "_id": 477,
+      "Dutch": "eenvoudig",
+      "English": "simple"
+    },
+    {
+      "_id": 478,
+      "Dutch": "verscheidene",
+      "English": "several"
+    },
+    {
+      "_id": 479,
+      "Dutch": "klinker",
+      "English": "vowel"
+    },
+    {
+      "_id": 480,
+      "Dutch": "in de richting van",
+      "English": "toward"
+    },
+    {
+      "_id": 481,
+      "Dutch": "oorlog",
+      "English": "war"
+    },
+    {
+      "_id": 482,
+      "Dutch": "leggen",
+      "English": "lay"
+    },
+    {
+      "_id": 483,
+      "Dutch": "tegen",
+      "English": "against"
+    },
+    {
+      "_id": 484,
+      "Dutch": "patroon",
+      "English": "pattern"
+    },
+    {
+      "_id": 485,
+      "Dutch": "langzaam",
+      "English": "slow"
+    },
+    {
+      "_id": 486,
+      "Dutch": "centrum",
+      "English": "center"
+    },
+    {
+      "_id": 487,
+      "Dutch": "liefde",
+      "English": "love"
+    },
+    {
+      "_id": 488,
+      "Dutch": "persoon",
+      "English": "person"
+    },
+    {
+      "_id": 489,
+      "Dutch": "geld",
+      "English": "money"
+    },
+    {
+      "_id": 490,
+      "Dutch": "dienen",
+      "English": "serve"
+    },
+    {
+      "_id": 491,
+      "Dutch": "verschijnen",
+      "English": "appear"
+    },
+    {
+      "_id": 492,
+      "Dutch": "weg",
+      "English": "road"
+    },
+    {
+      "_id": 493,
+      "Dutch": "kaart",
+      "English": "map"
+    },
+    {
+      "_id": 494,
+      "Dutch": "regen",
+      "English": "rain"
+    },
+    {
+      "_id": 495,
+      "Dutch": "regel",
+      "English": "rule"
+    },
+    {
+      "_id": 496,
+      "Dutch": "regeren",
+      "English": "govern"
+    },
+    {
+      "_id": 497,
+      "Dutch": "trek",
+      "English": "pull"
+    },
+    {
+      "_id": 498,
+      "Dutch": "koude",
+      "English": "cold"
+    },
+    {
+      "_id": 499,
+      "Dutch": "kennisgeving",
+      "English": "notice"
+    },
+    {
+      "_id": 500,
+      "Dutch": "stem",
+      "English": "voice"
+    },
+    {
+      "_id": 501,
+      "Dutch": "energie",
+      "English": "energy"
+    },
+    {
+      "_id": 502,
+      "Dutch": "hunt",
+      "English": "hunt"
+    },
+    {
+      "_id": 503,
+      "Dutch": "waarschijnlijk",
+      "English": "probable"
+    },
+    {
+      "_id": 504,
+      "Dutch": "bedden",
+      "English": "bed"
+    },
+    {
+      "_id": 505,
+      "Dutch": "broer",
+      "English": "brother"
+    },
+    {
+      "_id": 506,
+      "Dutch": "ei",
+      "English": "egg"
+    },
+    {
+      "_id": 507,
+      "Dutch": "rit",
+      "English": "ride"
+    },
+    {
+      "_id": 508,
+      "Dutch": "cel",
+      "English": "cell"
+    },
+    {
+      "_id": 509,
+      "Dutch": "geloven",
+      "English": "believe"
+    },
+    {
+      "_id": 510,
+      "Dutch": "misschien",
+      "English": "perhaps"
+    },
+    {
+      "_id": 511,
+      "Dutch": "pick",
+      "English": "pick"
+    },
+    {
+      "_id": 512,
+      "Dutch": "plotseling",
+      "English": "sudden"
+    },
+    {
+      "_id": 513,
+      "Dutch": "tellen",
+      "English": "count"
+    },
+    {
+      "_id": 514,
+      "Dutch": "square",
+      "English": "square"
+    },
+    {
+      "_id": 515,
+      "Dutch": "reden",
+      "English": "reason"
+    },
+    {
+      "_id": 516,
+      "Dutch": "lengte",
+      "English": "length"
+    },
+    {
+      "_id": 517,
+      "Dutch": "vertegenwoordigen",
+      "English": "represent"
+    },
+    {
+      "_id": 518,
+      "Dutch": "kunst",
+      "English": "art"
+    },
+    {
+      "_id": 519,
+      "Dutch": "onderwerp",
+      "English": "subject"
+    },
+    {
+      "_id": 520,
+      "Dutch": "regio",
+      "English": "region"
+    },
+    {
+      "_id": 521,
+      "Dutch": "grootte",
+      "English": "size"
+    },
+    {
+      "_id": 522,
+      "Dutch": "variëren",
+      "English": "vary"
+    },
+    {
+      "_id": 523,
+      "Dutch": "vestigen",
+      "English": "settle"
+    },
+    {
+      "_id": 524,
+      "Dutch": "spreken",
+      "English": "speak"
+    },
+    {
+      "_id": 525,
+      "Dutch": "gewicht",
+      "English": "weight"
+    },
+    {
+      "_id": 526,
+      "Dutch": "algemeen",
+      "English": "general"
+    },
+    {
+      "_id": 527,
+      "Dutch": "ijs",
+      "English": "ice"
+    },
+    {
+      "_id": 528,
+      "Dutch": "aangelegenheid",
+      "English": "matter"
+    },
+    {
+      "_id": 529,
+      "Dutch": "cirkel",
+      "English": "circle"
+    },
+    {
+      "_id": 530,
+      "Dutch": "paar",
+      "English": "pair"
+    },
+    {
+      "_id": 531,
+      "Dutch": "omvatten",
+      "English": "include"
+    },
+    {
+      "_id": 532,
+      "Dutch": "kloof",
+      "English": "divide"
+    },
+    {
+      "_id": 533,
+      "Dutch": "lettergreep",
+      "English": "syllable"
+    },
+    {
+      "_id": 534,
+      "Dutch": "vilt",
+      "English": "felt"
+    },
+    {
+      "_id": 535,
+      "Dutch": "grand",
+      "English": "grand"
+    },
+    {
+      "_id": 536,
+      "Dutch": "bal",
+      "English": "ball"
+    },
+    {
+      "_id": 537,
+      "Dutch": "nog",
+      "English": "yet"
+    },
+    {
+      "_id": 538,
+      "Dutch": "wave",
+      "English": "wave"
+    },
+    {
+      "_id": 539,
+      "Dutch": "laten vallen",
+      "English": "drop"
+    },
+    {
+      "_id": 540,
+      "Dutch": "hart",
+      "English": "heart"
+    },
+    {
+      "_id": 541,
+      "Dutch": "ben",
+      "English": "am"
+    },
+    {
+      "_id": 542,
+      "Dutch": "aanwezig",
+      "English": "present"
+    },
+    {
+      "_id": 543,
+      "Dutch": "zwaar",
+      "English": "heavy"
+    },
+    {
+      "_id": 544,
+      "Dutch": "dans",
+      "English": "dance"
+    },
+    {
+      "_id": 545,
+      "Dutch": "motor",
+      "English": "engine"
+    },
+    {
+      "_id": 546,
+      "Dutch": "positie",
+      "English": "position"
+    },
+    {
+      "_id": 547,
+      "Dutch": "arm",
+      "English": "arm"
+    },
+    {
+      "_id": 548,
+      "Dutch": "breed",
+      "English": "wide"
+    },
+    {
+      "_id": 549,
+      "Dutch": "zeil",
+      "English": "sail"
+    },
+    {
+      "_id": 550,
+      "Dutch": "materiaal",
+      "English": "material"
+    },
+    {
+      "_id": 551,
+      "Dutch": "fractie",
+      "English": "fraction"
+    },
+    {
+      "_id": 552,
+      "Dutch": "bos",
+      "English": "forest"
+    },
+    {
+      "_id": 553,
+      "Dutch": "zitten",
+      "English": "sit"
+    },
+    {
+      "_id": 554,
+      "Dutch": "ras",
+      "English": "race"
+    },
+    {
+      "_id": 555,
+      "Dutch": "venster",
+      "English": "window"
+    },
+    {
+      "_id": 556,
+      "Dutch": "winkel",
+      "English": "store"
+    },
+    {
+      "_id": 557,
+      "Dutch": "zomer",
+      "English": "summer"
+    },
+    {
+      "_id": 558,
+      "Dutch": "trein",
+      "English": "train"
+    },
+    {
+      "_id": 559,
+      "Dutch": "slaap",
+      "English": "sleep"
+    },
+    {
+      "_id": 560,
+      "Dutch": "bewijzen",
+      "English": "prove"
+    },
+    {
+      "_id": 561,
+      "Dutch": "eenzame",
+      "English": "lone"
+    },
+    {
+      "_id": 562,
+      "Dutch": "been",
+      "English": "leg"
+    },
+    {
+      "_id": 563,
+      "Dutch": "oefening",
+      "English": "exercise"
+    },
+    {
+      "_id": 564,
+      "Dutch": "muur",
+      "English": "wall"
+    },
+    {
+      "_id": 565,
+      "Dutch": "vangst",
+      "English": "catch"
+    },
+    {
+      "_id": 566,
+      "Dutch": "berg",
+      "English": "mount"
+    },
+    {
+      "_id": 567,
+      "Dutch": "wensen",
+      "English": "wish"
+    },
+    {
+      "_id": 568,
+      "Dutch": "hemel",
+      "English": "sky"
+    },
+    {
+      "_id": 569,
+      "Dutch": "boord",
+      "English": "board"
+    },
+    {
+      "_id": 570,
+      "Dutch": "vreugde",
+      "English": "joy"
+    },
+    {
+      "_id": 571,
+      "Dutch": "de winter",
+      "English": "winter"
+    },
+    {
+      "_id": 572,
+      "Dutch": "zat",
+      "English": "sat"
+    },
+    {
+      "_id": 573,
+      "Dutch": "geschreven",
+      "English": "written"
+    },
+    {
+      "_id": 574,
+      "Dutch": "wild",
+      "English": "wild"
+    },
+    {
+      "_id": 575,
+      "Dutch": "instrument",
+      "English": "instrument"
+    },
+    {
+      "_id": 576,
+      "Dutch": "gehouden",
+      "English": "kept"
+    },
+    {
+      "_id": 577,
+      "Dutch": "glas",
+      "English": "glass"
+    },
+    {
+      "_id": 578,
+      "Dutch": "gras",
+      "English": "grass"
+    },
+    {
+      "_id": 579,
+      "Dutch": "koe",
+      "English": "cow"
+    },
+    {
+      "_id": 580,
+      "Dutch": "werk",
+      "English": "job"
+    },
+    {
+      "_id": 581,
+      "Dutch": "edge",
+      "English": "edge"
+    },
+    {
+      "_id": 582,
+      "Dutch": "teken",
+      "English": "sign"
+    },
+    {
+      "_id": 583,
+      "Dutch": "bezoek",
+      "English": "visit"
+    },
+    {
+      "_id": 584,
+      "Dutch": "verleden",
+      "English": "past"
+    },
+    {
+      "_id": 585,
+      "Dutch": "zachte",
+      "English": "soft"
+    },
+    {
+      "_id": 586,
+      "Dutch": "lol",
+      "English": "fun"
+    },
+    {
+      "_id": 587,
+      "Dutch": "heldere",
+      "English": "bright"
+    },
+    {
+      "_id": 588,
+      "Dutch": "gas",
+      "English": "gas"
+    },
+    {
+      "_id": 589,
+      "Dutch": "weer",
+      "English": "weather"
+    },
+    {
+      "_id": 590,
+      "Dutch": "maand",
+      "English": "month"
+    },
+    {
+      "_id": 591,
+      "Dutch": "miljoen",
+      "English": "million"
+    },
+    {
+      "_id": 592,
+      "Dutch": "dragen",
+      "English": "bear"
+    },
+    {
+      "_id": 593,
+      "Dutch": "afwerking",
+      "English": "finish"
+    },
+    {
+      "_id": 594,
+      "Dutch": "happy",
+      "English": "happy"
+    },
+    {
+      "_id": 595,
+      "Dutch": "hopen",
+      "English": "hope"
+    },
+    {
+      "_id": 596,
+      "Dutch": "bloem",
+      "English": "flower"
+    },
+    {
+      "_id": 597,
+      "Dutch": "kleden",
+      "English": "clothe"
+    },
+    {
+      "_id": 598,
+      "Dutch": "vreemd",
+      "English": "strange"
+    },
+    {
+      "_id": 599,
+      "Dutch": "weg",
+      "English": "gone"
+    },
+    {
+      "_id": 600,
+      "Dutch": "handel",
+      "English": "trade"
+    },
+    {
+      "_id": 601,
+      "Dutch": "melodie",
+      "English": "melody"
+    },
+    {
+      "_id": 602,
+      "Dutch": "reis",
+      "English": "trip"
+    },
+    {
+      "_id": 603,
+      "Dutch": "kantoor",
+      "English": "office"
+    },
+    {
+      "_id": 604,
+      "Dutch": "ontvangen",
+      "English": "receive"
+    },
+    {
+      "_id": 605,
+      "Dutch": "rij",
+      "English": "row"
+    },
+    {
+      "_id": 606,
+      "Dutch": "mond",
+      "English": "mouth"
+    },
+    {
+      "_id": 607,
+      "Dutch": "exacte",
+      "English": "exact"
+    },
+    {
+      "_id": 608,
+      "Dutch": "symbool",
+      "English": "symbol"
+    },
+    {
+      "_id": 609,
+      "Dutch": "sterven",
+      "English": "die"
+    },
+    {
+      "_id": 610,
+      "Dutch": "minste",
+      "English": "least"
+    },
+    {
+      "_id": 611,
+      "Dutch": "problemen",
+      "English": "trouble"
+    },
+    {
+      "_id": 612,
+      "Dutch": "schreeuw",
+      "English": "shout"
+    },
+    {
+      "_id": 613,
+      "Dutch": "behalve",
+      "English": "except"
+    },
+    {
+      "_id": 614,
+      "Dutch": "schreef",
+      "English": "wrote"
+    },
+    {
+      "_id": 615,
+      "Dutch": "zaad",
+      "English": "seed"
+    },
+    {
+      "_id": 616,
+      "Dutch": "toon",
+      "English": "tone"
+    },
+    {
+      "_id": 617,
+      "Dutch": "toetreden tot",
+      "English": "join"
+    },
+    {
+      "_id": 618,
+      "Dutch": "suggereren",
+      "English": "suggest"
+    },
+    {
+      "_id": 619,
+      "Dutch": "schoon",
+      "English": "clean"
+    },
+    {
+      "_id": 620,
+      "Dutch": "break",
+      "English": "break"
+    },
+    {
+      "_id": 621,
+      "Dutch": "dame",
+      "English": "lady"
+    },
+    {
+      "_id": 622,
+      "Dutch": "yard",
+      "English": "yard"
+    },
+    {
+      "_id": 623,
+      "Dutch": "stijgen",
+      "English": "rise"
+    },
+    {
+      "_id": 624,
+      "Dutch": "slecht",
+      "English": "bad"
+    },
+    {
+      "_id": 625,
+      "Dutch": "klap",
+      "English": "blow"
+    },
+    {
+      "_id": 626,
+      "Dutch": "olie",
+      "English": "oil"
+    },
+    {
+      "_id": 627,
+      "Dutch": "bloed",
+      "English": "blood"
+    },
+    {
+      "_id": 628,
+      "Dutch": "aanraken",
+      "English": "touch"
+    },
+    {
+      "_id": 629,
+      "Dutch": "groeide",
+      "English": "grew"
+    },
+    {
+      "_id": 630,
+      "Dutch": "procent",
+      "English": "cent"
+    },
+    {
+      "_id": 631,
+      "Dutch": "mengen",
+      "English": "mix"
+    },
+    {
+      "_id": 632,
+      "Dutch": "team",
+      "English": "team"
+    },
+    {
+      "_id": 633,
+      "Dutch": "draad",
+      "English": "wire"
+    },
+    {
+      "_id": 634,
+      "Dutch": "kosten",
+      "English": "cost"
+    },
+    {
+      "_id": 635,
+      "Dutch": "verloren",
+      "English": "lost"
+    },
+    {
+      "_id": 636,
+      "Dutch": "bruin",
+      "English": "brown"
+    },
+    {
+      "_id": 637,
+      "Dutch": "dragen",
+      "English": "wear"
+    },
+    {
+      "_id": 638,
+      "Dutch": "tuin",
+      "English": "garden"
+    },
+    {
+      "_id": 639,
+      "Dutch": "gelijk",
+      "English": "equal"
+    },
+    {
+      "_id": 640,
+      "Dutch": "verzonden",
+      "English": "sent"
+    },
+    {
+      "_id": 641,
+      "Dutch": "kiezen",
+      "English": "choose"
+    },
+    {
+      "_id": 642,
+      "Dutch": "viel",
+      "English": "fell"
+    },
+    {
+      "_id": 643,
+      "Dutch": "passen",
+      "English": "fit"
+    },
+    {
+      "_id": 644,
+      "Dutch": "stromen",
+      "English": "flow"
+    },
+    {
+      "_id": 645,
+      "Dutch": "eerlijk",
+      "English": "fair"
+    },
+    {
+      "_id": 646,
+      "Dutch": "bank",
+      "English": "bank"
+    },
+    {
+      "_id": 647,
+      "Dutch": "verzamelen",
+      "English": "collect"
+    },
+    {
+      "_id": 648,
+      "Dutch": "besparen",
+      "English": "save"
+    },
+    {
+      "_id": 649,
+      "Dutch": "controle",
+      "English": "control"
+    },
+    {
+      "_id": 650,
+      "Dutch": "decimaal",
+      "English": "decimal"
+    },
+    {
+      "_id": 651,
+      "Dutch": "oor",
+      "English": "ear"
+    },
+    {
+      "_id": 652,
+      "Dutch": "anders",
+      "English": "else"
+    },
+    {
+      "_id": 653,
+      "Dutch": "heel",
+      "English": "quite"
+    },
+    {
+      "_id": 654,
+      "Dutch": "brak",
+      "English": "broke"
+    },
+    {
+      "_id": 655,
+      "Dutch": "geval",
+      "English": "case"
+    },
+    {
+      "_id": 656,
+      "Dutch": "midden",
+      "English": "middle"
+    },
+    {
+      "_id": 657,
+      "Dutch": "doden",
+      "English": "kill"
+    },
+    {
+      "_id": 658,
+      "Dutch": "zoon",
+      "English": "son"
+    },
+    {
+      "_id": 659,
+      "Dutch": "meer",
+      "English": "lake"
+    },
+    {
+      "_id": 660,
+      "Dutch": "momenteel",
+      "English": "moment"
+    },
+    {
+      "_id": 661,
+      "Dutch": "schaal",
+      "English": "scale"
+    },
+    {
+      "_id": 662,
+      "Dutch": "luid",
+      "English": "loud"
+    },
+    {
+      "_id": 663,
+      "Dutch": "voorjaar",
+      "English": "spring"
+    },
+    {
+      "_id": 664,
+      "Dutch": "waarnemen",
+      "English": "observe"
+    },
+    {
+      "_id": 665,
+      "Dutch": "kind",
+      "English": "child"
+    },
+    {
+      "_id": 666,
+      "Dutch": "straight",
+      "English": "straight"
+    },
+    {
+      "_id": 667,
+      "Dutch": "medeklinker",
+      "English": "consonant"
+    },
+    {
+      "_id": 668,
+      "Dutch": "natie",
+      "English": "nation"
+    },
+    {
+      "_id": 669,
+      "Dutch": "woordenboek",
+      "English": "dictionary"
+    },
+    {
+      "_id": 670,
+      "Dutch": "melk",
+      "English": "milk"
+    },
+    {
+      "_id": 671,
+      "Dutch": "snelheid",
+      "English": "speed"
+    },
+    {
+      "_id": 672,
+      "Dutch": "methode",
+      "English": "method"
+    },
+    {
+      "_id": 673,
+      "Dutch": "orgel",
+      "English": "organ"
+    },
+    {
+      "_id": 674,
+      "Dutch": "betalen",
+      "English": "pay"
+    },
+    {
+      "_id": 675,
+      "Dutch": "leeftijd",
+      "English": "age"
+    },
+    {
+      "_id": 676,
+      "Dutch": "sectie",
+      "English": "section"
+    },
+    {
+      "_id": 677,
+      "Dutch": "kleding",
+      "English": "dress"
+    },
+    {
+      "_id": 678,
+      "Dutch": "wolk",
+      "English": "cloud"
+    },
+    {
+      "_id": 679,
+      "Dutch": "verrassing",
+      "English": "surprise"
+    },
+    {
+      "_id": 680,
+      "Dutch": "rustig",
+      "English": "quiet"
+    },
+    {
+      "_id": 681,
+      "Dutch": "steen",
+      "English": "stone"
+    },
+    {
+      "_id": 682,
+      "Dutch": "minuscuul",
+      "English": "tiny"
+    },
+    {
+      "_id": 683,
+      "Dutch": "klimmen",
+      "English": "climb"
+    },
+    {
+      "_id": 684,
+      "Dutch": "koele",
+      "English": "cool"
+    },
+    {
+      "_id": 685,
+      "Dutch": "ontwerp",
+      "English": "design"
+    },
+    {
+      "_id": 686,
+      "Dutch": "slechte",
+      "English": "poor"
+    },
+    {
+      "_id": 687,
+      "Dutch": "veel",
+      "English": "lot"
+    },
+    {
+      "_id": 688,
+      "Dutch": "experiment",
+      "English": "experiment"
+    },
+    {
+      "_id": 689,
+      "Dutch": "onderzijde",
+      "English": "bottom"
+    },
+    {
+      "_id": 690,
+      "Dutch": "sleutel",
+      "English": "key"
+    },
+    {
+      "_id": 691,
+      "Dutch": "ijzer",
+      "English": "iron"
+    },
+    {
+      "_id": 692,
+      "Dutch": "enkelvoudige",
+      "English": "single"
+    },
+    {
+      "_id": 693,
+      "Dutch": "stok",
+      "English": "stick"
+    },
+    {
+      "_id": 694,
+      "Dutch": "flat",
+      "English": "flat"
+    },
+    {
+      "_id": 695,
+      "Dutch": "twintig",
+      "English": "twenty"
+    },
+    {
+      "_id": 696,
+      "Dutch": "huid",
+      "English": "skin"
+    },
+    {
+      "_id": 697,
+      "Dutch": "glimlach",
+      "English": "smile"
+    },
+    {
+      "_id": 698,
+      "Dutch": "vouw",
+      "English": "crease"
+    },
+    {
+      "_id": 699,
+      "Dutch": "gat",
+      "English": "hole"
+    },
+    {
+      "_id": 700,
+      "Dutch": "springen",
+      "English": "jump"
+    },
+    {
+      "_id": 701,
+      "Dutch": "kindje",
+      "English": "baby"
+    },
+    {
+      "_id": 702,
+      "Dutch": "acht",
+      "English": "eight"
+    },
+    {
+      "_id": 703,
+      "Dutch": "dorp",
+      "English": "village"
+    },
+    {
+      "_id": 704,
+      "Dutch": "ontmoeten",
+      "English": "meet"
+    },
+    {
+      "_id": 705,
+      "Dutch": "wortel",
+      "English": "root"
+    },
+    {
+      "_id": 706,
+      "Dutch": "kopen",
+      "English": "buy"
+    },
+    {
+      "_id": 707,
+      "Dutch": "verhogen",
+      "English": "raise"
+    },
+    {
+      "_id": 708,
+      "Dutch": "op te lossen",
+      "English": "solve"
+    },
+    {
+      "_id": 709,
+      "Dutch": "metalen",
+      "English": "metal"
+    },
+    {
+      "_id": 710,
+      "Dutch": "of",
+      "English": "whether"
+    },
+    {
+      "_id": 711,
+      "Dutch": "duw",
+      "English": "push"
+    },
+    {
+      "_id": 712,
+      "Dutch": "zeven",
+      "English": "seven"
+    },
+    {
+      "_id": 713,
+      "Dutch": "paragraaf",
+      "English": "paragraph"
+    },
+    {
+      "_id": 714,
+      "Dutch": "derde",
+      "English": "third"
+    },
+    {
+      "_id": 715,
+      "Dutch": "zal",
+      "English": "shall"
+    },
+    {
+      "_id": 716,
+      "Dutch": "gehouden",
+      "English": "held"
+    },
+    {
+      "_id": 717,
+      "Dutch": "haar",
+      "English": "hair"
+    },
+    {
+      "_id": 718,
+      "Dutch": "beschrijven",
+      "English": "describe"
+    },
+    {
+      "_id": 719,
+      "Dutch": "kok",
+      "English": "cook"
+    },
+    {
+      "_id": 720,
+      "Dutch": "vloer",
+      "English": "floor"
+    },
+    {
+      "_id": 721,
+      "Dutch": "ofwel",
+      "English": "either"
+    },
+    {
+      "_id": 722,
+      "Dutch": "resultaat",
+      "English": "result"
+    },
+    {
+      "_id": 723,
+      "Dutch": "verbranden",
+      "English": "burn"
+    },
+    {
+      "_id": 724,
+      "Dutch": "hill",
+      "English": "hill"
+    },
+    {
+      "_id": 725,
+      "Dutch": "veilig",
+      "English": "safe"
+    },
+    {
+      "_id": 726,
+      "Dutch": "kat",
+      "English": "cat"
+    },
+    {
+      "_id": 727,
+      "Dutch": "eeuw",
+      "English": "century"
+    },
+    {
+      "_id": 728,
+      "Dutch": "overwegen",
+      "English": "consider"
+    },
+    {
+      "_id": 729,
+      "Dutch": "soort",
+      "English": "type"
+    },
+    {
+      "_id": 730,
+      "Dutch": "wet",
+      "English": "law"
+    },
+    {
+      "_id": 731,
+      "Dutch": "beetje",
+      "English": "bit"
+    },
+    {
+      "_id": 732,
+      "Dutch": "kust",
+      "English": "coast"
+    },
+    {
+      "_id": 733,
+      "Dutch": "kopie",
+      "English": "copy"
+    },
+    {
+      "_id": 734,
+      "Dutch": "zinsnede",
+      "English": "phrase"
+    },
+    {
+      "_id": 735,
+      "Dutch": "stil",
+      "English": "silent"
+    },
+    {
+      "_id": 736,
+      "Dutch": "hoog",
+      "English": "tall"
+    },
+    {
+      "_id": 737,
+      "Dutch": "zand",
+      "English": "sand"
+    },
+    {
+      "_id": 738,
+      "Dutch": "bodem",
+      "English": "soil"
+    },
+    {
+      "_id": 739,
+      "Dutch": "rol",
+      "English": "roll"
+    },
+    {
+      "_id": 740,
+      "Dutch": "temperatuur",
+      "English": "temperature"
+    },
+    {
+      "_id": 741,
+      "Dutch": "vinger",
+      "English": "finger"
+    },
+    {
+      "_id": 742,
+      "Dutch": "industrie",
+      "English": "industry"
+    },
+    {
+      "_id": 743,
+      "Dutch": "waarde",
+      "English": "value"
+    },
+    {
+      "_id": 744,
+      "Dutch": "strijd",
+      "English": "fight"
+    },
+    {
+      "_id": 745,
+      "Dutch": "leugen",
+      "English": "lie"
+    },
+    {
+      "_id": 746,
+      "Dutch": "verslaan",
+      "English": "beat"
+    },
+    {
+      "_id": 747,
+      "Dutch": "excite",
+      "English": "excite"
+    },
+    {
+      "_id": 748,
+      "Dutch": "natuurlijke",
+      "English": "natural"
+    },
+    {
+      "_id": 749,
+      "Dutch": "view",
+      "English": "view"
+    },
+    {
+      "_id": 750,
+      "Dutch": "sense",
+      "English": "sense"
+    },
+    {
+      "_id": 751,
+      "Dutch": "hoofdstad",
+      "English": "capital"
+    },
+    {
+      "_id": 752,
+      "Dutch": "zal niet",
+      "English": "won’t"
+    },
+    {
+      "_id": 753,
+      "Dutch": "stoel",
+      "English": "chair"
+    },
+    {
+      "_id": 754,
+      "Dutch": "gevaar",
+      "English": "danger"
+    },
+    {
+      "_id": 755,
+      "Dutch": "fruit",
+      "English": "fruit"
+    },
+    {
+      "_id": 756,
+      "Dutch": "rijk",
+      "English": "rich"
+    },
+    {
+      "_id": 757,
+      "Dutch": "dikke",
+      "English": "thick"
+    },
+    {
+      "_id": 758,
+      "Dutch": "soldaat",
+      "English": "soldier"
+    },
+    {
+      "_id": 759,
+      "Dutch": "proces",
+      "English": "process"
+    },
+    {
+      "_id": 760,
+      "Dutch": "werken",
+      "English": "operate"
+    },
+    {
+      "_id": 761,
+      "Dutch": "praktijk",
+      "English": "practice"
+    },
+    {
+      "_id": 762,
+      "Dutch": "apart",
+      "English": "separate"
+    },
+    {
+      "_id": 763,
+      "Dutch": "moeilijk",
+      "English": "difficult"
+    },
+    {
+      "_id": 764,
+      "Dutch": "arts",
+      "English": "doctor"
+    },
+    {
+      "_id": 765,
+      "Dutch": "aub",
+      "English": "please"
+    },
+    {
+      "_id": 766,
+      "Dutch": "beschermen",
+      "English": "protect"
+    },
+    {
+      "_id": 767,
+      "Dutch": "middag",
+      "English": "noon"
+    },
+    {
+      "_id": 768,
+      "Dutch": "gewas",
+      "English": "crop"
+    },
+    {
+      "_id": 769,
+      "Dutch": "moderne",
+      "English": "modern"
+    },
+    {
+      "_id": 770,
+      "Dutch": "onderdeel",
+      "English": "element"
+    },
+    {
+      "_id": 771,
+      "Dutch": "hit",
+      "English": "hit"
+    },
+    {
+      "_id": 772,
+      "Dutch": "leerling",
+      "English": "student"
+    },
+    {
+      "_id": 773,
+      "Dutch": "hoek",
+      "English": "corner"
+    },
+    {
+      "_id": 774,
+      "Dutch": "partij",
+      "English": "party"
+    },
+    {
+      "_id": 775,
+      "Dutch": "levering",
+      "English": "supply"
+    },
+    {
+      "_id": 776,
+      "Dutch": "wiens",
+      "English": "whose"
+    },
+    {
+      "_id": 777,
+      "Dutch": "lokaliseren",
+      "English": "locate"
+    },
+    {
+      "_id": 778,
+      "Dutch": "kookplaten",
+      "English": "ring"
+    },
+    {
+      "_id": 779,
+      "Dutch": "karakter",
+      "English": "character"
+    },
+    {
+      "_id": 780,
+      "Dutch": "insecten",
+      "English": "insect"
+    },
+    {
+      "_id": 781,
+      "Dutch": "gevangen",
+      "English": "caught"
+    },
+    {
+      "_id": 782,
+      "Dutch": "periode",
+      "English": "period"
+    },
+    {
+      "_id": 783,
+      "Dutch": "geven",
+      "English": "indicate"
+    },
+    {
+      "_id": 784,
+      "Dutch": "radio In",
+      "English": "radio"
+    },
+    {
+      "_id": 785,
+      "Dutch": "sprak",
+      "English": "spoke"
+    },
+    {
+      "_id": 786,
+      "Dutch": "atoom",
+      "English": "atom"
+    },
+    {
+      "_id": 787,
+      "Dutch": "menselijk",
+      "English": "human"
+    },
+    {
+      "_id": 788,
+      "Dutch": "geschiedenis",
+      "English": "history"
+    },
+    {
+      "_id": 789,
+      "Dutch": "werking",
+      "English": "effect"
+    },
+    {
+      "_id": 790,
+      "Dutch": "elektrische",
+      "English": "electric"
+    },
+    {
+      "_id": 791,
+      "Dutch": "verwachten",
+      "English": "expect"
+    },
+    {
+      "_id": 792,
+      "Dutch": "bot",
+      "English": "bone"
+    },
+    {
+      "_id": 793,
+      "Dutch": "spoor",
+      "English": "rail"
+    },
+    {
+      "_id": 794,
+      "Dutch": "stel",
+      "English": "imagine"
+    },
+    {
+      "_id": 795,
+      "Dutch": "bieden",
+      "English": "provide"
+    },
+    {
+      "_id": 796,
+      "Dutch": "instemmen",
+      "English": "agree"
+    },
+    {
+      "_id": 797,
+      "Dutch": "dus",
+      "English": "thus"
+    },
+    {
+      "_id": 798,
+      "Dutch": "zachte",
+      "English": "gentle"
+    },
+    {
+      "_id": 799,
+      "Dutch": "vrouw",
+      "English": "woman"
+    },
+    {
+      "_id": 800,
+      "Dutch": "kapitein",
+      "English": "captain"
+    },
+    {
+      "_id": 801,
+      "Dutch": "denk",
+      "English": "guess"
+    },
+    {
+      "_id": 802,
+      "Dutch": "noodzakelijk",
+      "English": "necessary"
+    },
+    {
+      "_id": 803,
+      "Dutch": "scherpe",
+      "English": "sharp"
+    },
+    {
+      "_id": 804,
+      "Dutch": "vleugel",
+      "English": "wing"
+    },
+    {
+      "_id": 805,
+      "Dutch": "creëren",
+      "English": "create"
+    },
+    {
+      "_id": 806,
+      "Dutch": "buurman",
+      "English": "neighbor"
+    },
+    {
+      "_id": 807,
+      "Dutch": "wassen",
+      "English": "wash"
+    },
+    {
+      "_id": 808,
+      "Dutch": "vleermuis",
+      "English": "bat"
+    },
+    {
+      "_id": 809,
+      "Dutch": "eerder",
+      "English": "rather"
+    },
+    {
+      "_id": 810,
+      "Dutch": "menigte",
+      "English": "crowd"
+    },
+    {
+      "_id": 811,
+      "Dutch": "maïs",
+      "English": "corn"
+    },
+    {
+      "_id": 812,
+      "Dutch": "vergelijken",
+      "English": "compare"
+    },
+    {
+      "_id": 813,
+      "Dutch": "gedicht",
+      "English": "poem"
+    },
+    {
+      "_id": 814,
+      "Dutch": "koord",
+      "English": "string"
+    },
+    {
+      "_id": 815,
+      "Dutch": "bell",
+      "English": "bell"
+    },
+    {
+      "_id": 816,
+      "Dutch": "afhangen",
+      "English": "depend"
+    },
+    {
+      "_id": 817,
+      "Dutch": "vlees",
+      "English": "meat"
+    },
+    {
+      "_id": 818,
+      "Dutch": "wrijven",
+      "English": "rub"
+    },
+    {
+      "_id": 819,
+      "Dutch": "buis",
+      "English": "tube"
+    },
+    {
+      "_id": 820,
+      "Dutch": "beroemde",
+      "English": "famous"
+    },
+    {
+      "_id": 821,
+      "Dutch": "deas",
+      "English": "dollar"
+    },
+    {
+      "_id": 822,
+      "Dutch": "stroom",
+      "English": "stream"
+    },
+    {
+      "_id": 823,
+      "Dutch": "angst",
+      "English": "fear"
+    },
+    {
+      "_id": 824,
+      "Dutch": "zicht",
+      "English": "sight"
+    },
+    {
+      "_id": 825,
+      "Dutch": "dun",
+      "English": "thin"
+    },
+    {
+      "_id": 826,
+      "Dutch": "driehoek",
+      "English": "triangle"
+    },
+    {
+      "_id": 827,
+      "Dutch": "planeet",
+      "English": "planet"
+    },
+    {
+      "_id": 828,
+      "Dutch": "haast",
+      "English": "hurry"
+    },
+    {
+      "_id": 829,
+      "Dutch": "chief",
+      "English": "chief"
+    },
+    {
+      "_id": 830,
+      "Dutch": "kolonie",
+      "English": "colony"
+    },
+    {
+      "_id": 831,
+      "Dutch": "klok",
+      "English": "clock"
+    },
+    {
+      "_id": 832,
+      "Dutch": "de mijne",
+      "English": "mine"
+    },
+    {
+      "_id": 833,
+      "Dutch": "stropdas",
+      "English": "tie"
+    },
+    {
+      "_id": 834,
+      "Dutch": "voeren",
+      "English": "enter"
+    },
+    {
+      "_id": 835,
+      "Dutch": "grote",
+      "English": "major"
+    },
+    {
+      "_id": 836,
+      "Dutch": "vers",
+      "English": "fresh"
+    },
+    {
+      "_id": 837,
+      "Dutch": "zoeken",
+      "English": "search"
+    },
+    {
+      "_id": 838,
+      "Dutch": "sturen",
+      "English": "send"
+    },
+    {
+      "_id": 839,
+      "Dutch": "geel",
+      "English": "yellow"
+    },
+    {
+      "_id": 840,
+      "Dutch": "pistool",
+      "English": "gun"
+    },
+    {
+      "_id": 841,
+      "Dutch": "toelaten",
+      "English": "allow"
+    },
+    {
+      "_id": 842,
+      "Dutch": "afdrukken",
+      "English": "print"
+    },
+    {
+      "_id": 843,
+      "Dutch": "dood",
+      "English": "dead"
+    },
+    {
+      "_id": 844,
+      "Dutch": "plek",
+      "English": "spot"
+    },
+    {
+      "_id": 845,
+      "Dutch": "woestijn",
+      "English": "desert"
+    },
+    {
+      "_id": 846,
+      "Dutch": "pak",
+      "English": "suit"
+    },
+    {
+      "_id": 847,
+      "Dutch": "huidige",
+      "English": "current"
+    },
+    {
+      "_id": 848,
+      "Dutch": "lift",
+      "English": "lift"
+    },
+    {
+      "_id": 849,
+      "Dutch": "gestegen",
+      "English": "rose"
+    },
+    {
+      "_id": 850,
+      "Dutch": "aankomen",
+      "English": "arrive"
+    },
+    {
+      "_id": 851,
+      "Dutch": "meester",
+      "English": "master"
+    },
+    {
+      "_id": 852,
+      "Dutch": "spoor",
+      "English": "track"
+    },
+    {
+      "_id": 853,
+      "Dutch": "ouder",
+      "English": "parent"
+    },
+    {
+      "_id": 854,
+      "Dutch": "oever",
+      "English": "shore"
+    },
+    {
+      "_id": 855,
+      "Dutch": "divisie",
+      "English": "division"
+    },
+    {
+      "_id": 856,
+      "Dutch": "blad",
+      "English": "sheet"
+    },
+    {
+      "_id": 857,
+      "Dutch": "stof",
+      "English": "substance"
+    },
+    {
+      "_id": 858,
+      "Dutch": "gunst",
+      "English": "favor"
+    },
+    {
+      "_id": 859,
+      "Dutch": "aansluiten",
+      "English": "connect"
+    },
+    {
+      "_id": 860,
+      "Dutch": "post",
+      "English": "post"
+    },
+    {
+      "_id": 861,
+      "Dutch": "besteden",
+      "English": "spend"
+    },
+    {
+      "_id": 862,
+      "Dutch": "akkoord",
+      "English": "chord"
+    },
+    {
+      "_id": 863,
+      "Dutch": "vet",
+      "English": "fat"
+    },
+    {
+      "_id": 864,
+      "Dutch": "blij",
+      "English": "glad"
+    },
+    {
+      "_id": 865,
+      "Dutch": "origineel",
+      "English": "original"
+    },
+    {
+      "_id": 866,
+      "Dutch": "aandeel",
+      "English": "share"
+    },
+    {
+      "_id": 867,
+      "Dutch": "station",
+      "English": "station"
+    },
+    {
+      "_id": 868,
+      "Dutch": "dad",
+      "English": "dad"
+    },
+    {
+      "_id": 869,
+      "Dutch": "brood",
+      "English": "bread"
+    },
+    {
+      "_id": 870,
+      "Dutch": "rekenen",
+      "English": "charge"
+    },
+    {
+      "_id": 871,
+      "Dutch": "behoorlijk",
+      "English": "proper"
+    },
+    {
+      "_id": 872,
+      "Dutch": "bar",
+      "English": "bar"
+    },
+    {
+      "_id": 873,
+      "Dutch": "aanbod",
+      "English": "offer"
+    },
+    {
+      "_id": 874,
+      "Dutch": "segmenten",
+      "English": "segment"
+    },
+    {
+      "_id": 875,
+      "Dutch": "slaaf",
+      "English": "slave"
+    },
+    {
+      "_id": 876,
+      "Dutch": "eend",
+      "English": "duck"
+    },
+    {
+      "_id": 877,
+      "Dutch": "onmiddellijke",
+      "English": "instant"
+    },
+    {
+      "_id": 878,
+      "Dutch": "markt",
+      "English": "market"
+    },
+    {
+      "_id": 879,
+      "Dutch": "graad",
+      "English": "degree"
+    },
+    {
+      "_id": 880,
+      "Dutch": "bevolken",
+      "English": "populate"
+    },
+    {
+      "_id": 881,
+      "Dutch": "kuiken",
+      "English": "chick"
+    },
+    {
+      "_id": 882,
+      "Dutch": "lieve",
+      "English": "dear"
+    },
+    {
+      "_id": 883,
+      "Dutch": "vijand",
+      "English": "enemy"
+    },
+    {
+      "_id": 884,
+      "Dutch": "antwoorden",
+      "English": "reply"
+    },
+    {
+      "_id": 885,
+      "Dutch": "drankje",
+      "English": "drink"
+    },
+    {
+      "_id": 886,
+      "Dutch": "voorkomen",
+      "English": "occur"
+    },
+    {
+      "_id": 887,
+      "Dutch": "ondersteuning",
+      "English": "support"
+    },
+    {
+      "_id": 888,
+      "Dutch": "spraak",
+      "English": "speech"
+    },
+    {
+      "_id": 889,
+      "Dutch": "natuur",
+      "English": "nature"
+    },
+    {
+      "_id": 890,
+      "Dutch": "reeks",
+      "English": "range"
+    },
+    {
+      "_id": 891,
+      "Dutch": "stoom",
+      "English": "steam"
+    },
+    {
+      "_id": 892,
+      "Dutch": "beweging",
+      "English": "motion"
+    },
+    {
+      "_id": 893,
+      "Dutch": "pad",
+      "English": "path"
+    },
+    {
+      "_id": 894,
+      "Dutch": "vloeistof",
+      "English": "liquid"
+    },
+    {
+      "_id": 895,
+      "Dutch": "aanmelden",
+      "English": "log"
+    },
+    {
+      "_id": 896,
+      "Dutch": "betekende",
+      "English": "meant"
+    },
+    {
+      "_id": 897,
+      "Dutch": "quotiënt",
+      "English": "quotient"
+    },
+    {
+      "_id": 898,
+      "Dutch": "tanden",
+      "English": "teeth"
+    },
+    {
+      "_id": 899,
+      "Dutch": "schelp",
+      "English": "shell"
+    },
+    {
+      "_id": 900,
+      "Dutch": "nek",
+      "English": "neck"
+    },
+    {
+      "_id": 901,
+      "Dutch": "zuurstof",
+      "English": "oxygen"
+    },
+    {
+      "_id": 902,
+      "Dutch": "suiker",
+      "English": "sugar"
+    },
+    {
+      "_id": 903,
+      "Dutch": "dood",
+      "English": "death"
+    },
+    {
+      "_id": 904,
+      "Dutch": "vrij",
+      "English": "pretty"
+    },
+    {
+      "_id": 905,
+      "Dutch": "vaardigheid",
+      "English": "skill"
+    },
+    {
+      "_id": 906,
+      "Dutch": "vrouwen",
+      "English": "women"
+    },
+    {
+      "_id": 907,
+      "Dutch": "seizoen",
+      "English": "season"
+    },
+    {
+      "_id": 908,
+      "Dutch": "oplossing",
+      "English": "solution"
+    },
+    {
+      "_id": 909,
+      "Dutch": "magneet",
+      "English": "magnet"
+    },
+    {
+      "_id": 910,
+      "Dutch": "zilver",
+      "English": "silver"
+    },
+    {
+      "_id": 911,
+      "Dutch": "dank",
+      "English": "thank"
+    },
+    {
+      "_id": 912,
+      "Dutch": "tak",
+      "English": "branch"
+    },
+    {
+      "_id": 913,
+      "Dutch": "wedstrijd",
+      "English": "match"
+    },
+    {
+      "_id": 914,
+      "Dutch": "achtervoegsel",
+      "English": "suffix"
+    },
+    {
+      "_id": 915,
+      "Dutch": "vooral",
+      "English": "especially"
+    },
+    {
+      "_id": 916,
+      "Dutch": "vijg",
+      "English": "fig"
+    },
+    {
+      "_id": 917,
+      "Dutch": "bang",
+      "English": "afraid"
+    },
+    {
+      "_id": 918,
+      "Dutch": "reusachtig",
+      "English": "huge"
+    },
+    {
+      "_id": 919,
+      "Dutch": "zus",
+      "English": "sister"
+    },
+    {
+      "_id": 920,
+      "Dutch": "staal",
+      "English": "steel"
+    },
+    {
+      "_id": 921,
+      "Dutch": "bespreken",
+      "English": "discuss"
+    },
+    {
+      "_id": 922,
+      "Dutch": "vooruit",
+      "English": "forward"
+    },
+    {
+      "_id": 923,
+      "Dutch": "gelijkaardige",
+      "English": "similar"
+    },
+    {
+      "_id": 924,
+      "Dutch": "begeleiden",
+      "English": "guide"
+    },
+    {
+      "_id": 925,
+      "Dutch": "ervaring",
+      "English": "experience"
+    },
+    {
+      "_id": 926,
+      "Dutch": "partituur",
+      "English": "score"
+    },
+    {
+      "_id": 927,
+      "Dutch": "appel",
+      "English": "apple"
+    },
+    {
+      "_id": 928,
+      "Dutch": "gekocht",
+      "English": "bought"
+    },
+    {
+      "_id": 929,
+      "Dutch": "geleid",
+      "English": "led"
+    },
+    {
+      "_id": 930,
+      "Dutch": "toonhoogte",
+      "English": "pitch"
+    },
+    {
+      "_id": 931,
+      "Dutch": "coat",
+      "English": "coat"
+    },
+    {
+      "_id": 932,
+      "Dutch": "massa",
+      "English": "mass"
+    },
+    {
+      "_id": 933,
+      "Dutch": "kaart",
+      "English": "card"
+    },
+    {
+      "_id": 934,
+      "Dutch": "band",
+      "English": "band"
+    },
+    {
+      "_id": 935,
+      "Dutch": "touw",
+      "English": "rope"
+    },
+    {
+      "_id": 936,
+      "Dutch": "slip",
+      "English": "slip"
+    },
+    {
+      "_id": 937,
+      "Dutch": "win",
+      "English": "win"
+    },
+    {
+      "_id": 938,
+      "Dutch": "dromen",
+      "English": "dream"
+    },
+    {
+      "_id": 939,
+      "Dutch": "avond",
+      "English": "evening"
+    },
+    {
+      "_id": 940,
+      "Dutch": "voorwaarde",
+      "English": "condition"
+    },
+    {
+      "_id": 941,
+      "Dutch": "voer",
+      "English": "feed"
+    },
+    {
+      "_id": 942,
+      "Dutch": "gereedschap",
+      "English": "tool"
+    },
+    {
+      "_id": 943,
+      "Dutch": "totaal",
+      "English": "total"
+    },
+    {
+      "_id": 944,
+      "Dutch": "elementaire",
+      "English": "basic"
+    },
+    {
+      "_id": 945,
+      "Dutch": "geur",
+      "English": "smell"
+    },
+    {
+      "_id": 946,
+      "Dutch": "dal",
+      "English": "valley"
+    },
+    {
+      "_id": 947,
+      "Dutch": "noch",
+      "English": "nor"
+    },
+    {
+      "_id": 948,
+      "Dutch": "dubbel",
+      "English": "double"
+    },
+    {
+      "_id": 949,
+      "Dutch": "zitje",
+      "English": "seat"
+    },
+    {
+      "_id": 950,
+      "Dutch": "blijven",
+      "English": "continue"
+    },
+    {
+      "_id": 951,
+      "Dutch": "blokkeren",
+      "English": "block"
+    },
+    {
+      "_id": 952,
+      "Dutch": "grafiek",
+      "English": "chart"
+    },
+    {
+      "_id": 953,
+      "Dutch": "hoed",
+      "English": "hat"
+    },
+    {
+      "_id": 954,
+      "Dutch": "verkopen",
+      "English": "sell"
+    },
+    {
+      "_id": 955,
+      "Dutch": "succes",
+      "English": "success"
+    },
+    {
+      "_id": 956,
+      "Dutch": "bedrijf",
+      "English": "company"
+    },
+    {
+      "_id": 957,
+      "Dutch": "aftrekken",
+      "English": "subtract"
+    },
+    {
+      "_id": 958,
+      "Dutch": "evenement",
+      "English": "event"
+    },
+    {
+      "_id": 959,
+      "Dutch": "bijzonder",
+      "English": "particular"
+    },
+    {
+      "_id": 960,
+      "Dutch": "deal",
+      "English": "deal"
+    },
+    {
+      "_id": 961,
+      "Dutch": "zwemmen",
+      "English": "swim"
+    },
+    {
+      "_id": 962,
+      "Dutch": "termijn",
+      "English": "term"
+    },
+    {
+      "_id": 963,
+      "Dutch": "tegengesteld",
+      "English": "opposite"
+    },
+    {
+      "_id": 964,
+      "Dutch": "vrouw",
+      "English": "wife"
+    },
+    {
+      "_id": 965,
+      "Dutch": "schoen",
+      "English": "shoe"
+    },
+    {
+      "_id": 966,
+      "Dutch": "schouder",
+      "English": "shoulder"
+    },
+    {
+      "_id": 967,
+      "Dutch": "spreiding",
+      "English": "spread"
+    },
+    {
+      "_id": 968,
+      "Dutch": "regelen",
+      "English": "arrange"
+    },
+    {
+      "_id": 969,
+      "Dutch": "kamp",
+      "English": "camp"
+    },
+    {
+      "_id": 970,
+      "Dutch": "uitvinden",
+      "English": "invent"
+    },
+    {
+      "_id": 971,
+      "Dutch": "katoen",
+      "English": "cotton"
+    },
+    {
+      "_id": 972,
+      "Dutch": "geboren",
+      "English": "born"
+    },
+    {
+      "_id": 973,
+      "Dutch": "bepalen",
+      "English": "determine"
+    },
+    {
+      "_id": 974,
+      "Dutch": "quart",
+      "English": "quart"
+    },
+    {
+      "_id": 975,
+      "Dutch": "negen",
+      "English": "nine"
+    },
+    {
+      "_id": 976,
+      "Dutch": "vrachtwagen",
+      "English": "truck"
+    },
+    {
+      "_id": 977,
+      "Dutch": "geluidsoverlast",
+      "English": "noise"
+    },
+    {
+      "_id": 978,
+      "Dutch": "niveau",
+      "English": "level"
+    },
+    {
+      "_id": 979,
+      "Dutch": "kans",
+      "English": "chance"
+    },
+    {
+      "_id": 980,
+      "Dutch": "verzamelen",
+      "English": "gather"
+    },
+    {
+      "_id": 981,
+      "Dutch": "winkel",
+      "English": "shop"
+    },
+    {
+      "_id": 982,
+      "Dutch": "rekken",
+      "English": "stretch"
+    },
+    {
+      "_id": 983,
+      "Dutch": "gooien",
+      "English": "throw"
+    },
+    {
+      "_id": 984,
+      "Dutch": "glans",
+      "English": "shine"
+    },
+    {
+      "_id": 985,
+      "Dutch": "pand",
+      "English": "property"
+    },
+    {
+      "_id": 986,
+      "Dutch": "column",
+      "English": "column"
+    },
+    {
+      "_id": 987,
+      "Dutch": "molecuul",
+      "English": "molecule"
+    },
+    {
+      "_id": 988,
+      "Dutch": "selecteren",
+      "English": "select"
+    },
+    {
+      "_id": 989,
+      "Dutch": "mis",
+      "English": "wrong"
+    },
+    {
+      "_id": 990,
+      "Dutch": "grijs",
+      "English": "gray"
+    },
+    {
+      "_id": 991,
+      "Dutch": "herhaal",
+      "English": "repeat"
+    },
+    {
+      "_id": 992,
+      "Dutch": "vereisen",
+      "English": "require"
+    },
+    {
+      "_id": 993,
+      "Dutch": "brede",
+      "English": "broad"
+    },
+    {
+      "_id": 994,
+      "Dutch": "bereiden",
+      "English": "prepare"
+    },
+    {
+      "_id": 995,
+      "Dutch": "zout",
+      "English": "salt"
+    },
+    {
+      "_id": 996,
+      "Dutch": "neus",
+      "English": "nose"
+    },
+    {
+      "_id": 997,
+      "Dutch": "meervoud",
+      "English": "plural"
+    },
+    {
+      "_id": 998,
+      "Dutch": "woede",
+      "English": "anger"
+    },
+    {
+      "_id": 999,
+      "Dutch": "vordering",
+      "English": "claim"
+    },
+    {
+      "_id": 1000,
+      "Dutch": "werelddeel",
+      "English": "continent"
+    }
+   ] }
