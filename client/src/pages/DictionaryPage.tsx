@@ -11,10 +11,16 @@ function DictionaryPage() {
 
 const [words, setWords] = useState<Word[]>([]);
 
-let renderedWords  = words.map((word) => {
+let renderedEnglishWords  = words.map((word) => {
   return  <div className="flex flex-row gap-2 pb-5"  key={word._id}>
-  <h3>{word.Dutch}</h3>
-  <h3>{word.English}</h3>
+  <h3 className=" text-xl " >{word.English}</h3>
+</div>
+})
+
+
+let renderedDutchWords  = words.map((word) => {
+  return  <div className="flex flex-row gap-2 pb-5"  key={word._id}>
+  <h3 className=" text-xl " >{word.Dutch}</h3>
 </div>
 })
 
@@ -28,11 +34,23 @@ useEffect(() => {
 
   return (
     <div>
-      <div className="flex flex-row gap-2 justify-center items-center" >
-        <h1>Dutch</h1>
-        <h1>English</h1>
-      </div>
-    <div className="flex flex-col justify-center items-center" >{renderedWords}</div>
+      <div className="flex flex-row justify-center items-center pt-10 pb-16 " >
+        <h1 className=" text-red-flag text-4xl " >DICTIONARY</h1>
+        </div>
+
+
+<div className="flex flex-row justify-center " >
+        <div className="w-1/2 ml-10 " >
+      <h3 className=" text-blue-flag text-3xl pb-5 " >Dutch</h3>
+    <div className="flex flex-col justify-center">{renderedDutchWords}</div>
+    </div>
+
+      <div className="w-1/2" >
+      <h3 className=" text-blue-flag text-3xl pb-5 " >English</h3>
+    <div className="flex flex-col justify-center">{renderedEnglishWords}</div>
+    </div>
+</div>
+
     </div>
   )
 }
