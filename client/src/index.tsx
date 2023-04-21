@@ -9,6 +9,8 @@ import MaterialPage from './pages/MaterialPage'
 import TextMaterialPage from './pages/TextMaterialPage'
 import VideoMaterial from './pages/VideoMaterialPage'
 import AddMaterialPage from './pages/AddMaterialPage'
+import Post from './components/Post'
+import Posts from './components/Posts'
 import './input.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -30,6 +32,8 @@ root.render(
         <Route path="/textmaterial" element={<TextMaterialPage/>} />
         <Route path="/videomaterial" element={<VideoMaterial/>} />
         <Route path="/addmaterial" element={<AddMaterialPage/>} />
+        <Route path="/posts" element={<Posts/>} />
+        <Route path="/posts/post/:postId" element={<Post/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

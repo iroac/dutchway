@@ -6,3 +6,9 @@
 body {
     font-family: 'Nunito', sans-serif;
 }
+
+.icon-disabled {
+    color: gray;
+    cursor: default;
+    pointer-events: none;
+  }
