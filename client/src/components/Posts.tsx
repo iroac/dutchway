@@ -8,7 +8,7 @@ import { BiFirstPage, BiLastPage } from 'react-icons/bi';
 function Posts() {;
     const [posts, setPosts] = useState<Word[]>([]);
 interface Word {
-        _id: string;
+        id: string;
         title: string;
         text: string;
       }
@@ -45,8 +45,8 @@ interface Word {
 
   // Rendered CurrentItems
 const renderedPosts = currentItems.map((p) => {   
-        return <div key={p._id} >
-            <Link to={`post/${p._id}`} className=" flex flex-col mx-auto shadow-md h-20 justify-center items-center cursor-pointer hover:shadow-red-flag"> <h1 className="text-xl text-blue-flag" >{`${p.title.slice(0, 40)}...`}</h1> </Link>
+        return <div key={p.id} >
+            <Link to={`post/${p.id}`} className=" flex flex-col mx-auto shadow-md h-20 justify-center items-center cursor-pointer hover:shadow-red-flag"> <h1 className="text-xl text-blue-flag" >{`${p.title.slice(0, 40)}...`}</h1> </Link>
                 </div>
 })
 
