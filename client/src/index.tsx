@@ -7,12 +7,14 @@ import LessonsPage from './pages/LessonsPage'
 import DictionaryPage from './pages/DictionaryPage'
 import MaterialPage from './pages/MaterialPage'
 import TextMaterialPage from './pages/TextMaterialPage'
-import VideoMaterial from './pages/VideoMaterialPage'
 import AddMaterialPage from './pages/AddMaterialPage'
 import Post from './components/Post'
 import Posts from './components/Posts'
+import Videos from './components/Videos';
+import Video from './components/Video';
 import './input.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 
 
 const root = ReactDOM.createRoot(
@@ -30,10 +32,11 @@ root.render(
         <Route path="/dictionary" element={<DictionaryPage/>} />
         <Route path="/material" element={<MaterialPage/>} />
         <Route path="/textmaterial" element={<TextMaterialPage/>} />
-        <Route path="/videomaterial" element={<VideoMaterial/>} />
+        <Route path="/videos" element={<Videos/>} />
         <Route path="/addmaterial" element={<AddMaterialPage/>} />
         <Route path="/posts" element={<Posts/>} />
         <Route path="/posts/post/:postId" element={<Post/>} />
+        <Route path="/videos/video/:videoId" element={<Video/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

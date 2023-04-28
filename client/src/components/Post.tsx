@@ -1,10 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import classNames from 'classnames';
-import { BiFirstPage, BiLastPage } from 'react-icons/bi';
 
-const pageSize = 200;
+const pageSize = 1000;
 
 function Post() {
   const { postId } = useParams();
