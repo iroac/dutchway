@@ -1,9 +1,17 @@
-import React from 'react'
 
 function LessonsPage() {
+
+
+
   return (
-    <div>LessonsPage</div>
+    <div>
+Lessons
+    </div>
   )
 }
 
 export default LessonsPage
+
+
+
+
