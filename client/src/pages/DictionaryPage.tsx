@@ -4,23 +4,24 @@ import axios from 'axios'
 function DictionaryPage() {
 
   interface Word {
-    _id: string;
-    Dutch: string;
-    English: string;
+    id: string;
+    dutch: string;
+    english: string;
+    phrases: string[];
   }
 
 const [words, setWords] = useState<Word[]>([]);
 
 let renderedEnglishWords  = words.map((word) => {
-  return  <div className="flex flex-row gap-2 pb-5"  key={word._id}>
-  <h3 className=" text-xl " >{word.English}</h3>
+  return  <div className="flex flex-row gap-2 pb-5"  key={word.id}>
+  <h3 className=" text-xl " >{word.english}</h3>
 </div>
 })
 
 
 let renderedDutchWords  = words.map((word) => {
-  return  <div className="flex flex-row gap-2 pb-5"  key={word._id}>
-  <h3 className=" text-xl " >{word.Dutch}</h3>
+  return  <div className="flex flex-row gap-2 pb-5"  key={word.id}>
+  <h3 className=" text-xl " >{word.dutch}</h3>
 </div>
 })
 
