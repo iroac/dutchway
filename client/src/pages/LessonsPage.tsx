@@ -17,7 +17,9 @@ function LessonsPage() {
     id: string;
     dutch: string;
     english: string;
+    phrases: string[][];
   }
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,28 +27,64 @@ function LessonsPage() {
       let user = response.data
       const hasValue = user.currentlyWords.some((innerArray: number[]) => innerArray[1] >= 20) 
       if(hasValue) {
-// Taking the new wordsLearned
-  const learnArray = user.currentlyWords.filter((innerArray: number[]) => innerArray[1] >= 20)
-  user.wordsLearned.push(...learnArray)
+// Taking the new Learn Word
+  const learnWord = user.currentlyWords.filter((innerArray: number[]) => innerArray[1] >= 20)
+  user.wordsLearned.push(...learnWord)
 
 // Taking the new currentlyWords
   const newArray = user.currentlyWords.filter((innerArray: number[]) => innerArray[1] < 20)
 
   // generates a new word to learn
-const generateRandomNumber = () => {
-let randomNumber = Math.floor(Math.random() * 2) + 1;      
+const generateNewWord = () => {
+  function containAllWords(arrays: number[][], number: number): boolean {
+    const flattenedArray = arrays.map(arr => arr[0]);
+    const set = new Set(flattenedArray);
+  
+    for (let i = 1; i <= number; i++) {
+      if (!set.has(i)) {
+        return false;
+      }
+    }
+  
+    return true;
+  }
+
+let is100used = containAllWords(user.wordsLearned, 100)
+let is1000used = containAllWords(user.wordsLearned, 1000)
+let randomNumber = Math.floor(Math.random() * 100) + 1; 
 let isWordLearned = user.wordsLearned.some((innerArray: number[]) => innerArray[0] === randomNumber)
-let isWordLearning = newArray.some((innerArray: number[]) => innerArray[0] === randomNumber)        
-    while (isWordLearned || isWordLearning) {             
-    randomNumber = Math.floor(Math.random() * 2) + 1; 
+let isWordLearning = newArray.some((innerArray: number[]) => innerArray[0] === randomNumber)  
+
+if(learnWord[0][0] <= 100 && !is100used) {
+  console.log('me')
+  while (isWordLearned || isWordLearning) {             
+    randomNumber = Math.floor(Math.random() * 100) + 1; 
     isWordLearned = user.wordsLearned.some((innerArray: number[]) => innerArray[0] === randomNumber)
     isWordLearning = newArray.some((innerArray: number[]) => innerArray[0] === randomNumber)
     }  
-return [randomNumber, 0]
+    return [randomNumber, 0]
+} else if (learnWord[0][0] <= 100 && is100used) {
+  while (isWordLearned || isWordLearning || randomNumber <= 100) {             
+    randomNumber = Math.floor(Math.random() * 1000) + 1; 
+    isWordLearned = user.wordsLearned.some((innerArray: number[]) => innerArray[0] === randomNumber)
+    isWordLearning = newArray.some((innerArray: number[]) => innerArray[0] === randomNumber)
+    } 
+    return [randomNumber, 0]
+} else if(is1000used) {
+console.log('You finish all the words')
+} else {
+  console.log('it was me')
+    while (isWordLearned || isWordLearning) {             
+      randomNumber = Math.floor(Math.random() * 1000) + 1; 
+      isWordLearned = user.wordsLearned.some((innerArray: number[]) => innerArray[0] === randomNumber)
+      isWordLearning = newArray.some((innerArray: number[]) => innerArray[0] === randomNumber)
+      }  
+      return [randomNumber, 0]
+}
   }
  
 // Push new Word to the newArray
-const newWord = generateRandomNumber() 
+const newWord = generateNewWord() 
 newArray.push(newWord)
 
 // Put the new User on the database
