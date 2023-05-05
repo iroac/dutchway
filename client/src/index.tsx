@@ -12,8 +12,13 @@ import Post from './components/Post'
 import Posts from './components/Posts'
 import Videos from './components/Videos';
 import Video from './components/Video';
+import LessonMain from './components/LessonMain';
+import LeassonPhrases from './components/LessonPhrases';
+import LessonWordtoWord from './components/LessonWordtoWord';
 import './input.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import LeassonSizetoSize from './components/LessonSizetoSize';
+
 
 
 
@@ -29,6 +34,10 @@ root.render(
         <Route path="/" element={<App/>} />
         <Route path="/grammar" element={<GrammarPage/>} />
         <Route path="/lessons" element={<LessonsPage/>} />
+        <Route path="/dailylesson" element={<LessonMain/>} />
+        <Route path="/phraseslesson" element={<LeassonPhrases/>} />
+        <Route path="/sizetosizelesson" element={<LeassonSizetoSize/>} />
+        <Route path="/wordtowordlesson" element={<LessonWordtoWord/>} />
         <Route path="/dictionary" element={<DictionaryPage/>} />
         <Route path="/material" element={<MaterialPage/>} />
         <Route path="/textmaterial" element={<TextMaterialPage/>} />
