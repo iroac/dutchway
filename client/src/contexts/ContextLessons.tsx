@@ -9,14 +9,14 @@ export interface MyContextValues {
 }
 
 export interface User {
-  id: string;
+  id: number;
   name: string;
   wordsLearned: number[][];
   currentlyWords: number[];
   addWords: string[];
 }
 export interface Word {
-  id: string;
+  id: number;
   dutch: string;
   english: string;
   phrases: Phrases[];
@@ -119,7 +119,6 @@ newArray.push(newWord)
 
       setUser(user)
       setCurrentlyWords(words); // Set the Currently Words 
-      console.log(words)
   };
 
   useEffect(() => {

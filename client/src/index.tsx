@@ -113,7 +113,6 @@ const AppWithProvider = () => {
   
       setUser(user)
       setCurrentlyWords(words); // Set the Currently Words 
-      console.log(words)
   };
 
   return (
