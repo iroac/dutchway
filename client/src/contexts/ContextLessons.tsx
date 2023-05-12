@@ -12,7 +12,7 @@ export interface User {
   id: number;
   name: string;
   wordsLearned: number[][];
-  currentlyWords: number[];
+  currentlyWords: number[][];
   addWords: string[];
 }
 export interface Word {

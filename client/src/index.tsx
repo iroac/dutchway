@@ -11,7 +11,7 @@ import TextMaterialPage from './pages/TextMaterialPage'
 import AddMaterialPage from './pages/AddMaterialPage'
 import Post from './components/Post'
 import Posts from './components/Posts'
-import Videos from './components/Videos';
+import Videos from './components/Videos'; 
 import Video from './components/Video';
 import LessonMain from './components/LessonMain';
 import LeassonPhrases from './components/LessonPhrases';
@@ -127,7 +127,7 @@ const AppWithProvider = () => {
           <Route path="/dailylesson" element={<LessonMain/>} />
           <Route path="/phraseslesson" element={<LeassonPhrases/>} />
           <Route path="/sizetosizelesson" element={<LeassonSizetoSize/>} />
-          <Route path="/wordtowordlesson" element={<LessonWordtoWord/>} />
+          <Route path="/wordtowordlesson/:order" element={<LessonWordtoWord/>} />
           <Route path="/dictionary" element={<DictionaryPage/>} />
           <Route path="/material" element={<MaterialPage/>} />
           <Route path="/textmaterial" element={<TextMaterialPage/>} />

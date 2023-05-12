@@ -1,12 +1,13 @@
-import {  useContext, useEffect, useState, useCallback, useMemo,  } from 'react';
+import {  useContext, useEffect, useState  } from 'react';
 import { useParams } from 'react-router-dom';
-import { ContextLessons, User, Word, Phrases } from '../contexts/ContextLessons';
-
+import { ContextLessons, User, Word } from '../contexts/ContextLessons';
+import axios from 'axios'
 
 function LessonWordtoWord() {
   const { order } = useParams()
+
   const { user, currentlyWords, fetchData } = useContext(ContextLessons);
-  
+
   const [selectAnswer, setSelectAnswer] = useState<boolean>(false);
   const [continueButton, setContinueButton] = useState<boolean>(false);
   const [selectAnswerWrong, setSelectAnswerWrong] = useState<boolean>(false);
@@ -18,23 +19,34 @@ function LessonWordtoWord() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
   const [totalQuestions, setTotalQuestions] = useState<number>(0);
+  const [pointUser, setPointUser] = useState<User | undefined>(user)
+  const [questions, setQuestions] = useState<Word[]>([]);
+  const [options, setOptions] = useState<Word[]>([])
+  const [text, setText] = useState<string>("")
 
-
-  const handleClick = (index: number) => {
+  const handleClick = (index: number, english: string, dutch: string) => {
     setSelectedAnswerIndex(index);
     setSelectAnswer(true);
     setAnswerIndex(index)
+    if(order === 'eng') {
+      setText(english)
+    } else if(order === 'dutch') {
+      setText(dutch)
+    }
   };
 
   const handleContinueButton = () => {
     if(totalQuestions === questions.length) {
 setShowFinalResult(true)
+axios.put(`http://localhost:3000/users/${user?.id}`, pointUser)
     } else {
       if (currentQuestionIndex === questions.length - 1) {
         setCurrentQuestionIndex(0);
       } else {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
       }
+      let newOptions = shuffleArray(options)
+      setOptions(newOptions)
       setSelectedAnswerIndex(null);
       setSelectAnswer(false);
       setContinueButton(false)
@@ -44,11 +56,16 @@ setShowFinalResult(true)
   }
 
   const handleCheckButton = () => {
-if (questions[answerIndex].english === questions[currentQuestionIndex].english) {
+if (order === 'eng' ? text === questions[currentQuestionIndex].english : text === questions[currentQuestionIndex].dutch ) {
 setSelectAnswer(false);
 setContinueButton(true);
 setSelectAnswerRight(true);
-setScore(score + 1) 
+setScore(score + 1)
+let questId = questions[currentQuestionIndex].id
+const questIndex = pointUser?.currentlyWords.findIndex((innerArray: number[]) => innerArray[0] === questId);
+if (questIndex !== undefined && questIndex !== -1 && pointUser) {
+  pointUser.currentlyWords[questIndex][1] += 1;
+}
 } else {
 setSelectAnswer(false)
 setContinueButton(true)
@@ -57,29 +74,26 @@ setSelectAnswerWrong(true)
 setTotalQuestions(totalQuestions + 1)
   }
 
-  const setQuestions = useCallback(() => {
-    const newQuestions: Word[] = [];
-    for (let i = 0; i < 4; i++) {
-      let randomIndex = Math.floor(Math.random() * currentlyWords.length);
-      let alreadyAdd = newQuestions.some(
-        (quest: Word) => quest.id === currentlyWords[randomIndex].id
-      );
-      while (alreadyAdd) {
-        randomIndex = Math.floor(Math.random() * currentlyWords.length);
-        alreadyAdd = newQuestions.some(
-          (quest: Word) => quest.id === currentlyWords[randomIndex].id
-        );
-      }
-      newQuestions.push(currentlyWords[randomIndex]);
+  const shuffleArray = (array: Word[]) => {
+    const shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
     }
-    return newQuestions;
-  }, [currentlyWords]);
+    return shuffledArray;
+  };
 
   useEffect(() => {
-    fetchData();
+    if(!user || !currentlyWords) {
+      fetchData()
+    }
+    if (currentlyWords.length > 0) {
+      const shuffledQuestions = shuffleArray(currentlyWords).slice(0, 4);
+      console.log(shuffledQuestions)
+      setQuestions(shuffledQuestions);
+      setOptions(shuffledQuestions);
+    }
   }, []);
-
-  const questions = useMemo(() => setQuestions(), [setQuestions, currentQuestionIndex]);
 
   return (
     <div>
@@ -87,15 +101,15 @@ setTotalQuestions(totalQuestions + 1)
         {questions.length > 0 && !showFinalResult && (
           <>
             <div className="flex flex-col mx-auto shadow-md h-52 w-52 justify-center bg-blue-flag text-white text-3xl items-center cursor-pointer mb-12">
-              {questions[currentQuestionIndex].dutch}
+              {order === 'eng' ? questions[currentQuestionIndex].dutch : questions[currentQuestionIndex].english }
             </div>
-            {questions.map((quest, index) => (
+            {options.map((quest, index) => (
               <div
                 key={quest.id}
-                onClick={() => handleClick(index)}
+                onClick={() => handleClick(index, quest.english, quest.dutch)}
                 className={`flex flex-col mx-auto shadow-md h-20 w-full justify-center items-center cursor-pointer text-xl mb-4 ${selectedAnswerIndex === index ? 'bg-blue-flag text-white' : ''} ${answerIndex === index && selectAnswerRight ? 'bg-green-500 text-white' : ''} ${answerIndex === index && selectAnswerWrong ? 'bg-red-flag text-white' : ''} `}
               >
-                {quest.english}
+                {order === 'eng' ? quest.english : quest.dutch}
               </div>
             ))}
              {selectAnswer && (
