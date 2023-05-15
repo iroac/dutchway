@@ -22,8 +22,8 @@ useEffect(() => {
 
 
     <div className="flex flex-row justify-center items-center w-screen">
-    <Link to="/phraseslesson" className=" flex flex-col shadow-md h-52 w-4/12 justify-center items-center cursor-pointer hover:shadow-red-flag"> <h1 className="text-md text-red-flag" >PHRASES - ENG/DUTCH</h1> </Link>
-    <Link to="/phraseslesson" className=" flex flex-col shadow-md h-52 w-4/12 justify-center items-center cursor-pointer hover:shadow-red-flag"> <h1 className="text-md text-red-flag" >PHRASES - DUTCH/ENG</h1> </Link>
+    <Link to="/phraseslesson/eng" className=" flex flex-col shadow-md h-52 w-4/12 justify-center items-center cursor-pointer hover:shadow-red-flag"> <h1 className="text-md text-red-flag" >PHRASES - ENG/DUTCH</h1> </Link>
+    <Link to="/phraseslesson/dutch" className=" flex flex-col shadow-md h-52 w-4/12 justify-center items-center cursor-pointer hover:shadow-red-flag"> <h1 className="text-md text-red-flag" >PHRASES - DUTCH/ENG</h1> </Link>
     <Link to="/wordtowordlesson/dutch" className=" flex flex-col shadow-md h-52 w-4/12 justify-center items-center cursor-pointer hover:shadow-red-flag"> <h1 className="text-md text-red-flag" >WORDS - DUTCH/ENG</h1> </Link>
     </div>
   </div>;

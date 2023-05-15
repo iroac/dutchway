@@ -113,7 +113,7 @@ const AppWithProvider = () => {
   
       setUser(user)
       setCurrentlyWords(words); // Set the Currently Words 
-  };
+  }; 
 
   return (
     
@@ -125,8 +125,8 @@ const AppWithProvider = () => {
           <Route path="/grammar" element={<GrammarPage/>} />
           <Route path="/lessons" element={<LessonsPage/>} />
           <Route path="/dailylesson" element={<LessonMain/>} />
-          <Route path="/phraseslesson" element={<LeassonPhrases/>} />
-          <Route path="/sizetosizelesson" element={<LeassonSizetoSize/>} />
+          <Route path="/phraseslesson/:order" element={<LeassonPhrases/>} />
+          <Route path="/sizetosizelesson/:order" element={<LeassonSizetoSize/>} />
           <Route path="/wordtowordlesson/:order" element={<LessonWordtoWord/>} />
           <Route path="/dictionary" element={<DictionaryPage/>} />
           <Route path="/material" element={<MaterialPage/>} />

@@ -1,10 +1,11 @@
 import {  useContext, useEffect, useState  } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { ContextLessons, User, Word } from '../contexts/ContextLessons';
 import axios from 'axios'
 
 function LessonWordtoWord() {
   const { order } = useParams()
+  const navigate = useNavigate()
 
   const { user, currentlyWords, fetchData } = useContext(ContextLessons);
 
@@ -85,11 +86,10 @@ setTotalQuestions(totalQuestions + 1)
 
   useEffect(() => {
     if(!user || !currentlyWords) {
-      fetchData()
+      navigate('/lessons')
     }
     if (currentlyWords.length > 0) {
       const shuffledQuestions = shuffleArray(currentlyWords).slice(0, 4);
-      console.log(shuffledQuestions)
       setQuestions(shuffledQuestions);
       setOptions(shuffledQuestions);
     }
