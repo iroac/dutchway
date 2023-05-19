@@ -126,7 +126,7 @@ const AppWithProvider = () => {
           <Route path="/lessons" element={<LessonsPage/>} />
           <Route path="/dailylesson" element={<LessonMain/>} />
           <Route path="/phraseslesson/:order" element={<LeassonPhrases/>} />
-          <Route path="/sizetosizelesson/:order" element={<LeassonSizetoSize/>} />
+          <Route path="/sizetosizelesson" element={<LeassonSizetoSize/>} />
           <Route path="/wordtowordlesson/:order" element={<LessonWordtoWord/>} />
           <Route path="/dictionary" element={<DictionaryPage/>} />
           <Route path="/material" element={<MaterialPage/>} />
