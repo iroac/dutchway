@@ -3,20 +3,20 @@ import { useNavigate } from 'react-router-dom';
 import { ContextLessons, User, Word } from '../contexts/ContextLessons';
 import axios from 'axios'
 
-function LeassonSizetoSize() {
+const LeassonSizetoSize = () => {
   const navigate = useNavigate()
   const { user, currentlyWords, fetchData } = useContext(ContextLessons);
 
 // States
- const [score, setScore] = useState<number>(0);
+const [pointUser, setPointUser] = useState<User | undefined>(user)
+const [questions, setQuestions] = useState<Word[]>([]);
+const [options, setOptions] = useState<Word[]>([])
+const [score, setScore] = useState<number>(0);
  const [totalClickQuestions, setTotalClickQuestions] = useState<number>(0);
- const [pointUser, setPointUser] = useState<User | undefined>(user)
- const [questions, setQuestions] = useState<Word[]>([]);
- const [options, setOptions] = useState<Word[]>([])
- const [dutchIndex, setDutchIndex] = useState<number>()
- const [dutchText, setDutchText] = useState<string>()
- const [englishIndex, setEnglishIndex] = useState<number>()
- const [englishText, setEnglishText] = useState<string>()
+ const [dutchIndex, setDutchIndex] = useState<number>(-1)
+ const [englishIndex, setEnglishIndex] = useState<number>(-1)
+ const [dutchText, setDutchText] = useState<string>("")
+ const [englishText, setEnglishText] = useState<string>("")
 
   // Boolean States
   const [selectAnswer, setSelectAnswer] = useState<boolean>(false);
@@ -26,17 +26,19 @@ function LeassonSizetoSize() {
 
   // Disabled
   const [disabledButtons, setDisabledButtons] = useState<boolean[]>([]);
-  const [disabledButtonsTrue, setDisabledButtonsTrue] = useState<boolean[]>([false, false, false, false]);
+  const [disabledButtonsTrue, setDisabledButtonsTrue] = useState<boolean[]>([]);
   // English ones below
   const [disabledButtonsEnglish, setDisabledButtonsEnglish] = useState<boolean[]>([]);
-  const [disabledButtonsTrueEnglish, setDisabledButtonsTrueEnglish] = useState<boolean[]>([false, false, false, false]);
+  const [disabledButtonsTrueEnglish, setDisabledButtonsTrueEnglish] = useState<boolean[]>([]);
 
 const handleDutchClick = (index:number, english:string, dutch:string) => {
   setDutchIndex(index)
   setEnglishText(english)
+  console.log(dutchText, dutch)
+  console.log(englishIndex)
+  
   
   if(dutchText === dutch) {
-    if(englishIndex) {
     // DUTCH UPDATE 
     let updatedDisabledButtons = [...disabledButtons];
     updatedDisabledButtons[index] = true;
@@ -51,17 +53,17 @@ const handleDutchClick = (index:number, english:string, dutch:string) => {
     let updatedDisabledButtonsTrueEnglish = [...disabledButtonsTrueEnglish];
     updatedDisabledButtonsTrueEnglish[englishIndex] = true;
     setDisabledButtonsTrueEnglish(updatedDisabledButtonsTrueEnglish);
-    console.log(dutchText, dutch, englishIndex, index, disabledButtonsTrue, disabledButtonsTrueEnglish)
-    }
   }
 }
 
 const handleEnglishClick = (index:number, dutch:string, english:string) => {
   setEnglishIndex(index)
   setDutchText(dutch) 
+  console.log(englishText, english)
+  console.log(dutchIndex)
 
+  
   if(englishText === english) {
-    if(dutchIndex) {
       // ENGLISH UPDATE
       let updatedDisabledButtons = [...disabledButtonsEnglish];
       updatedDisabledButtons[index] = true;
@@ -78,8 +80,6 @@ const handleEnglishClick = (index:number, dutch:string, english:string) => {
     let updatedDisabledButtonsTrue = [...disabledButtonsTrue];
     updatedDisabledButtonsTrue[dutchIndex] = true;
     setDisabledButtonsTrue(updatedDisabledButtonsTrue);
-    console.log(englishText, english, dutchIndex, index, disabledButtonsTrue, disabledButtonsTrueEnglish)
-    }
   }
 }
 
