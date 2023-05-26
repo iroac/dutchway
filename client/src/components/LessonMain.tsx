@@ -15,13 +15,14 @@ function LeassonMain() {
   // Change Lesson States
   const [showFinalResult, setShowFinalResult] = useState<boolean>(false);
   const [showWriteQuestions, setWriteQuestions] = useState<boolean>(false);
+  const [showSideBySide, setSideBySide] = useState<boolean>(false);
 
 // WORD TO WORD
   const randomWordToWordOrder = () => {let order = ['eng', 'dutch'] 
   const i = Math.floor(Math.random() * 2);
   return order[i]
   }
-  const order  = randomWordToWordOrder()
+  const order  = 'eng'
 
   // WORD TO WORD STATES
   // Buttons States
@@ -39,7 +40,19 @@ function LeassonMain() {
   const [text, setText] = useState<string>("")
   const [writeText, setWriteText] = useState<string>("")
 
+  // SIDE TO SIDE STATES
+  // Text States
+  const [dutchText, setDutchText] = useState<string>("");
+  const [englishText, setEnglishText] = useState<string>("");
+  // Index States
+  const [dutchIndex, setDutchIndex] = useState<number>(-1);
+  const [englishIndex, setEnglishIndex] = useState<number>(-1);
+  // Buttons/Options States
+  const [animationComplete, setAnimationComplete] = useState(false);
+  const [disabledButtons, setDisabledButtons] = useState<boolean[]>([]);
+  const [disabledButtonsEnglish, setDisabledButtonsEnglish] = useState<boolean[]>([]);
 
+// WORD TO WORD FUNCTIONS
   const handleClick = (index: number, english: string, dutch: string) => {
     setAnswerIndex(index)
     setCheckButton(true);
@@ -63,8 +76,7 @@ setWriteText(event.target.value)
 
   const handleContinueButton = () => {
     if(totalClickQuestions === questions.length * 2) {
-      setShowFinalResult(true)
-      axios.put(`http://localhost:3000/users/${user?.id}`, pointUser)
+      setSideBySide(true)
     } 
 
     if(!showWriteQuestions) {
@@ -78,6 +90,7 @@ setWriteText(event.target.value)
         }
         let newOptions = shuffleArray(options)
         setOptions(newOptions)
+        setAnswerIndex(-1)
         setCheckButton(false);
         setContinueButton(false)
         setSelectAnswerRight(false)
@@ -133,6 +146,83 @@ setWriteText('')
 setTotalClickQuestions(totalClickQuestions + 1)
   }
 
+// SIDE TO SIDE FUNCTIONS 
+const handleDutchClick = (index: number, english: string, dutch: string) => {
+  setDutchIndex(index);
+  setEnglishText(english);
+
+  if (englishIndex >= 0) {
+    if (dutchText === dutch) {
+      // DUTCH UPDATE
+      let updatedDisabledButtons = [...disabledButtons];
+      updatedDisabledButtons[index] = true;
+      setDisabledButtons(updatedDisabledButtons);
+      // ENGLISH UPDATE
+      let updatedDisabledButtonsEnglish = [...disabledButtonsEnglish];
+      updatedDisabledButtonsEnglish[englishIndex] = true;
+      setDisabledButtonsEnglish(updatedDisabledButtonsEnglish);
+      // UPDATE VARIABLES
+      setDutchIndex(-1);
+      setEnglishIndex(-1);
+      setEnglishText("");
+      setDutchText("");
+      setTotalClickQuestions(totalClickQuestions + 1);
+      if (totalClickQuestions === 11) {
+        setShowFinalResult(true);
+        axios.put(`http://localhost:3000/users/${user?.id}`, pointUser)
+      }
+    }
+
+    if (dutchText !== dutch) {
+      setAnimationComplete(true);
+    }
+  }
+};
+
+const handleEnglishClick = (
+  index: number,
+  dutch: string,
+  english: string
+) => {
+  setEnglishIndex(index);
+  setDutchText(dutch);
+
+  if (dutchIndex >= 0) {
+    if (englishText === english) {
+      // ENGLISH UPDATE
+      let updatedDisabledButtons = [...disabledButtonsEnglish];
+      updatedDisabledButtons[index] = true;
+      setDisabledButtonsEnglish(updatedDisabledButtons);
+      // DUTCH UPDATE
+      let updatedDisabledButtonsDutch = [...disabledButtons];
+      updatedDisabledButtonsDutch[dutchIndex] = true;
+      setDisabledButtons(updatedDisabledButtonsDutch);
+      // UPDATE VARIABLES
+      setDutchText("");
+      setEnglishText("");
+      setDutchIndex(-1);
+      setEnglishIndex(-1);
+      setTotalClickQuestions(totalClickQuestions + 1);
+      if (totalClickQuestions === 11) {
+        axios.put(`http://localhost:3000/users/${user?.id}`, pointUser)
+        setShowFinalResult(true);
+      }
+    }
+
+    if (englishText !== english) {
+      setAnimationComplete(true);
+    }
+  }
+};
+
+const handleAnimationEnd = () => {
+  setAnimationComplete(false);
+  setEnglishIndex(-1);
+  setDutchIndex(-1);
+  setEnglishText("");
+  setDutchText("");
+};
+
   const shuffleArray = (array: Word[]) => {
     const shuffledArray = [...array];
     for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -141,7 +231,6 @@ setTotalClickQuestions(totalClickQuestions + 1)
     }
     return shuffledArray;
   };
-
   useEffect(() => {
     if(!user || !currentlyWords) {
       navigate('/lessons')
@@ -156,11 +245,11 @@ setTotalClickQuestions(totalClickQuestions + 1)
 
   return (
     <div>
-      {questions.length > 0 ? <div className="flex flex-col justify-center items-center mt-16 ">
+      {questions.length > 0 ? <div className="flex flex-col justify-center items-center">
 
-        {showWriteQuestions && !showFinalResult && (
+        {showWriteQuestions && !showFinalResult && !showSideBySide && (
             <>
-              <div className={`flex flex-col mx-auto shadow-md h-52 w-52 justify-center bg-blue-flag text-white text-3xl items-center cursor-pointer mb-12 ${selectAnswerRight ? 'bg-green-500' : ''} ${selectAnswerWrong ? 'bg-red-flag' : ''}`}>
+              <div className={`flex flex-col mt-16 mx-auto shadow-md h-52 w-52 justify-center bg-blue-flag text-white text-3xl items-center cursor-pointer mb-12 ${selectAnswerRight ? 'bg-green-500' : ''} ${selectAnswerWrong ? 'bg-red-flag' : ''}`}>
         {order === 'eng' ? questions[currentQuestionIndex].dutch : questions[currentQuestionIndex].english }
               </div>
               
@@ -179,9 +268,9 @@ setTotalClickQuestions(totalClickQuestions + 1)
             </>
           )}
  
-        {!showWriteQuestions && !showFinalResult ? (
+        {!showWriteQuestions && !showFinalResult && !showSideBySide ? (
             <>
-              <div className={`flex flex-col mx-auto shadow-md h-52 w-52 justify-center bg-blue-flag text-white text-3xl items-center cursor-pointer mb-12 ${selectAnswerRight ? 'bg-green-500' : ''} ${selectAnswerWrong ? 'bg-red-flag' : ''}`}>
+              <div className={`flex flex-col mt-16 mx-auto shadow-md h-52 w-52 justify-center bg-blue-flag text-white text-3xl items-center cursor-pointer mb-12 ${selectAnswerRight ? 'bg-green-500' : ''} ${selectAnswerWrong ? 'bg-red-flag' : ''}`}>
                 {order === 'eng' ? questions[currentQuestionIndex].dutch : questions[currentQuestionIndex].english }
               </div>
               {options.map((quest, index) => (
@@ -211,6 +300,69 @@ setTotalClickQuestions(totalClickQuestions + 1)
           </div>
           )} 
         </div> : ""}
+
+        {questions.length > 0 && showSideBySide && !showFinalResult && (
+        <div className="flex flex-row justify-center items-center">
+          {!showFinalResult ? (
+            <>
+              <div className="flex flex-col justify-center items-center h-screen w-1/2  bg-blue-flag">
+                {questions.map((quest, index) => {
+                  return (
+                    <button
+                      key={quest.id}
+                      onClick={() =>
+                        handleDutchClick(index, quest.english, quest.dutch)
+                      }
+                      onAnimationEnd={handleAnimationEnd}
+                      className={`flex w-11/12 h-20 my-5 justify-center items-center bg-white rounded-md cursor-pointer ${
+                        animationComplete && index === dutchIndex
+                          ? "animate-shake-horizontal"
+                          : ""
+                      } ${disabledButtons[index] ? "bg-green-200" : ""} ${
+                        dutchIndex === index ? "bg-slate-300" : ""
+                      }`}
+                      disabled={disabledButtons[index]}
+                    >
+                      {quest.dutch}
+                    </button>
+                  );
+                })}
+              </div>
+              <div className="flex flex-col justify-center items-center h-screen w-1/2 bg-red-flag">
+                {options.map((quest, index) => {
+                  return (
+                    <button
+                      key={quest.id}
+                      onClick={() =>
+                        handleEnglishClick(index, quest.dutch, quest.english)
+                      }
+                      onAnimationEnd={handleAnimationEnd}
+                      className={`flex w-11/12 h-20 my-5 justify-center items-center bg-white rounded-md cursor-pointer  ${
+                        animationComplete && index === englishIndex
+                          ? "animate-shake-horizontal"
+                          : ""
+                      } ${
+                        disabledButtonsEnglish[index] ? "bg-green-200" : ""
+                      } ${englishIndex === index ? "bg-slate-300" : ""}`}
+                      disabled={disabledButtonsEnglish[index]}
+                    >
+                      {quest.english}
+                    </button>
+                  );
+                })}
+              </div>
+            </>
+          ) : (
+            ""
+          )}
+
+          {showFinalResult && (
+            <div className="flex flex-col justify-center items-center h-screen w-screen">
+              <div> You final scores is 0/{totalClickQuestions} </div>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

@@ -4,32 +4,36 @@ import { ContextLessons, User, Word } from '../contexts/ContextLessons';
 import axios from 'axios'
 
 function LessonWordtoWord() {
+  const { user, currentlyWords, fetchData } = useContext(ContextLessons);
   const { order } = useParams()
   const navigate = useNavigate()
 
-  const { user, currentlyWords, fetchData } = useContext(ContextLessons);
-
-  const [selectAnswer, setSelectAnswer] = useState<boolean>(false);
-  const [continueButton, setContinueButton] = useState<boolean>(false);
-  const [selectAnswerWrong, setSelectAnswerWrong] = useState<boolean>(false);
-  const [selectAnswerRight, setSelectAnswerRight] = useState<boolean>(false);
-  const [showFinalResult, setShowFinalResult] = useState<boolean>(false);
-  const [showWriteQuestions, setWriteQuestions] = useState<boolean>(false);
-
-  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
-  const [answerIndex, setAnswerIndex] = useState<number>(0);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
-  const [score, setScore] = useState<number>(0);
-  const [totalClickQuestions, setTotalClickQuestions] = useState<number>(0);
+  //STATES
+  // Fetch States
   const [pointUser, setPointUser] = useState<User | undefined>(user)
   const [questions, setQuestions] = useState<Word[]>([]);
   const [options, setOptions] = useState<Word[]>([])
-  const [text, setText] = useState<string>("")
-  const [writeText, setWriteText] = useState<string>("")
+  // Buttons States
+  const [checkButton, setCheckButton] = useState<boolean>(false);
+  const [continueButton, setContinueButton] = useState<boolean>(false);
+  // Answer States
+  const [answerIndex, setAnswerIndex] = useState<number>(-1);
+  const [selectAnswerWrong, setSelectAnswerWrong] = useState<boolean>(false);
+  const [selectAnswerRight, setSelectAnswerRight] = useState<boolean>(false);
+  // Question States
+const [score, setScore] = useState<number>(0);
+const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
+const [totalClickQuestions, setTotalClickQuestions] = useState<number>(0);
+// Writing States
+const [text, setText] = useState<string>("")
+const [writeText, setWriteText] = useState<string>("")
+// Showing States
+const [showWriteQuestions, setWriteQuestions] = useState<boolean>(false);
+const [showFinalResult, setShowFinalResult] = useState<boolean>(false);
+
 
   const handleClick = (index: number, english: string, dutch: string) => {
-    setSelectedAnswerIndex(index);
-    setSelectAnswer(true);
+    setCheckButton(true);
     setAnswerIndex(index)
     if(order === 'eng') {
       setText(english)
@@ -39,7 +43,7 @@ function LessonWordtoWord() {
   };
 
   const handleWrite = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-setSelectAnswer(true)
+setCheckButton(true)
 setWriteText(event.target.value)
   }
 
@@ -66,8 +70,8 @@ setWriteText(event.target.value)
         }
         let newOptions = shuffleArray(options)
         setOptions(newOptions)
-        setSelectedAnswerIndex(null);
-        setSelectAnswer(false);
+        setAnswerIndex(-1)
+        setCheckButton(false);
         setContinueButton(false)
         setSelectAnswerRight(false)
         setSelectAnswerWrong(false)
@@ -89,7 +93,7 @@ setWriteText('')
   const handleCheckButton = () => {
     if(!showWriteQuestions) {
       if (order === 'eng' ? text === questions[currentQuestionIndex].english : text === questions[currentQuestionIndex].dutch ) {
-        setSelectAnswer(false);
+        setCheckButton(false);
         setContinueButton(true);
         setSelectAnswerRight(true);
         setScore(score + 1)
@@ -118,7 +122,7 @@ setWriteText('')
         }
         
     }
-    setSelectAnswer(false)
+    setCheckButton(false)
 setTotalClickQuestions(totalClickQuestions + 1)
   }
 
@@ -155,7 +159,7 @@ setTotalClickQuestions(totalClickQuestions + 1)
               
                 <textarea value={writeText} onKeyDown={handleKeyDown} onChange={handleWrite} className={`flex flex-col mx-auto shadow-md h-72 w-full justify-center items-center cursor-pointer text-xl mb-4 disabled:opacity-50 disabled:bg-gray-200`}disabled={continueButton}> </textarea>
            
-               {selectAnswer && (
+               {checkButton && (
             <button className="justify-center items-center rounded-md text-white bg-red-flag text-xl" onClick={handleCheckButton}>
               Check
             </button>
@@ -178,12 +182,12 @@ setTotalClickQuestions(totalClickQuestions + 1)
                 <div
                   key={quest.id}
                   onClick={() => handleClick(index, quest.english, quest.dutch)}
-                  className={`flex flex-col mx-auto shadow-md h-20 w-full justify-center items-center cursor-pointer text-xl mb-4 ${selectedAnswerIndex === index ? 'bg-blue-flag text-white' : ''} ${answerIndex === index && selectAnswerRight ? 'bg-green-500 text-white' : ''} ${answerIndex === index && selectAnswerWrong ? 'bg-red-flag text-white' : ''} `}
+                  className={`flex flex-col mx-auto shadow-md h-20 w-full justify-center items-center cursor-pointer text-xl mb-4 ${answerIndex === index ? 'bg-blue-flag text-white' : ''} ${answerIndex === index && selectAnswerRight ? 'bg-green-500 text-white' : ''} ${answerIndex === index && selectAnswerWrong ? 'bg-red-flag text-white' : ''} `}
                 >
                   {order === 'eng' ? quest.english : quest.dutch}
                 </div>
               ))}
-               {selectAnswer && (
+               {checkButton && (
             <button className="justify-center items-center rounded-md text-white bg-red-flag text-xl" onClick={handleCheckButton}>
               Check
             </button>
