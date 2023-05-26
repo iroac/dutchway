@@ -171,7 +171,7 @@ setTotalClickQuestions(totalClickQuestions + 1)
   
         {!showWriteQuestions && !showFinalResult ? (
             <>
-              <div className="flex flex-col mx-auto shadow-md h-52 w-52 justify-center bg-blue-flag text-white text-3xl items-center cursor-pointer mb-12">
+              <div className={`flex flex-col mx-auto shadow-md h-52 w-52 justify-center bg-blue-flag text-white text-3xl items-center cursor-pointer mb-12 ${selectAnswerRight ? 'bg-green-500' : ''} ${selectAnswerWrong ? 'bg-red-flag' : ''}`}>
                 {order === 'eng' ? questions[currentQuestionIndex].dutch : questions[currentQuestionIndex].english }
               </div>
               {options.map((quest, index) => (
