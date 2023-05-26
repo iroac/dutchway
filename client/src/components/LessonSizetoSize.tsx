@@ -19,10 +19,8 @@ const [score, setScore] = useState<number>(0);
  const [englishText, setEnglishText] = useState<string>("")
 
   // Boolean States
-  const [selectAnswer, setSelectAnswer] = useState<boolean>(false);
-  const [selectAnswerWrong, setSelectAnswerWrong] = useState<boolean>(false);
-  const [selectAnswerRight, setSelectAnswerRight] = useState<boolean>(false);
   const [showFinalResult, setShowFinalResult] = useState<boolean>(false);
+  const [animationComplete, setAnimationComplete] = useState(false);
 
   // Disabled
   const [disabledButtons, setDisabledButtons] = useState<boolean[]>([]);
@@ -34,10 +32,8 @@ const [score, setScore] = useState<number>(0);
 const handleDutchClick = (index:number, english:string, dutch:string) => {
   setDutchIndex(index)
   setEnglishText(english)
-  console.log(dutchText, dutch)
-  console.log(englishIndex)
   
-  
+  if(englishIndex >= 0) {
   if(dutchText === dutch) {
     // DUTCH UPDATE 
     let updatedDisabledButtons = [...disabledButtons];
@@ -53,16 +49,28 @@ const handleDutchClick = (index:number, english:string, dutch:string) => {
     let updatedDisabledButtonsTrueEnglish = [...disabledButtonsTrueEnglish];
     updatedDisabledButtonsTrueEnglish[englishIndex] = true;
     setDisabledButtonsTrueEnglish(updatedDisabledButtonsTrueEnglish);
+    setDutchIndex(-1)
+    setEnglishIndex(-1)
+  setEnglishText("")
+  setDutchText('')
+  setTotalClickQuestions(totalClickQuestions + 1)
+  if(totalClickQuestions === 4) {
+    setShowFinalResult(true)
   }
+  }
+
+
+  if(dutchText !== dutch) {
+    setAnimationComplete(true)
+  }
+}
 }
 
 const handleEnglishClick = (index:number, dutch:string, english:string) => {
   setEnglishIndex(index)
-  setDutchText(dutch) 
-  console.log(englishText, english)
-  console.log(dutchIndex)
+  setDutchText(dutch)
 
-  
+  if(dutchIndex >= 0) {
   if(englishText === english) {
       // ENGLISH UPDATE
       let updatedDisabledButtons = [...disabledButtonsEnglish];
@@ -80,15 +88,31 @@ const handleEnglishClick = (index:number, dutch:string, english:string) => {
     let updatedDisabledButtonsTrue = [...disabledButtonsTrue];
     updatedDisabledButtonsTrue[dutchIndex] = true;
     setDisabledButtonsTrue(updatedDisabledButtonsTrue);
+    setDutchText('')
+    setEnglishText("")
+    setDutchIndex(-1)
+    setEnglishIndex(-1)
+    setTotalClickQuestions(totalClickQuestions + 1)
+    if(totalClickQuestions === 3) {
+      setShowFinalResult(true)
+    }
   }
+
+  if(englishText !== english) {
+  setAnimationComplete(true)
+}
+}
 }
 
+const handleAnimationEnd = () => {
+  setAnimationComplete(false);
+  setEnglishIndex(-1)
+  setDutchIndex(-1)
+  setEnglishText("")
+  setDutchText('')
+};
 
-
-
-
-
-  const shuffleArray = (array: Word[]) => {
+const shuffleArray = (array: Word[]) => {
     const shuffledArray = [...array];
     for (let i = shuffledArray.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -96,6 +120,7 @@ const handleEnglishClick = (index:number, dutch:string, english:string) => {
     }
     return shuffledArray;
   };
+  
   useEffect(() => {
     if(!user || !currentlyWords) {
       navigate('/lessons')
@@ -115,14 +140,14 @@ const handleEnglishClick = (index:number, dutch:string, english:string) => {
             
 <div className="flex flex-col justify-center items-center h-screen w-1/2  bg-blue-flag">
   {questions.map((quest, index) => {
-    return <button key={quest.id} onClick={() => handleDutchClick(index, quest.english, quest.dutch)} className={`flex w-11/12 h-20 my-5 justify-center items-center bg-white rounded-md cursor-pointer ${disabledButtonsTrue[index] ? 'bg-green-300' : ""} ${dutchIndex === index ? 'bg-slate-200' : ""}`} disabled={disabledButtons[index]} >{quest.dutch}</button>
+    return <button key={quest.id} onClick={() => handleDutchClick(index, quest.english, quest.dutch)}  onAnimationEnd={handleAnimationEnd} className={`flex w-11/12 h-20 my-5 justify-center items-center bg-white rounded-md cursor-pointer ${animationComplete && index === dutchIndex ? 'animate-shake-horizontal' : ''} ${disabledButtonsTrue[index] ? 'bg-green-200' : ""} ${dutchIndex === index ? 'bg-slate-300' : ""}`} disabled={disabledButtons[index]} >{quest.dutch}</button>
   })
   } 
 
 </div>
 <div className="flex flex-col justify-center items-center h-screen w-1/2 bg-red-flag">
 {options.map((quest, index) => {
-    return <button key={quest.id} onClick={() => handleEnglishClick(index, quest.dutch, quest.english)} className={`flex w-11/12 h-20 my-5 justify-center items-center bg-white rounded-md cursor-pointer ${disabledButtonsTrueEnglish[index] ? 'bg-green-300' : ""} ${englishIndex === index ? 'bg-slate-200' : ""}`} disabled={disabledButtonsEnglish[index]}>{quest.english}</button>
+    return <button key={quest.id} onClick={() => handleEnglishClick(index, quest.dutch, quest.english)} onAnimationEnd={handleAnimationEnd} className={`flex w-11/12 h-20 my-5 justify-center items-center bg-white rounded-md cursor-pointer  ${animationComplete && index === englishIndex ? 'animate-shake-horizontal' : ""} ${disabledButtonsTrueEnglish[index] ? 'bg-green-200' : ""} ${englishIndex === index ? 'bg-slate-300' : ""}`} disabled={disabledButtonsEnglish[index]}>{quest.english}</button>
   })
   }
 </div>
