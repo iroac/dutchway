@@ -16,6 +16,8 @@ function LeassonMain() {
   const [showFinalResult, setShowFinalResult] = useState<boolean>(false);
   const [showWriteQuestions, setWriteQuestions] = useState<boolean>(false);
   const [showSideBySide, setSideBySide] = useState<boolean>(false);
+  const [showPhases, setShowPhrases] = useState<boolean>(false);
+  const [hasPhrases, setHasPhrases] = useState<boolean>(false)
 
 // WORD TO WORD
   const randomWordToWordOrder = () => {let order = ['eng', 'dutch'] 
@@ -40,6 +42,7 @@ function LeassonMain() {
   const [text, setText] = useState<string>("")
   const [writeText, setWriteText] = useState<string>("")
 
+
   // SIDE TO SIDE STATES
   // Text States
   const [dutchText, setDutchText] = useState<string>("");
@@ -52,33 +55,13 @@ function LeassonMain() {
   const [disabledButtons, setDisabledButtons] = useState<boolean[]>([]);
   const [disabledButtonsEnglish, setDisabledButtonsEnglish] = useState<boolean[]>([]);
 
-// WORD TO WORD FUNCTIONS
-  const handleClick = (index: number, english: string, dutch: string) => {
-    setAnswerIndex(index)
-    setCheckButton(true);
-    if(order === 'eng') {
-      setText(english)
-    } else if(order === 'dutch') {
-      setText(dutch)
-    }
-  };
 
-  const handleWrite = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-setCheckButton(true)
-setWriteText(event.target.value)
-  }
-
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (event.key === 'Enter') {
-      handleCheckButton()
-    }
-  }
-
+  // WORD TO WORD FUNCTIONS
   const handleContinueButton = () => {
     if(totalClickQuestions === questions.length * 2) {
       setSideBySide(true)
     } 
-
+  
     if(!showWriteQuestions) {
       if(totalClickQuestions === questions.length) {
         setWriteQuestions(true)
@@ -97,19 +80,19 @@ setWriteText(event.target.value)
         setSelectAnswerWrong(false)
       
     } else {
-if (currentQuestionIndex === questions.length - 1) {
+  if (currentQuestionIndex === questions.length - 1) {
     setCurrentQuestionIndex(0);
   } else {
     setCurrentQuestionIndex(currentQuestionIndex + 1);
   }
-
-setContinueButton(false)
-setSelectAnswerRight(false)
-setSelectAnswerWrong(false)
-setWriteText('')
+  
+  setContinueButton(false)
+  setSelectAnswerRight(false)
+  setSelectAnswerWrong(false)
+  setWriteText('')
     }   
   }
-
+  
   const handleCheckButton = () => {
     if(!showWriteQuestions) {
       if (order === 'eng' ? text === questions[currentQuestionIndex].english : text === questions[currentQuestionIndex].dutch ) {
@@ -143,10 +126,31 @@ setWriteText('')
         
     }
     setCheckButton(false)
-setTotalClickQuestions(totalClickQuestions + 1)
+  setTotalClickQuestions(totalClickQuestions + 1)
   }
 
-// SIDE TO SIDE FUNCTIONS 
+  const handleClick = (index: number, english: string, dutch: string) => {
+    setAnswerIndex(index)
+    setCheckButton(true);
+    if(order === 'eng') {
+      setText(english)
+    } else if(order === 'dutch') {
+      setText(dutch)
+    }
+  };
+
+  const handleWrite = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+setCheckButton(true)
+setWriteText(event.target.value)
+  }
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Enter') {
+      handleCheckButton()
+    }
+  }
+
+// SIDE BY SIDE FUNCTIONS 
 const handleDutchClick = (index: number, english: string, dutch: string) => {
   setDutchIndex(index);
   setEnglishText(english);
@@ -168,8 +172,12 @@ const handleDutchClick = (index: number, english: string, dutch: string) => {
       setDutchText("");
       setTotalClickQuestions(totalClickQuestions + 1);
       if (totalClickQuestions === 11) {
-        setShowFinalResult(true);
-        axios.put(`http://localhost:3000/users/${user?.id}`, pointUser)
+        if(hasPhrases) {
+setShowPhrases(true)
+        } else {
+          axios.put(`http://localhost:3000/users/${user?.id}`, pointUser)
+          setShowFinalResult(true);
+        }
       }
     }
 
@@ -204,8 +212,12 @@ const handleEnglishClick = (
       setEnglishIndex(-1);
       setTotalClickQuestions(totalClickQuestions + 1);
       if (totalClickQuestions === 11) {
-        axios.put(`http://localhost:3000/users/${user?.id}`, pointUser)
-        setShowFinalResult(true);
+        if(hasPhrases) {
+setShowPhrases(true)
+        } else {
+          axios.put(`http://localhost:3000/users/${user?.id}`, pointUser)
+          setShowFinalResult(true);
+        }
       }
     }
 
@@ -240,6 +252,7 @@ const handleAnimationEnd = () => {
       const shuffledOptions = shuffleArray(shuffledQuestions);
       setQuestions(shuffledQuestions);
       setOptions(shuffledOptions);
+      setHasPhrases(questions.some((obj) => obj.id <= 100))
     }
   }, []);
 

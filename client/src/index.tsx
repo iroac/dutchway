@@ -18,7 +18,7 @@ import LeassonPhrases from './components/LessonPhrases';
 import LessonWordtoWord from './components/LessonWordtoWord';
 import './input.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import LeassonSizetoSize from './components/LessonSizetoSize';
+import LeassonSideBySide from './components/LessonSidebySide';
 import { ContextLessons, MyContextValues, User, Word} from './contexts/ContextLessons';
 
 
@@ -126,7 +126,7 @@ const AppWithProvider = () => {
           <Route path="/lessons" element={<LessonsPage/>} />
           <Route path="/dailylesson" element={<LessonMain/>} />
           <Route path="/phraseslesson/:order" element={<LeassonPhrases/>} />
-          <Route path="/sizetosizelesson" element={<LeassonSizetoSize/>} />
+          <Route path="/sizetosizelesson" element={<LeassonSideBySide/>} />
           <Route path="/wordtowordlesson/:order" element={<LessonWordtoWord/>} />
           <Route path="/dictionary" element={<DictionaryPage/>} />
           <Route path="/material" element={<MaterialPage/>} />

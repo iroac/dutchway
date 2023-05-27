@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ContextLessons, Word } from "../contexts/ContextLessons";
 
-const LeassonSizetoSize = () => {
+const LeassonSidebySide = () => {
   const { user, currentlyWords, fetchData } = useContext(ContextLessons);
   const navigate = useNavigate();
 
@@ -190,4 +190,4 @@ const LeassonSizetoSize = () => {
   );
 };
 
-export default LeassonSizetoSize;
+export default LeassonSidebySide;
