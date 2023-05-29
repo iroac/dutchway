@@ -1,10 +1,10 @@
 import {  useContext, useEffect } from 'react';
-import { ContextLessons, User, Word, Phrases } from '../contexts/ContextLessons';
+import { ContextLessons } from '../contexts/ContextLessons';
 import { Link } from "react-router-dom";
 import {BiBookBookmark} from 'react-icons/bi';
 
 function LessonsPage() {
-  const { user, currentlyWords, fetchData} = useContext(ContextLessons);
+  const { fetchData} = useContext(ContextLessons);
 
 useEffect(() => {
   fetchData()

@@ -104,7 +104,6 @@ setTotalQuestions(totalQuestions + 1)
     if (currentlyWords.length > 0) {
       let shuffledQuestions = shuffleArray(currentlyWords).slice(0, 2);
       let hasPhrases = shuffledQuestions.some((quest) => quest.phrases[1].english === '');
-      console.log(currentlyWords)
       while(hasPhrases) {
         shuffledQuestions = shuffleArray(currentlyWords).slice(0, 2);
         hasPhrases = shuffledQuestions.some((quest) => quest.phrases[1].english === '');

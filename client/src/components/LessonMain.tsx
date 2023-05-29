@@ -1,7 +1,12 @@
 import {  useContext, useEffect, useState  } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ContextLessons, User, Word } from '../contexts/ContextLessons';
+import { ContextLessons, User, Word, Phrases } from '../contexts/ContextLessons';
 import axios from 'axios'
+
+const randomWordToWordOrder = () => {let order = ['eng', 'dutch'] 
+  const i = Math.floor(Math.random() * 2);
+  return order[i]
+  }
 
 function LeassonMain() {
   const { user, currentlyWords, fetchData } = useContext(ContextLessons);
@@ -14,18 +19,13 @@ function LeassonMain() {
   const [options, setOptions] = useState<Word[]>([])
   // Change Lesson States
   const [showFinalResult, setShowFinalResult] = useState<boolean>(false);
+  const [showFinalResultPhrases, setShowFinalResultPhrases] = useState<boolean>(false);
   const [showWriteQuestions, setWriteQuestions] = useState<boolean>(false);
   const [showSideBySide, setSideBySide] = useState<boolean>(false);
   const [showPhases, setShowPhrases] = useState<boolean>(false);
-  const [hasPhrases, setHasPhrases] = useState<boolean>(false)
+  const [order, setOrder] = useState<string>(() => randomWordToWordOrder())
 
 // WORD TO WORD
-  const randomWordToWordOrder = () => {let order = ['eng', 'dutch'] 
-  const i = Math.floor(Math.random() * 2);
-  return order[i]
-  }
-  const order  = 'eng'
-
   // WORD TO WORD STATES
   // Buttons States
   const [checkButton, setCheckButton] = useState<boolean>(false);
@@ -42,7 +42,7 @@ function LeassonMain() {
   const [text, setText] = useState<string>("")
   const [writeText, setWriteText] = useState<string>("")
 
-
+  
   // SIDE TO SIDE STATES
   // Text States
   const [dutchText, setDutchText] = useState<string>("");
@@ -55,6 +55,84 @@ function LeassonMain() {
   const [disabledButtons, setDisabledButtons] = useState<boolean[]>([]);
   const [disabledButtonsEnglish, setDisabledButtonsEnglish] = useState<boolean[]>([]);
 
+
+  // PHRASES STATES
+  // Question States
+  const [currentQuestionIndexPhrase, setCurrentQuestionIndexPhrase] = useState<number>(0);
+  const [textPhrase, setTextPhrase] = useState<string>("")
+  const [answerIndexPhrase, setAnswerIndexPhrase] = useState<number>(-1);
+  const [totalQuestions, setTotalQuestions] = useState<number>(0);
+  // Button States
+  const [checkButtonPhrase, setCheckButtonPhrase] = useState<boolean>(false);
+  const [continueButtonPhrase, setContinueButtonPhrase] = useState<boolean>(false);
+  // Questions States
+  const [optionsPhrases, setOptionsPhrases] = useState<Phrases[]>([]);
+  const [questionsPhrases, setQuestionsPhrases] = useState<Phrases[]>([]);
+
+
+  // PHRASES FUNCTIONS 
+
+  const handleClickPhrases = (index: number, english: string, dutch: string) => {
+    setCheckButtonPhrase(true);
+    setAnswerIndexPhrase(index)
+    if(order === 'eng') {
+      setTextPhrase(english)
+    } else if(order === 'dutch') {
+      setTextPhrase(dutch)
+    }
+  };
+
+  const handleContinueButtonPhrases = () => {
+    if(totalQuestions === questionsPhrases.length) {
+      setShowFinalResultPhrases(true)
+axios.put(`http://localhost:3000/users/${user?.id}`, pointUser)
+    } else {
+      if (currentQuestionIndexPhrase === questionsPhrases.length - 1) {
+        setCurrentQuestionIndexPhrase(0);
+      } else {
+        setCurrentQuestionIndexPhrase(currentQuestionIndexPhrase + 1);
+      }
+      let newOptions = shuffledOptions(optionsPhrases)
+      setOptionsPhrases(newOptions)
+      setAnswerIndexPhrase(-1)
+      setCheckButtonPhrase(false);
+      setContinueButtonPhrase(false)
+      setSelectAnswerRight(false)
+      setSelectAnswerWrong(false)
+    }
+  }
+
+  const handleCheckButtonPhrases = () => {
+    let hasEnglish = questionsPhrases[currentQuestionIndexPhrase].english === textPhrase;
+    let hasDutch = questionsPhrases[currentQuestionIndexPhrase].dutch === textPhrase;
+if (order === 'eng' ? hasEnglish : hasDutch ) {
+setCheckButton(false);
+setContinueButton(true);
+setSelectAnswerRight(true);
+setScore(score + 1)
+const actualPhrase = questionsPhrases[currentQuestionIndexPhrase].english
+const foundObject = currentlyWords.find((obj) => obj.phrases.find((phrase) => phrase.english === actualPhrase))
+const questIndex = pointUser?.currentlyWords.findIndex((innerArray: number[]) => innerArray[0] === foundObject?.id);
+if (questIndex !== undefined && questIndex !== -1 && pointUser) {
+  pointUser.currentlyWords[questIndex][1] += 1;
+}
+} else {
+setSelectAnswerWrong(true)
+}
+setTotalQuestions(totalQuestions + 1)
+setTotalClickQuestions(totalClickQuestions + 1)
+setCheckButtonPhrase(false)
+setContinueButtonPhrase(true)
+  }
+
+  const shuffledOptions = (array: Phrases[]) => {
+    const shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+    return shuffledArray;
+  };
 
   // WORD TO WORD FUNCTIONS
   const handleContinueButton = () => {
@@ -170,11 +248,21 @@ const handleDutchClick = (index: number, english: string, dutch: string) => {
       setEnglishIndex(-1);
       setEnglishText("");
       setDutchText("");
+      setScore(score + 1)
       setTotalClickQuestions(totalClickQuestions + 1);
       if (totalClickQuestions === 11) {
-        if(hasPhrases) {
-setShowPhrases(true)
-        } else {
+        let WordWithPhrases = questions.some((obj) => obj.id <= 100)
+        if(WordWithPhrases) {
+          setShowPhrases(true)
+          let shuffledQuestionsPhrases = shuffleArray(currentlyWords).slice(0, 2);
+                let hasPhrases = shuffledQuestionsPhrases.some((quest) => quest.phrases[1].english === '');
+                while(hasPhrases) {
+                  shuffledQuestionsPhrases = shuffleArray(currentlyWords).slice(0, 2);
+                  hasPhrases = shuffledQuestionsPhrases.some((quest) => quest.phrases[1].english === '');
+                }
+                setQuestionsPhrases([shuffledQuestionsPhrases[0].phrases[0], shuffledQuestionsPhrases[0].phrases[1], shuffledQuestionsPhrases[1].phrases[0], shuffledQuestionsPhrases[1].phrases[1]]);
+                setOptionsPhrases([shuffledQuestionsPhrases[0].phrases[0], shuffledQuestionsPhrases[0].phrases[1], shuffledQuestionsPhrases[1].phrases[0], shuffledQuestionsPhrases[1].phrases[1]]);
+                  } else {
           axios.put(`http://localhost:3000/users/${user?.id}`, pointUser)
           setShowFinalResult(true);
         }
@@ -211,9 +299,19 @@ const handleEnglishClick = (
       setDutchIndex(-1);
       setEnglishIndex(-1);
       setTotalClickQuestions(totalClickQuestions + 1);
+      setScore(score + 1)
       if (totalClickQuestions === 11) {
-        if(hasPhrases) {
+        let WordWithPhrases = questions.some((obj) => obj.id <= 100)
+        if(WordWithPhrases) {
 setShowPhrases(true)
+let shuffledQuestionsPhrases = shuffleArray(currentlyWords).slice(0, 2);
+      let hasPhrases = shuffledQuestionsPhrases.some((quest) => quest.phrases[1].english === '');
+      while(hasPhrases) {
+        shuffledQuestionsPhrases = shuffleArray(currentlyWords).slice(0, 2);
+        hasPhrases = shuffledQuestionsPhrases.some((quest) => quest.phrases[1].english === '');
+      }
+      setQuestionsPhrases([shuffledQuestionsPhrases[0].phrases[0], shuffledQuestionsPhrases[0].phrases[1], shuffledQuestionsPhrases[1].phrases[0], shuffledQuestionsPhrases[1].phrases[1]]);
+      setOptionsPhrases([shuffledQuestionsPhrases[0].phrases[0], shuffledQuestionsPhrases[0].phrases[1], shuffledQuestionsPhrases[1].phrases[0], shuffledQuestionsPhrases[1].phrases[1]]);
         } else {
           axios.put(`http://localhost:3000/users/${user?.id}`, pointUser)
           setShowFinalResult(true);
@@ -252,7 +350,6 @@ const handleAnimationEnd = () => {
       const shuffledOptions = shuffleArray(shuffledQuestions);
       setQuestions(shuffledQuestions);
       setOptions(shuffledOptions);
-      setHasPhrases(questions.some((obj) => obj.id <= 100))
     }
   }, []);
 
@@ -314,7 +411,7 @@ const handleAnimationEnd = () => {
           )} 
         </div> : ""}
 
-        {questions.length > 0 && showSideBySide && !showFinalResult && (
+        {questions.length > 0 && showSideBySide && !showFinalResult && !showPhases && (
         <div className="flex flex-row justify-center items-center">
           {!showFinalResult ? (
             <>
@@ -368,14 +465,41 @@ const handleAnimationEnd = () => {
           ) : (
             ""
           )}
-
-          {showFinalResult && (
-            <div className="flex flex-col justify-center items-center h-screen w-screen">
-              <div> You final scores is 0/{totalClickQuestions} </div>
-            </div>
-          )}
         </div>
       )}
+
+      {questionsPhrases.length > 0 && !showFinalResultPhrases && showPhases && (
+        <div className="flex flex-col justify-center items-center mt-16 ">
+          { order === 'dutch' ?  <div className="flex flex-row mx-auto shadow-md h-52 w-auto justify-center bg-blue-flag text-white text-3xl items-center cursor-pointer mb-12">{questionsPhrases[currentQuestionIndexPhrase].english.split(' ').map((word, index) => (<span key={index} className={`${ currentlyWords.some((obj) => obj.english === word) ? 'text-red-500' : ''} mr-2 `}>{word} </span>))}</div> : ""}
+          { order === 'eng' ?  <div className="flex flex-row mx-auto shadow-md h-52 w-auto justify-center bg-blue-flag text-white text-3xl items-center cursor-pointer mb-12">{questionsPhrases[currentQuestionIndexPhrase].dutch.split(' ').map((word, index) => (<span key={index} className={`${currentlyWords.some((obj) => obj.dutch === word) ? 'text-red-500' : ''} mr-2 `}>{word} </span>))}</div> : ""}
+ 
+            {optionsPhrases.map((quest, index) => ( 
+              <div
+                key={quest.english}
+                onClick={() => handleClickPhrases(index, quest.english, quest.dutch)}
+                className={`flex flex-col mx-auto shadow-md h-20 w-full justify-center items-center cursor-pointer text-xl mb-4 ${answerIndexPhrase === index ? 'bg-blue-flag text-white' : ''} ${answerIndexPhrase === index && selectAnswerRight ? 'bg-green-500 text-white' : ''} ${answerIndexPhrase === index && selectAnswerWrong ? 'bg-red-flag text-white' : ''} `}
+              >
+                {order === 'eng' ? quest.english : quest.dutch}
+              </div>
+            ))}
+             {checkButtonPhrase && (
+          <button className="justify-center items-center rounded-md text-white bg-red-flag text-xl" onClick={handleCheckButtonPhrases}>
+            Check
+          </button>
+        )}
+        {continueButtonPhrase && (
+          <button className="justify-center items-center rounded-md text-white bg-red-flag text-xl" onClick={handleContinueButtonPhrases}>
+            Continue
+          </button>
+        )}
+       
+      </div>
+      )}
+
+{showFinalResultPhrases && (<div className="flex flex-col justify-center items-center h-screen w-screen" >
+<div> You final scores is {score}/{totalClickQuestions} </div>
+        </div>
+        )}
     </div>
   );
 }
