@@ -16,6 +16,7 @@ import Video from './components/Video';
 import LessonMain from './components/LessonMain';
 import LeassonPhrases from './components/LessonPhrases';
 import LessonWordtoWord from './components/LessonWordtoWord';
+import VerbTenses from './components/VerbTenses';
 import './input.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LeassonSideBySide from './components/LessonSidebySide';
@@ -123,6 +124,7 @@ const AppWithProvider = () => {
         <Routes>
           <Route path="/" element={<App/>} />
           <Route path="/grammar" element={<GrammarPage/>} />
+          <Route path="/grammar/:verbtime" element={<VerbTenses/>} />
           <Route path="/lessons" element={<LessonsPage/>} />
           <Route path="/dailylesson" element={<LessonMain/>} />
           <Route path="/phraseslesson/:order" element={<LeassonPhrases/>} />
