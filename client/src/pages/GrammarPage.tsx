@@ -12,9 +12,9 @@ function GrammarPage() {
 <hr className='border-2 border-blue-flag w-11/12 mt-10'/>
 <h1 className={'text-4xl text-blue-flag mt-10'}>Structure</h1>
 <div className={'flex flex-row w-full justify-center items-center gap-20 mt-10'} >
-<div className={' flex rounded-full text-3xl w-40 h-40 text-white bg-blue-flag items-center justify-center'}>SENTENCE</div>
-<div className={' flex rounded-full text-1xl w-40 h-40 text-white bg-blue-flag items-center justify-center'}>MODAL VERBS</div>
-<div className={' flex rounded-full text-3xl w-40 h-40 text-white bg-blue-flag items-center justify-center'}>ARTICLES</div>
+<Link to='/grammar/adjectives' className={' flex rounded-full text-2xl w-40 h-40 text-white bg-blue-flag items-center justify-center'}>ADJECTIVES</Link>
+<Link to='/grammar/modalverbs' className={' flex rounded-full text-1xl w-40 h-40 text-white bg-blue-flag items-center justify-center'}>MODAL VERBS</Link>
+<Link to='/grammar/articles' className={' flex rounded-full text-2xl w-40 h-40 text-white bg-blue-flag items-center justify-center'}>ARTICLES</Link>
 </div>
     </div> 
   )
