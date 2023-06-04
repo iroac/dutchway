@@ -3,9 +3,16 @@ module.exports = {
   content: ["./src/**/*.{html,js,tsx}"],
   theme: {
     extend: {
+      height: {
+        'animation-cut': '160px',
+      },
       colors: {
         'red-flag': '#C8102E',
         'blue-flag': '#003DA5'
+      }, backgroundImage: {
+        'daily-gradient': 'linear-gradient(40deg, rgba(0,61,165,1) 0%, rgba(46,178,250,1) 0%, rgba(0,61,165,1) 100%)',
+        'sidebyside-gradient': 'linear-gradient(120deg, rgba(200,16,46,1) 50%, rgba(200,16,46,1) 50%, rgba(0,61,165,1) 51%)',
+        'sidebysidehover-gradient': 'linear-gradient(126deg, rgba(200,16,46,1) 6%, rgba(200,16,46,1) 44%, rgba(0,61,165,1) 63%)',
       },
       keyframes: {
         'shake-horizontal': {
