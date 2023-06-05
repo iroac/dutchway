@@ -153,19 +153,19 @@ setTotalClickQuestions(totalClickQuestions + 1)
 
         {showWriteQuestions && !showFinalResult && (
             <>
-              <div className={`flex flex-col mx-auto shadow-md h-52 w-52 justify-center bg-white text-blue-flag text-3xl items-center cursor-pointer mb-12 ${selectAnswerRight ? 'bg-green-500' : ''} ${selectAnswerWrong ? 'bg-red-flag' : ''}`}>
+              <div className={`flex flex-col mx-auto shadow-md h-fit rounded-xl w-fit px-16 py-14 justify-center border-solid border-8 border-blue-flag bg-white text-blue-flag text-4xl items-center cursor-pointer mb-12 ${selectAnswerRight ? 'border-green-500 text-green-500' : ''} ${selectAnswerWrong ? 'bg-red-700 text-white border-red-700' : ''}`}>
         {order === 'eng' ? questions[currentQuestionIndex].dutch : questions[currentQuestionIndex].english }
               </div>
               
-                <textarea value={writeText} onKeyDown={handleKeyDown} onChange={handleWrite} className={`flex flex-col mx-auto shadow-md h-72 w-full justify-center items-center cursor-pointer text-xl mb-4 disabled:opacity-50 disabled:bg-gray-200`}disabled={continueButton}> </textarea>
+                <textarea value={writeText} onKeyDown={handleKeyDown} onChange={handleWrite} className={`flex flex-col shadow-md border-solid border-4 border-blue-flag h-72 w-11/12 justify-center items-center cursor-pointer text-xl mb-10 disabled:opacity-50 disabled:bg-gray-200 ${selectAnswerRight ? 'border-green-500' : ''} ${selectAnswerWrong ? 'border-red-flag' : ''}`}disabled={continueButton}> </textarea>
            
-               {checkButton && (
-            <button className="justify-center items-center rounded-md text-white bg-red-flag text-xl" onClick={handleCheckButton}>
+                {checkButton && (
+            <button className="justify-center items-center rounded-md text-white bg-blue-flag text-4xl px-20 py-4" onClick={handleCheckButton}>
               Check
             </button>
           )}
           {continueButton && (
-            <button className="justify-center items-center rounded-md text-white bg-red-flag text-xl" onClick={handleContinueButton}>
+            <button className="justify-center items-center rounded-md text-white bg-blue-flag text-4xl px-20 py-4" onClick={handleContinueButton}>
               Continue
             </button>
           )}
@@ -177,7 +177,7 @@ setTotalClickQuestions(totalClickQuestions + 1)
             <div className={'flex flex-col h-screen w-screen justify-start items-center'} >
 
 <div className={'flex flex-col h-1/4 w-full'} >
-              <div className={`flex flex-col mx-auto shadow-md h-fit w-fit px-16 py-14 justify-center border-solid border-8 border-red-flag bg-white text-red-flag text-4xl items-center cursor-pointer mb-20 ${selectAnswerRight ? 'border-green-500 text-green-500' : ''} ${selectAnswerWrong ? 'bg-red-700 text-white' : ''}`}>
+              <div className={`flex flex-col mx-auto shadow-md h-fit w-fit rounded-xl px-16 py-14 justify-center border-solid border-8 border-blue-flag bg-white text-blue-flag text-4xl items-center cursor-pointer mb-20 ${selectAnswerRight ? 'border-green-500 text-green-500' : ''} ${selectAnswerWrong ? 'bg-red-700 border-red-flag text-white' : ''}`}>
                 {order === 'eng' ? questions[currentQuestionIndex].dutch : questions[currentQuestionIndex].english }
               </div>
               </div>
