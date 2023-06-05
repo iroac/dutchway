@@ -123,10 +123,10 @@ const LeassonSidebySide = () => {
   return (
     <div>
       {questions.length > 0 ? (
-        <div className="flex flex-row justify-center items-center">
+        <div className="flex flex-row justify-center items-center bg-no-repeat bg-center " style={{ backgroundImage: `url(/utils/svg/ballmiddlebg.svg)` }} >
           {!showFinalResult ? (
             <>
-              <div className="flex flex-col justify-center items-center h-screen w-1/2  bg-blue-flag">
+              <div className="flex flex-col justify-center items-center h-screen w-1/2">
                 {questions.map((quest, index) => {
                   return (
                     <button
@@ -135,12 +135,12 @@ const LeassonSidebySide = () => {
                         handleDutchClick(index, quest.english, quest.dutch)
                       }
                       onAnimationEnd={handleAnimationEnd}
-                      className={`flex w-11/12 h-20 my-5 justify-center items-center bg-white rounded-md cursor-pointer ${
+                      className={`flex w-11/12 h-20 my-5 justify-center items-center bg-white rounded-md text-blue-flag text-3xl cursor-pointer border-solid border-4 border-blue-flag ${
                         animationComplete && index === dutchIndex
                           ? "animate-shake-horizontal"
                           : ""
-                      } ${disabledButtons[index] ? "bg-green-200" : ""} ${
-                        dutchIndex === index ? "bg-slate-300" : ""
+                      } ${disabledButtons[index] ? "bg-green-400 text-black border-green-600" : ""} ${
+                        dutchIndex === index ? "bg-slate-200" : ""
                       }`}
                       disabled={disabledButtons[index]}
                     >
@@ -149,7 +149,7 @@ const LeassonSidebySide = () => {
                   );
                 })}
               </div>
-              <div className="flex flex-col justify-center items-center h-screen w-1/2 bg-red-flag">
+              <div className="flex flex-col justify-center items-center h-screen w-1/2">
                 {options.map((quest, index) => {
                   return (
                     <button
@@ -157,14 +157,14 @@ const LeassonSidebySide = () => {
                       onClick={() =>
                         handleEnglishClick(index, quest.dutch, quest.english)
                       }
-                      onAnimationEnd={handleAnimationEnd}
-                      className={`flex w-11/12 h-20 my-5 justify-center items-center bg-white rounded-md cursor-pointer  ${
+                      onAnimationEnd={handleAnimationEnd} 
+                      className={`flex w-11/12 h-20 my-5 justify-center items-center bg-white rounded-md text-blue-flag text-3xl cursor-pointer border-solid border-4 border-blue-flag ${
                         animationComplete && index === englishIndex
                           ? "animate-shake-horizontal"
                           : ""
                       } ${
-                        disabledButtonsEnglish[index] ? "bg-green-200" : ""
-                      } ${englishIndex === index ? "bg-slate-300" : ""}`}
+                        disabledButtonsEnglish[index] ? "bg-green-400 text-black border-green-600" : ""
+                      } ${englishIndex === index ? "bg-slate-200" : ""}`}
                       disabled={disabledButtonsEnglish[index]}
                     >
                       {quest.english}

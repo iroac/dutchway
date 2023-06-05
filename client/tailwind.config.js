@@ -47,7 +47,7 @@ module.exports = {
         },
       },
       animation: {
-        'shake-horizontal': 'shake-horizontal 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both',
+        'shake-horizontal': 'shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both',
       },
     },
   },

@@ -119,25 +119,33 @@ setTotalQuestions(totalQuestions + 1)
       <div className="flex flex-col justify-center items-center mt-16 ">
         {questions.length > 0 && !showFinalResult && (
           <>
-          { order === 'dutch' ?  <div className="flex flex-row mx-auto shadow-md h-52 w-auto justify-center bg-blue-flag text-white text-3xl items-center cursor-pointer mb-12">{questions[currentQuestionIndex].english.split(' ').map((word, index) => (<span key={index} className={`${ currentlyWords.some((obj) => obj.english === word) ? 'text-red-500' : ''} mr-2 `}>{word} </span>))}</div> : ""}
-          { order === 'eng' ?  <div className="flex flex-row mx-auto shadow-md h-52 w-auto justify-center bg-blue-flag text-white text-3xl items-center cursor-pointer mb-12">{questions[currentQuestionIndex].dutch.split(' ').map((word, index) => (<span key={index} className={`${currentlyWords.some((obj) => obj.dutch === word) ? 'text-red-500' : ''} mr-2 `}>{word} </span>))}</div> : ""}
+          <div className={'flex flex-col h-1/4 w-full justify-center items-center'}>
+          { order === 'dutch' ?  <div className={`flex flex-row shadow-md h-fit w-11/12 rounded-xl px-6 py-16 justify-center border-solid border-4 border-blue-flag bg-white text-blue-flag text-2xl items-center cursor-pointer mb-10 ${selectAnswerRight ? 'border-green-500 text-green-500' : ''} ${selectAnswerWrong ? 'bg-red-700 border-red-flag text-white' : ''}`}>{questions[currentQuestionIndex].english.split(' ').map((word, index) => (<span key={index} className={`${ currentlyWords.some((obj) => obj.english === word) ? `text-red-500 ` : ''} mr-2 `}>{word} </span>))}</div> : ""}
+          { order === 'eng' ?  <div className={`flex flex-row shadow-md h-fit w-11/12 rounded-xl px-6 py-16 justify-center border-solid border-4 border-blue-flag bg-white text-blue-flag text-2xl items-center cursor-pointer mb-10 ${selectAnswerRight ? 'border-green-500 text-green-500' : ''} ${selectAnswerWrong ? 'bg-red-700 border-red-flag text-white' : ''}`}>{questions[currentQuestionIndex].dutch.split(' ').map((word, index) => (<span key={index} className={`${currentlyWords.some((obj) => obj.dutch === word) ? 'text-red-500' : ''} mr-2 `}>{word} </span>))}</div> : ""}
+          </div>
  
+
+ <div className={'flex flex-col h-2/4 w-full justify-start items-center mb-10 gap-6'}>
             {options.map((quest, index) => ( 
-              <div
+              <button
                 key={quest.english}
                 onClick={() => handleClick(index, quest.english, quest.dutch)}
-                className={`flex flex-col mx-auto shadow-md h-20 w-full justify-center items-center cursor-pointer text-xl mb-4 ${answerIndex === index ? 'bg-blue-flag text-white' : ''} ${answerIndex === index && selectAnswerRight ? 'bg-green-500 text-white' : ''} ${answerIndex === index && selectAnswerWrong ? 'bg-red-flag text-white' : ''} `}
+                disabled={continueButton}
+                className={`flex flex-col shadow-md h-24 w-11/12 rounded-lg border-solid border-2 border-blue-flag text-blue-flag justify-center items-center cursor-pointer text-2xl ${answerIndex === index ? 'bg-blue-flag text-white' : ''} ${answerIndex === index && selectAnswerRight ? 'bg-green-500 text-white border-green-600 border-4 ' : ''} ${answerIndex === index && selectAnswerWrong ? 'bg-red-flag text-white border-red-700 border-4' : ''} `}
               >
                 {order === 'eng' ? quest.english : quest.dutch}
-              </div>
+              </button>
             ))}
+</div>
+
+
              {checkButton && (
-          <button className="justify-center items-center rounded-md text-white bg-red-flag text-xl" onClick={handleCheckButton}>
+          <button className="justify-center items-center rounded-md text-white bg-red-flag text-4xl px-20 py-4 mb-5" onClick={handleCheckButton}>
             Check
           </button>
         )}
         {continueButton && (
-          <button className="justify-center items-center rounded-md text-white bg-red-flag text-xl" onClick={handleContinueButton}>
+          <button className="justify-center items-center rounded-md text-white bg-red-flag text-4xl px-20 py-4 mb-5" onClick={handleContinueButton}>
             Continue
           </button>
         )}
