@@ -1,6 +1,7 @@
 import {  useContext, useEffect, useState  } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { ContextLessons, User, Word } from '../contexts/ContextLessons';
+import {IoIosArrowBack} from 'react-icons/io';
 import axios from 'axios'
 
 function LessonWordtoWord() {
@@ -153,7 +154,7 @@ setTotalClickQuestions(totalClickQuestions + 1)
 
         {showWriteQuestions && !showFinalResult && (
             <>
-              <div className={`flex flex-col mx-auto shadow-md h-fit rounded-xl w-fit px-16 py-14 justify-center border-solid border-8 border-blue-flag bg-white text-blue-flag text-4xl items-center cursor-pointer mb-12 ${selectAnswerRight ? 'border-green-500 text-green-500' : ''} ${selectAnswerWrong ? 'bg-red-700 text-white border-red-700' : ''}`}>
+              <div className={`flex flex-col mx-auto shadow-md h-fit rounded-xl w-fit px-16 py-14 justify-center border-solid border-8 border-blue-flag bg-white text-blue-flag text-4xl items-center cursor-pointer mb-12 ${selectAnswerRight ? 'border-green-500 text-green-500' : ''} ${selectAnswerWrong ? 'bg-red-700 border-red-700' : ''}`}>
         {order === 'eng' ? questions[currentQuestionIndex].dutch : questions[currentQuestionIndex].english }
               </div>
               
@@ -177,7 +178,7 @@ setTotalClickQuestions(totalClickQuestions + 1)
             <div className={'flex flex-col h-screen w-screen justify-start items-center'} >
 
 <div className={'flex flex-col h-1/4 w-full'} >
-              <div className={`flex flex-col mx-auto shadow-md h-fit w-fit rounded-xl px-16 py-14 justify-center border-solid border-8 border-blue-flag bg-white text-blue-flag text-4xl items-center cursor-pointer mb-20 ${selectAnswerRight ? 'border-green-500 text-green-500' : ''} ${selectAnswerWrong ? 'bg-red-700 border-red-flag text-white' : ''}`}>
+              <div className={`flex flex-col mx-auto shadow-md h-fit w-fit rounded-xl px-16 py-14 justify-center border-solid border-8 border-blue-flag bg-white text-blue-flag text-4xl items-center cursor-pointer mb-20 ${selectAnswerRight ? 'border-green-500 text-green-500' : ''} ${selectAnswerWrong ? 'bg-red-700 border-red-flag text-red-flag' : ''}`}>
                 {order === 'eng' ? questions[currentQuestionIndex].dutch : questions[currentQuestionIndex].english }
               </div>
               </div>
@@ -209,8 +210,10 @@ setTotalClickQuestions(totalClickQuestions + 1)
           ): ""}
   
   
-        {showFinalResult && (<div className="flex flex-col justify-center items-center h-screen w-screen" >
-  <div> You final scores is {score}/{totalClickQuestions} </div>
+        {showFinalResult && (<div className="flex flex-col justify-start items-center h-screen w-screen" >
+        <img src="/utils/svg/donelesson.gif"/>
+  <div className=' text-3xl text-blue-flag'>You final scores is {score}/{totalClickQuestions}</div>
+  <Link to='/lessons' className="flex flex-row justify-center items-center rounded-lg text-white bg-blue-flag text-2xl px-1 py-2 mt-2"><IoIosArrowBack />Return lessons</Link>
           </div>
           )} 
         </div> : ""}

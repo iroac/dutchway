@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { ContextLessons, Word } from "../contexts/ContextLessons";
+import {IoIosArrowBack} from 'react-icons/io';
 
 const LeassonSidebySide = () => {
   const { user, currentlyWords, fetchData } = useContext(ContextLessons);
@@ -123,7 +124,7 @@ const LeassonSidebySide = () => {
   return (
     <div>
       {questions.length > 0 ? (
-        <div className="flex flex-row justify-center items-center bg-no-repeat bg-center " style={{ backgroundImage: `url(/utils/svg/ballmiddlebg.svg)` }} >
+        <div className={`flex flex-row justify-center items-center bg-no-repeat bg-center ${showFinalResult ? 'bg-white' : ''} `} style={{backgroundImage: `${showFinalResult ? '' : `url(/utils/svg/ballmiddlebg.svg)`}`}} >
           {!showFinalResult ? (
             <>
               <div className="flex flex-col justify-center items-center h-screen w-1/2">
@@ -178,8 +179,10 @@ const LeassonSidebySide = () => {
           )}
 
           {showFinalResult && (
-            <div className="flex flex-col justify-center items-center h-screen w-screen">
-              <div> You final scores is 0/{totalClickQuestions} </div>
+            <div className="flex flex-col justify-start mt-28 items-center h-screen w-screen">
+              <img src="/utils/svg/donelesson.gif" />
+              <div className=' text-3xl text-blue-flag' > You final scores is {totalClickQuestions}/{totalClickQuestions} </div>
+              <Link to='/lessons' className="flex flex-row justify-center items-center rounded-lg text-white bg-blue-flag text-2xl px-1 py-2 mt-2"><IoIosArrowBack />Return lessons</Link>
             </div>
           )}
         </div>
