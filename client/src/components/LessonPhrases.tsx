@@ -1,7 +1,8 @@
 import {  useContext, useEffect, useState  } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { ContextLessons, User, Word, Phrases } from '../contexts/ContextLessons';
 import axios from 'axios'
+import { IoIosArrowBack } from 'react-icons/io';
 
 function LeassonPhrases() {
   const { user, currentlyWords, fetchData } = useContext(ContextLessons);
@@ -152,8 +153,10 @@ setTotalQuestions(totalQuestions + 1)
           </>
         )}
 
-        {showFinalResult && (<div className="flex flex-col justify-center items-center h-screen w-screen" >
-<div> You final scores is {score}/{questions.length} </div>
+        {showFinalResult && (<div className="flex flex-col justify-start items-center h-screen w-screen mt-28" >
+        <img src="/utils/svg/donelesson.gif" />
+<div className=' text-3xl text-blue-flag'>You final scores is {score}/{questions.length}</div>
+<Link to='/lessons' className="flex flex-row justify-center items-center rounded-lg text-white bg-blue-flag text-2xl px-1 py-2 mt-2"><IoIosArrowBack />Return lessons</Link>
         </div>
         )}
        

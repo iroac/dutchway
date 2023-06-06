@@ -177,9 +177,19 @@ setTotalClickQuestions(totalClickQuestions + 1)
         {!showWriteQuestions && !showFinalResult ? (
             <div className={'flex flex-col h-screen w-screen justify-start items-center'} >
 
-<div className={'flex flex-col h-1/4 w-full'} >
+<div className={`flex flex-row h-1/4 w-full justify-center items-center ${checkButton || selectAnswerRight || selectAnswerWrong ? 'mr-20' : ''} `} >
+  <div className={'flex flex-row'} >
+
+    <div className={'flex flex-col justify-end items-center mb-16'} >
+  {checkButton && <img src="/utils/svg/thoughtfulhead.gif" className="w-20 h-20" />}
+  {selectAnswerRight && <img src="/utils/svg/yessticker.gif" className="w-20 h-20" />}
+  {selectAnswerWrong && <img src="/utils/svg/nosticker.gif" className="w-20 h-20" />}
+  </div>
+  
               <div className={`flex flex-col mx-auto shadow-md h-fit w-fit rounded-xl px-16 py-14 justify-center border-solid border-8 border-blue-flag bg-white text-blue-flag text-4xl items-center cursor-pointer mb-20 ${selectAnswerRight ? 'border-green-500 text-green-500' : ''} ${selectAnswerWrong ? 'bg-red-700 border-red-flag text-red-flag' : ''}`}>
                 {order === 'eng' ? questions[currentQuestionIndex].dutch : questions[currentQuestionIndex].english }
+              </div>
+
               </div>
               </div>
 
