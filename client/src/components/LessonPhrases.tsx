@@ -120,9 +120,12 @@ setTotalQuestions(totalQuestions + 1)
       <div className="flex flex-col justify-center items-center mt-16 ">
         {questions.length > 0 && !showFinalResult && (
           <>
-          <div className={'flex flex-col h-1/4 w-full justify-center items-center'}>
-          { order === 'dutch' ?  <div className={`flex flex-row shadow-md h-fit w-11/12 rounded-xl px-6 py-16 justify-center border-solid border-4 border-blue-flag bg-white text-blue-flag text-2xl items-center cursor-pointer mb-10 ${selectAnswerRight ? 'border-green-500 text-green-500' : ''} ${selectAnswerWrong ? 'bg-red-700 border-red-flag text-red-500' : ''}`}>{questions[currentQuestionIndex].english.split(' ').map((word, index) => (<span key={index} className={`${ currentlyWords.some((obj) => obj.english === word) ? `text-red-500 ` : ''} mr-2 `}>{word} </span>))}</div> : ""}
-          { order === 'eng' ?  <div className={`flex flex-row shadow-md h-fit w-11/12 rounded-xl px-6 py-16 justify-center border-solid border-4 border-blue-flag bg-white text-blue-flag text-2xl items-center cursor-pointer mb-10 ${selectAnswerRight ? 'border-green-500 text-green-500' : ''} ${selectAnswerWrong ? 'bg-red-700 border-red-flag' : ''}`}>{questions[currentQuestionIndex].dutch.split(' ').map((word, index) => (<span key={index} className={`${currentlyWords.some((obj) => obj.dutch === word) ? 'text-red-500' : ''} mr-2 `}>{word} </span>))}</div> : ""}
+          <div className={`flex relative h-1/4 w-fit justify-center items-center shadow-md rounded-xl mb-10 px-10 py-10 border-solid border-4 border-blue-flag bg-white text-blue-flag ${selectAnswerWrong ? 'bg-red-700 border-red-flag' : ''} ${selectAnswerRight ? 'border-green-500' : ''}`}>
+          {checkButton && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/thoughtfulhead.gif" className="w-10 h-10" /></div>}
+          {selectAnswerRight && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/yessticker.gif" className="w-10 h-10" /></div>}
+          {selectAnswerWrong && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/nosticker.gif" className="w-10 h-10" /></div>}
+          { order === 'dutch' ?  <div className={`flex flex-row text-2xl items-center cursor-pointer ${selectAnswerRight ? ' text-green-500' : ''} ${selectAnswerWrong ? 'text-red-500' : ''}`}>{questions[currentQuestionIndex].english.split(' ').map((word, index) => (<span key={index} className={`${ currentlyWords.some((obj) => obj.english === word) ? `text-red-500 ` : ''} mr-2 `}>{word} </span>))}</div> : ""}
+          { order === 'eng' ?  <div className={`flex flex-row text-2xl items-center cursor-pointer ${selectAnswerRight ? ' text-green-500' : ''}  ${selectAnswerWrong ? 'text-red-500' : ''}`}>{questions[currentQuestionIndex].dutch.split(' ').map((word, index) => (<span key={index} className={`${currentlyWords.some((obj) => obj.dutch === word) ? 'text-red-500' : ''} mr-2 `}>{word} </span>))}</div> : ""}
           </div>
  
 
