@@ -1,6 +1,7 @@
 import {  useContext, useEffect, useState  } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { ContextLessons, User, Word, Phrases } from '../contexts/ContextLessons';
+import {IoIosArrowBack} from 'react-icons/io';
 import axios from 'axios'
 
 const randomWordToWordOrder = () => {let order = ['eng', 'dutch'] 
@@ -358,110 +359,130 @@ const handleAnimationEnd = () => {
       {questions.length > 0 ? <div className="flex flex-col justify-center items-center">
 
         {showWriteQuestions && !showFinalResult && !showSideBySide && (
-            <>
-              <div className={`flex flex-col mt-16 mx-auto shadow-md h-52 w-52 justify-center bg-blue-flag text-white text-3xl items-center cursor-pointer mb-12 ${selectAnswerRight ? 'bg-green-500' : ''} ${selectAnswerWrong ? 'bg-red-flag' : ''}`}>
-        {order === 'eng' ? questions[currentQuestionIndex].dutch : questions[currentQuestionIndex].english }
-              </div>
-              
-                <textarea value={writeText} onKeyDown={handleKeyDown} onChange={handleWrite} className={`flex flex-col mx-auto shadow-md h-72 w-full justify-center items-center cursor-pointer text-xl mb-4 disabled:opacity-50 disabled:bg-gray-200`}disabled={continueButton}> </textarea>
-           
-               {checkButton && (
-            <button className="justify-center items-center rounded-md text-white bg-red-flag text-xl" onClick={handleCheckButton}>
-              Check
-            </button>
-          )}
-          {continueButton && (
-            <button className="justify-center items-center rounded-md text-white bg-red-flag text-xl" onClick={handleContinueButton}>
-              Continue
-            </button>
-          )}
-            </>
+                        <>
+                        <div className={`flex flex-col mx-auto shadow-md h-fit rounded-xl w-fit px-16 py-14 justify-center border-solid border-8 border-blue-flag bg-white text-blue-flag text-4xl items-center cursor-pointer mb-12 mt-16 ${selectAnswerRight ? 'border-green-500 text-green-500' : ''} ${selectAnswerWrong ? 'bg-red-700 border-red-700' : ''}`}>
+                  {order === 'eng' ? questions[currentQuestionIndex].dutch : questions[currentQuestionIndex].english }
+                        </div>
+                        
+                          <textarea value={writeText} onKeyDown={handleKeyDown} onChange={handleWrite} className={`flex flex-col shadow-md border-solid border-4 border-blue-flag h-72 w-11/12 justify-center items-center cursor-pointer text-xl mb-10 disabled:opacity-50 disabled:bg-gray-200 ${selectAnswerRight ? 'border-green-500' : ''} ${selectAnswerWrong ? 'border-red-flag' : ''}`}disabled={continueButton}> </textarea>
+                     
+                          {checkButton && (
+                      <button className="justify-center items-center rounded-md text-white bg-blue-flag text-4xl px-20 py-4" onClick={handleCheckButton}>
+                        Check
+                      </button>
+                    )}
+                    {continueButton && (
+                      <button className="justify-center items-center rounded-md text-white bg-blue-flag text-4xl px-20 py-4" onClick={handleContinueButton}>
+                        Continue
+                      </button>
+                    )}
+                      </>
           )}
  
         {!showWriteQuestions && !showFinalResult && !showSideBySide ? (
-            <>
-              <div className={`flex flex-col mt-16 mx-auto shadow-md h-52 w-52 justify-center bg-blue-flag text-white text-3xl items-center cursor-pointer mb-12 ${selectAnswerRight ? 'bg-green-500' : ''} ${selectAnswerWrong ? 'bg-red-flag' : ''}`}>
+            <div className={'flex flex-col h-screen w-screen justify-start items-center mt-16'} >
+
+<div className={`flex flex-row h-1/4 w-full justify-center items-center ${checkButton || selectAnswerRight || selectAnswerWrong ? 'mr-20' : ''} `} >
+  <div className={'flex flex-row'} >
+
+    <div className={'flex flex-col justify-end items-center mb-16'} >
+  {checkButton && <img src="/utils/svg/thoughtfulhead.gif" className="w-20 h-20" />}
+  {selectAnswerRight && <img src="/utils/svg/yessticker.gif" className="w-20 h-20" />}
+  {selectAnswerWrong && <img src="/utils/svg/nosticker.gif" className="w-20 h-20" />}
+  </div>
+  
+              <div className={`flex flex-col mx-auto shadow-md h-fit w-fit rounded-xl px-16 py-14 justify-center border-solid border-8 border-blue-flag bg-white text-blue-flag text-4xl items-center cursor-pointer mb-20 ${selectAnswerRight ? 'border-green-500 text-green-500' : ''} ${selectAnswerWrong ? 'bg-red-700 border-red-flag text-red-flag' : ''}`}>
                 {order === 'eng' ? questions[currentQuestionIndex].dutch : questions[currentQuestionIndex].english }
               </div>
+
+              </div>
+              </div>
+
+<div className={'flex flex-col h-2/4 w-full justify-start items-center mb-10 gap-6'} >
               {options.map((quest, index) => (
-                <div
+                <button
                   key={quest.id}
+                  disabled={continueButton}
                   onClick={() => handleClick(index, quest.english, quest.dutch)}
-                  className={`flex flex-col mx-auto shadow-md h-20 w-full justify-center items-center cursor-pointer text-xl mb-4 ${answerIndex === index ? 'bg-blue-flag text-white' : ''} ${answerIndex === index && selectAnswerRight ? 'bg-green-500 text-white' : ''} ${answerIndex === index && selectAnswerWrong ? 'bg-red-flag text-white' : ''} `}
+                  className={`flex flex-col shadow-md h-24 w-11/12 rounded-lg border-solid border-2 border-blue-flag text-blue-flag justify-center items-center cursor-pointer text-2xl ${answerIndex === index ? 'bg-blue-flag text-white' : ''} ${answerIndex === index && selectAnswerRight ? 'bg-green-500 text-white border-green-600 border-4 ' : ''} ${answerIndex === index && selectAnswerWrong ? 'bg-red-flag text-white border-red-700 border-4' : ''} `}
                 >
                   {order === 'eng' ? quest.english : quest.dutch}
-                </div>
+                </button>
               ))}
+</div>
+
                {checkButton && (
-            <button className="justify-center items-center rounded-md text-white bg-red-flag text-xl" onClick={handleCheckButton}>
+            <button className="justify-center items-center rounded-md text-white bg-red-flag text-4xl px-20 py-4" onClick={handleCheckButton}>
               Check
             </button>
           )}
           {continueButton && (
-            <button className="justify-center items-center rounded-md text-white bg-red-flag text-xl" onClick={handleContinueButton}>
+            <button className="justify-center items-center rounded-md text-white bg-red-flag text-4xl px-20 py-4" onClick={handleContinueButton}>
               Continue
             </button>
           )}
-            </>
+            </div>
           ): ""}
   
-        {showFinalResult && (<div className="flex flex-col justify-center items-center h-screen w-screen" >
-  <div> You final scores is {score}/{totalClickQuestions} </div>
+        {showFinalResult && (<div className="flex flex-col justify-start items-center h-screen w-screen" >
+        <img src="/utils/svg/donelesson.gif"/>
+  <div className=' text-3xl text-blue-flag'>You final scores is {score}/{totalClickQuestions}</div>
+  <Link to='/lessons' className="flex flex-row justify-center items-center rounded-lg text-white bg-blue-flag text-2xl px-1 py-2 mt-2"><IoIosArrowBack />Return lessons</Link>
           </div>
           )} 
         </div> : ""}
 
         {questions.length > 0 && showSideBySide && !showFinalResult && !showPhases && (
-        <div className="flex flex-row justify-center items-center">
+        <div className={`flex flex-row justify-center items-center bg-no-repeat bg-center ${showFinalResult ? 'bg-white' : ''} `} style={{backgroundImage: `${showFinalResult ? '' : `url(/utils/svg/ballmiddlebg.svg)`}`}}>
           {!showFinalResult ? (
-            <>
-              <div className="flex flex-col justify-center items-center h-screen w-1/2  bg-blue-flag">
-                {questions.map((quest, index) => {
-                  return (
-                    <button
-                      key={quest.id}
-                      onClick={() =>
-                        handleDutchClick(index, quest.english, quest.dutch)
-                      }
-                      onAnimationEnd={handleAnimationEnd}
-                      className={`flex w-11/12 h-20 my-5 justify-center items-center bg-white rounded-md cursor-pointer ${
-                        animationComplete && index === dutchIndex
-                          ? "animate-shake-horizontal"
-                          : ""
-                      } ${disabledButtons[index] ? "bg-green-200" : ""} ${
-                        dutchIndex === index ? "bg-slate-300" : ""
-                      }`}
-                      disabled={disabledButtons[index]}
-                    >
-                      {quest.dutch}
-                    </button>
-                  );
-                })}
-              </div>
-              <div className="flex flex-col justify-center items-center h-screen w-1/2 bg-red-flag">
-                {options.map((quest, index) => {
-                  return (
-                    <button
-                      key={quest.id}
-                      onClick={() =>
-                        handleEnglishClick(index, quest.dutch, quest.english)
-                      }
-                      onAnimationEnd={handleAnimationEnd}
-                      className={`flex w-11/12 h-20 my-5 justify-center items-center bg-white rounded-md cursor-pointer  ${
-                        animationComplete && index === englishIndex
-                          ? "animate-shake-horizontal"
-                          : ""
-                      } ${
-                        disabledButtonsEnglish[index] ? "bg-green-200" : ""
-                      } ${englishIndex === index ? "bg-slate-300" : ""}`}
-                      disabled={disabledButtonsEnglish[index]}
-                    >
-                      {quest.english}
-                    </button>
-                  );
-                })}
-              </div>
-            </>
+                 <>
+                 <div className="flex flex-col justify-center items-center h-screen w-1/2">
+                   {questions.map((quest, index) => {
+                     return (
+                       <button
+                         key={quest.id}
+                         onClick={() =>
+                           handleDutchClick(index, quest.english, quest.dutch)
+                         }
+                         onAnimationEnd={handleAnimationEnd}
+                         className={`flex w-11/12 h-20 my-5 justify-center items-center bg-white rounded-md text-blue-flag text-3xl cursor-pointer border-solid border-4 border-blue-flag ${
+                           animationComplete && index === dutchIndex
+                             ? "animate-shake-horizontal"
+                             : ""
+                         } ${disabledButtons[index] ? "bg-green-400 text-black border-green-600" : ""} ${
+                           dutchIndex === index ? "bg-slate-200" : ""
+                         }`}
+                         disabled={disabledButtons[index]}
+                       >
+                         {quest.dutch}
+                       </button>
+                     );
+                   })}
+                 </div>
+                 <div className="flex flex-col justify-center items-center h-screen w-1/2">
+                   {options.map((quest, index) => {
+                     return (
+                       <button
+                         key={quest.id}
+                         onClick={() =>
+                           handleEnglishClick(index, quest.dutch, quest.english)
+                         }
+                         onAnimationEnd={handleAnimationEnd} 
+                         className={`flex w-11/12 h-20 my-5 justify-center items-center bg-white rounded-md text-blue-flag text-3xl cursor-pointer border-solid border-4 border-blue-flag ${
+                           animationComplete && index === englishIndex
+                             ? "animate-shake-horizontal"
+                             : ""
+                         } ${
+                           disabledButtonsEnglish[index] ? "bg-green-400 text-black border-green-600" : ""
+                         } ${englishIndex === index ? "bg-slate-200" : ""}`}
+                         disabled={disabledButtonsEnglish[index]}
+                       >
+                         {quest.english}
+                       </button>
+                     );
+                   })}
+                 </div>
+               </>
           ) : (
             ""
           )}
@@ -469,37 +490,52 @@ const handleAnimationEnd = () => {
       )}
 
       {questionsPhrases.length > 0 && !showFinalResultPhrases && showPhases && (
+        <div>
         <div className="flex flex-col justify-center items-center mt-16 ">
-          { order === 'dutch' ?  <div className="flex flex-row mx-auto shadow-md h-52 w-auto justify-center bg-blue-flag text-white text-3xl items-center cursor-pointer mb-12">{questionsPhrases[currentQuestionIndexPhrase].english.split(' ').map((word, index) => (<span key={index} className={`${ currentlyWords.some((obj) => obj.english === word) ? 'text-red-500' : ''} mr-2 `}>{word} </span>))}</div> : ""}
-          { order === 'eng' ?  <div className="flex flex-row mx-auto shadow-md h-52 w-auto justify-center bg-blue-flag text-white text-3xl items-center cursor-pointer mb-12">{questionsPhrases[currentQuestionIndexPhrase].dutch.split(' ').map((word, index) => (<span key={index} className={`${currentlyWords.some((obj) => obj.dutch === word) ? 'text-red-500' : ''} mr-2 `}>{word} </span>))}</div> : ""}
+          <div className={`flex relative h-1/4 w-fit justify-center items-center shadow-md rounded-xl mb-10 px-10 py-10 border-solid border-4 border-blue-flag bg-white text-blue-flag ${selectAnswerWrong ? 'bg-red-700 border-red-flag' : ''} ${selectAnswerRight ? 'border-green-500' : ''}`}>
+          {checkButton && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/thoughtfulhead.gif" className="w-10 h-10" /></div>}
+          {selectAnswerRight && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/yessticker.gif" className="w-10 h-10" /></div>}
+          {selectAnswerWrong && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/nosticker.gif" className="w-10 h-10" /></div>}
+          { order === 'dutch' ?  <div className={`flex flex-row text-2xl items-center cursor-pointer ${selectAnswerRight ? ' text-green-500' : ''} ${selectAnswerWrong ? 'text-red-500' : ''}`}>{questionsPhrases[currentQuestionIndexPhrase].english.split(' ').map((word, index) => (<span key={index} className={`${ currentlyWords.some((obj) => obj.english === word) ? 'text-red-500' : ''} mr-2 `}>{word} </span>))}</div> : ""}
+          { order === 'eng' ?  <div className={`flex flex-row text-2xl items-center cursor-pointer ${selectAnswerRight ? ' text-green-500' : ''} ${selectAnswerWrong ? 'text-red-500' : ''}`}>{questionsPhrases[currentQuestionIndexPhrase].dutch.split(' ').map((word, index) => (<span key={index} className={`${currentlyWords.some((obj) => obj.dutch === word) ? 'text-red-500' : ''} mr-2 `}>{word} </span>))}</div> : ""}
+          </div>
+          
  
+          <div className={'flex flex-col h-2/4 w-full justify-start items-center mb-10 gap-6'}>
             {optionsPhrases.map((quest, index) => ( 
-              <div
+              <button
                 key={quest.english}
                 onClick={() => handleClickPhrases(index, quest.english, quest.dutch)}
-                className={`flex flex-col mx-auto shadow-md h-20 w-full justify-center items-center cursor-pointer text-xl mb-4 ${answerIndexPhrase === index ? 'bg-blue-flag text-white' : ''} ${answerIndexPhrase === index && selectAnswerRight ? 'bg-green-500 text-white' : ''} ${answerIndexPhrase === index && selectAnswerWrong ? 'bg-red-flag text-white' : ''} `}
+                disabled={continueButtonPhrase}
+                className={`flex flex-col shadow-md h-24 w-11/12 rounded-lg border-solid border-2 border-blue-flag text-blue-flag justify-center items-center cursor-pointer text-2xl ${answerIndexPhrase === index ? 'bg-blue-flag text-white' : ''} ${answerIndexPhrase === index && selectAnswerRight ? 'bg-green-500 text-white border-green-600 border-4' : ''} ${answerIndexPhrase === index && selectAnswerWrong ? 'bg-red-flag text-white border-red-700 border-4' : ''} `}
               >
                 {order === 'eng' ? quest.english : quest.dutch}
-              </div>
+              </button>
             ))}
+            </div>
+
+            
              {checkButtonPhrase && (
-          <button className="justify-center items-center rounded-md text-white bg-red-flag text-xl" onClick={handleCheckButtonPhrases}>
+          <button className="justify-center items-center rounded-md text-white bg-red-flag text-4xl px-20 py-4 mb-5" onClick={handleCheckButtonPhrases}>
             Check
           </button>
         )}
         {continueButtonPhrase && (
-          <button className="justify-center items-center rounded-md text-white bg-red-flag text-xl" onClick={handleContinueButtonPhrases}>
+          <button className="justify-center items-center rounded-md text-white bg-red-flag text-4xl px-20 py-4 mb-5" onClick={handleContinueButtonPhrases}>
             Continue
           </button>
         )}
        
       </div>
+      </div>
       )}
 
-{showFinalResultPhrases && (<div className="flex flex-col justify-center items-center h-screen w-screen" >
-<div> You final scores is {score}/{totalClickQuestions} </div>
-        </div>
-        )}
+{showFinalResultPhrases && (<div className="flex flex-col justify-start items-center h-screen w-screen" >
+        <img src="/utils/svg/donelesson.gif"/>
+  <div className=' text-3xl text-blue-flag'>You final scores is {score}/{totalClickQuestions}</div>
+  <Link to='/lessons' className="flex flex-row justify-center items-center rounded-lg text-white bg-blue-flag text-2xl px-1 py-2 mt-2"><IoIosArrowBack />Return lessons</Link>
+          </div>
+          )}
     </div>
   );
 }
