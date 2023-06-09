@@ -53,6 +53,8 @@ function Posts() {;
     setCurrentPage(currentPage + 1);
   };
 
+
+  // Filter for user content or default content
   const handleFilter = () => {
     setSelectOptions(selectOption)
   }
@@ -82,9 +84,9 @@ useEffect(() => {
       fetchData()
 }, [])
   return ( <div className="flex flex-col h-screen w-screen justify-start items-center" >
-    <div className="flex flex-row h-1/12 mt-4 justify-end items-center w-11/12">
+    {/* <div className="flex flex-row h-1/12 mt-4 justify-end items-center w-11/12">
       <Select className=" autofocus:outline-none" defaultValue={selectOption} value={selectOption} styles={customStyles} onChange={handleFilter} options={options} />
-    </div>
+    </div> */}
 
     <div className="flex flex-col justify-center items-center w-screen h-10/12 gap-5 mt-8" >{renderedPosts}</div>
 
