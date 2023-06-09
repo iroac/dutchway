@@ -24,7 +24,7 @@ const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 
 const addPost = async (event: any) => {
   event.preventDefault()
-  let newPost = { title: textTitle, text: textContent }
+  let newPost = { title: textTitle, text: textContent, category: 'mycontent'}
   await axios.post('http://localhost:3000/contentpost', newPost)
   setTextTitle('')
   setTextContent('')
