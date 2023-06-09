@@ -125,7 +125,7 @@ const AppWithProvider = () => {
         <Routes>
           <Route path="/" element={<App/>} />
           <Route path="/grammar" element={<GrammarPage/>} />
-          <Route path="/grammar/:structure" element={<GrammarStructures/>} />
+          <Route path="/grammar/structure/:structure" element={<GrammarStructures/>} />
           <Route path="/grammar/:verbtime" element={<VerbTenses/>} />
           <Route path="/lessons" element={<LessonsPage/>} />
           <Route path="/dailylesson" element={<LessonMain/>} />

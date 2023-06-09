@@ -6,6 +6,7 @@ const {verbtime} = useParams()
 
   return (
     <div>
+
 {verbtime === 'past' && (<div className="flex flex-col justify-center" >
     
     <h1 className=" text-4xl text-red-flag mt-10 text-center " >Past Tenses</h1>
