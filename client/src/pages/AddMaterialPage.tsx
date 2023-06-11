@@ -39,8 +39,9 @@ const addVideo = async (event: any) => {
   const id = match && match[2] ? match[2] : null;
   
   let embedUrl = `https://www.youtube.com/embed/${id}`;
+  let thumbnail = `https://img.youtube.com/vi/${id}/0.jpg`
 
-  let newVideo = { title: videoTitle, text: videoContent, url: embedUrl }
+  let newVideo = { title: videoTitle, text: videoContent, url: embedUrl, thumbnail: thumbnail }
   await axios.post('http://localhost:3000/contentvideo', newVideo)
   setVideoContent('')
   setTitleVideo('')

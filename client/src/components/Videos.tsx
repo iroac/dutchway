@@ -9,6 +9,7 @@ interface Video {
   title: string;
   text: string;
   url: string;
+  thumbnail: string;
 }
 
 function Videos() {
@@ -45,7 +46,10 @@ function Videos() {
   
     // Rendered CurrentItems
   const renderedvideo = currentItems.map((p) => {   
-          return  <Link key={p.id} to={`video/${p.id}`} className="flex flex-col shadow-md h-20 w-11/12 justify-center items-center cursor-pointer rounded-lg border-solid border-2 border-blue-flag hover:border-white hover:bg-blue-flag text-2xl text-blue-flag hover:text-white">{`${p.title.slice(0, 40)}...`}</Link>             
+          return (<div className="flex flex-col group shadow-md justify-cente h-44 w-48 items-center cursor-pointer rounded-lg border-solid border-4 bg-blue-flag border-blue-flag hover:bg-white " >
+           <div className="flex flex-grow justify-start items-center w-full h-3/4 overflow-hidden" ><img src={p.thumbnail} className="w-full h-44" /></div>
+            <Link key={p.id} to={`video/${p.id}`} className="w-full h-1/4 flex justify-center items-center flex-col text-center text-md text-white group-hover:text-blue-flag">{`${p.title.slice(0, 40)}...`}</Link>
+          </div>)              
   })
   
   
@@ -57,7 +61,7 @@ function Videos() {
         fetchData()
   }, [])
     return ( <div className="flex flex-col h-screen w-screen justify-start items-center">
-      <div className="flex flex-col justify-center items-center w-screen h-10/12 gap-5 mt-8" >{renderedvideo}</div>
+      <div className="flex flex-wrap justify-center items-center w-screen h-10/12 gap-5 mt-8" >{renderedvideo}</div>
       <div className=" flex flex-row justify-center items-center gap-10 mt-10" >
       <BiFirstPage className={` ${previousPageClassNames} text-4xl text-blue-flag  `} onClick={handlePreviousPage} />
   <BiLastPage className={` ${nextPageClassNames} text-4xl text-red-flag  `}onClick={handleNextPage}/>
