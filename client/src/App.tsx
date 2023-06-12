@@ -21,7 +21,6 @@ const sumTrueValues = doneTasks.reduce((sum, value) => {
   return sum;
 }, 0);
 
-
 useEffect(() => {
   const interval = setInterval(() => {
     const newDay = new Date().getDate();
