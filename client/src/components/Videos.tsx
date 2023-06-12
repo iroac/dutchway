@@ -46,10 +46,10 @@ function Videos() {
   
     // Rendered CurrentItems
   const renderedvideo = currentItems.map((p) => {   
-          return (<div className="flex flex-col group shadow-md justify-cente h-44 w-48 items-center cursor-pointer rounded-lg border-solid border-4 bg-blue-flag border-blue-flag hover:bg-white " >
+          return (<Link to={`video/${p.id}`} key={p.id} className="flex flex-col group shadow-md justify-cente h-44 w-48 items-center cursor-pointer rounded-lg border-solid border-4 bg-blue-flag border-blue-flag hover:bg-white " >
            <div className="flex flex-grow justify-start items-center w-full h-3/4 overflow-hidden" ><img src={p.thumbnail} className="w-full h-44" /></div>
-            <Link key={p.id} to={`video/${p.id}`} className="w-full h-1/4 flex justify-center items-center flex-col text-center text-md text-white group-hover:text-blue-flag">{`${p.title.slice(0, 40)}...`}</Link>
-          </div>)              
+            <div  className="w-full h-1/4 flex justify-center items-center flex-col text-center text-md text-white group-hover:text-blue-flag">{`${p.title.slice(0, 40)}...`}</div>
+          </Link>)              
   })
   
   
