@@ -4,11 +4,6 @@ import { Link } from "react-router-dom";
 import {WiDayCloudy} from 'react-icons/wi';
 
 function LessonsPage() {
-  const { fetchData} = useContext(ContextLessons);
-
-useEffect(() => {
-  fetchData()
-}, [])
   
   return <div className="flex flex-col justify-start w-screen h-screen bg-slate-50">
     <div  className="flex flex-row justify-center items-center h-2/4 w-full bg-daily-gradient" >

@@ -1,12 +1,6 @@
-import { createContext } from 'react';
-import { useEffect, useState } from 'react'
+import { useEffect, useState, ReactNode, createContext } from 'react'
 import axios from 'axios'
 
-export interface MyContextValues {
-  user: User | undefined;
-  currentlyWords: Word[];
-  fetchData: () => void;
-}
 
 export interface User {
   id: number;
@@ -26,17 +20,26 @@ export interface Phrases {
   english: string;
 }
 
+// Define the shape of context values
+export interface MyContextValues {
+  user: User | undefined;
+  currentlyWords: Word[];
+  fetchData: () => void;
+}
+
+// Create the context
 export const ContextLessons = createContext<MyContextValues>({
   user: undefined,
   currentlyWords: [],
   fetchData: () => {},
 });
 
-export function MyContextProvider({ children }: { children: JSX.Element }) {
+export const MyContextProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | undefined>();
   const [currentlyWords, setCurrentlyWords] = useState<Word[]>([]);
  
   const fetchData = async () => {
+    console.log('works') 
     const response = await axios.get('http://localhost:3000/users/1');
     let user = response.data
     const hasValue = user.currentlyWords.some((innerArray: number[]) => innerArray[1] >= 20) 
@@ -120,13 +123,17 @@ newArray.push(newWord)
       setUser(user)
       setCurrentlyWords(words); // Set the Currently Words 
   };
-
   useEffect(() => {
     fetchData();
   }, []);
 
+  const contextValue: MyContextValues = {
+    user,
+    currentlyWords,
+    fetchData,
+  };
   return (
-    <ContextLessons.Provider value={{ user, currentlyWords, fetchData }}>
+    <ContextLessons.Provider value={contextValue}>
       {children}
     </ContextLessons.Provider>
   );
