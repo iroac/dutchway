@@ -39,7 +39,6 @@ export const MyContextProvider = ({ children }: { children: ReactNode }) => {
   const [currentlyWords, setCurrentlyWords] = useState<Word[]>([]);
  
   const fetchData = async () => {
-    console.log('works') 
     const response = await axios.get('http://localhost:3000/users/1');
     let user = response.data
     const hasValue = user.currentlyWords.some((innerArray: number[]) => innerArray[1] >= 20) 

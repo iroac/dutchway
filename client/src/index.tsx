@@ -31,11 +31,17 @@ root.render(
   <React.StrictMode>
           <BrowserRouter>
         <NavBar/>
+        <MyContextProvider>
         <Routes>
           <Route path="/" element={<App/>} />
           <Route path="/grammar" element={<GrammarPage/>} />
           <Route path="/grammar/structure/:structure" element={<GrammarStructures/>} />
           <Route path="/grammar/:verbtime" element={<VerbTenses/>} />
+          <Route path="/lessons" element={<LessonsPage/>} />
+          <Route path="/dailylesson" element={<LessonMain/>} />
+          <Route path="/phraseslesson/:order" element={<LeassonPhrases/>} />
+          <Route path="/sizetosizelesson" element={<LeassonSideBySide/>} />
+          <Route path="/wordtowordlesson/:order" element={<LessonWordtoWord/>} />
           <Route path="/dictionary" element={<DictionaryPage/>} />
           <Route path="/material" element={<MaterialPage/>} />
           <Route path="/textmaterial" element={<TextMaterialPage/>} />
@@ -45,17 +51,7 @@ root.render(
           <Route path="/posts/post/:postId" element={<Post/>} />
           <Route path="/videos/video/:videoId" element={<Video/>} />
         </Routes>
-
-        <MyContextProvider>
-        <Routes>
-          <Route path="/lessons" element={<LessonsPage/>} />
-          <Route path="/dailylesson" element={<LessonMain/>} />
-          <Route path="/phraseslesson/:order" element={<LeassonPhrases/>} />
-          <Route path="/sizetosizelesson" element={<LeassonSideBySide/>} />
-          <Route path="/wordtowordlesson/:order" element={<LessonWordtoWord/>} />
-        </Routes>
         </MyContextProvider>
-        
       </BrowserRouter>
   </React.StrictMode>
 );
