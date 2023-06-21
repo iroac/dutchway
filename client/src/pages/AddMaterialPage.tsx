@@ -53,7 +53,7 @@ const addVideo = async (event: any) => {
   return (
     <div>
 
-<div className=" flex justify-center items-center h-screen w-screen" >
+<div className={`flex justify-center items-center h-screen w-screen`} >
 
 {
   initialView && (
@@ -69,33 +69,37 @@ const addVideo = async (event: any) => {
 
 
 
-{textAddView && (<form className="flex flex-col justify-start items-start shadow-lg w-screen " >
+{textAddView && (<form className="flex flex-col justify-start items-start shadow-lg w-11/12 border-2 rounded-lg border-blue-flag border-solid px-4 pt-5 pb-2" >
 
   <h1 className="text-2xl text-blue-flag" >Title</h1>
-  <input className=" w-full h-9 " value={textTitle} onChange={handleTitleChange}  />
+  <input className=" w-full h-9 border-2 border-solid border-blue-flag " value={textTitle} onChange={handleTitleChange}  />
   
-  <h1 className="text-2xl text-blue-flag mt-10" >Content</h1>
-  <textarea maxLength={1200} className=" w-full " value={textContent} onChange={handleContentChange} ></textarea>
+  <h1 className="text-2xl text-blue-flag mt-8" >Content</h1>
+  <textarea maxLength={1200} className=" w-full border-2 border-solid border-blue-flag " value={textContent} onChange={handleContentChange} ></textarea>
   
-  <button className=" ml-2 text-2xl bg-blue-flag text-white rounded-sm px-2 py-1 mt-10 mb-5 " onClick={addPost} >Post</button>
+  <div className='flex flex-row w-full h-fit justify-end items-center' >
+  <button className="text-2xl bg-blue-flag text-white rounded-sm px-2 py-1 mt-8" onClick={addPost} >Post</button>
+  </div>
   
   </form>)}
 
 
 
 
-{videoAddView && (<form className="flex flex-col justify-start items-start shadow-lg w-screen " >
+{videoAddView && (<form className="flex flex-col justify-start items-start shadow-lg w-11/12 border-2 rounded-lg border-blue-flag border-solid px-4 pt-5 pb-2" >
 
   <h1 className="text-2xl text-blue-flag" >Title</h1>
-  <input className=" w-full h-9 " value={videoTitle} onChange={(e) => {setTitleVideo(e.target.value)}}  />
+  <input className=" w-full h-9 border-2 border-solid border-blue-flag " value={videoTitle} onChange={(e) => {setTitleVideo(e.target.value)}}  />
 
-  <h1 className="text-2xl text-blue-flag" >Url</h1>
-  <input className=" w-full h-9 " value={videoUrl} onChange={(e) => {setVideoUrl(e.target.value)}}  />
+  <h1 className="text-2xl text-blue-flag mt-5" >Url</h1>
+  <input className=" w-full h-9 border-2 border-solid border-blue-flag " value={videoUrl} onChange={(e) => {setVideoUrl(e.target.value)}}  />
   
-  <h1 className="text-2xl text-blue-flag mt-10" >Video Content</h1>
-  <textarea maxLength={1200} className=" w-full " value={videoContent} onChange={(e) => {setVideoContent(e.target.value)}} ></textarea>
+  <h1 className="text-2xl text-blue-flag mt-5" >Video Content</h1>
+  <textarea maxLength={1200} className=" w-full h-20 border-2 border-solid border-blue-flag " value={videoContent} onChange={(e) => {setVideoContent(e.target.value)}} ></textarea>
   
-  <button className=" ml-2 text-2xl bg-blue-flag text-white rounded-sm px-2 py-1 mt-10 mb-5 " onClick={addVideo} >Post</button>
+  <div className='flex flex-row w-full h-fit justify-end items-center' >
+  <button className="text-2xl bg-blue-flag text-white rounded-sm px-2 py-1 mt-8" onClick={addPost} >Post</button>
+  </div>
   
   </form>)}
 
