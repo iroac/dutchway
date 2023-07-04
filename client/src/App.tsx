@@ -49,7 +49,7 @@ useEffect(() => {
         </div>
         <h1 className="text-blue-flag" >{sumTrueValues}/3</h1>
         </div>
-      </div>
+      </div> 
 
 
       <div className="flex flex-col w-11/12 h-11/12 gap-10 mt-10">
