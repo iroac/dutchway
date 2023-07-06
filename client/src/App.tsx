@@ -4,6 +4,7 @@ import {MdRadioButtonUnchecked} from 'react-icons/md';
 import {MdOutlineCheckCircleOutline} from 'react-icons/md';
 import { Link } from "react-router-dom";
 import {useState, useEffect} from 'react'
+import axios from 'axios';
 
 function App() {
 const [currentDay, setCurrentDay] = useState(new Date().getDate());
@@ -21,7 +22,15 @@ const sumTrueValues = doneTasks.reduce((sum, value) => {
   return sum;
 }, 0);
 
-useEffect(() => {
+useEffect(() =>  {
+
+  const fetchdata = async () => {
+    const datatest = await axios.get('http://localhost:3012/api/getwords/1')  
+    datatest.data.phrases = JSON.parse(datatest.data.phrases)
+  console.log(datatest.data)  
+  }
+
+
   const interval = setInterval(() => {
     const newDay = new Date().getDate();
     if (newDay !== currentDay) {
@@ -30,6 +39,7 @@ useEffect(() => {
     }
   }, 1000); // Check every second for day change
 
+  fetchdata()
   return () => {
     clearInterval(interval); // Cleanup the interval on component unmount
   };
@@ -87,7 +97,6 @@ useEffect(() => {
 {doneTasks[2] ? <MdOutlineCheckCircleOutline className="text-4xl mt-9 mr-5 text-blue-flag"  onClick={() => handleRadioClick(2)} /> : <MdRadioButtonUnchecked className="text-4xl mt-9 mr-5 text-blue-flag"   onClick={() => handleRadioClick(2)} />}
 </div>
         </div>
-
    
 
 

@@ -39,8 +39,10 @@ export const MyContextProvider = ({ children }: { children: ReactNode }) => {
   const [currentlyWords, setCurrentlyWords] = useState<Word[]>([]);
  
   const fetchData = async () => {
-    const response = await axios.get('http://localhost:3000/users/1');
+    const response = await axios.get('http://localhost:3012/api/getuser/1');
     let user = response.data
+    user.currentlyWords = JSON.parse(user.currentlyWords);
+    user.wordsLearned = JSON.parse(user.wordsLearned);
     const hasValue = user.currentlyWords.some((innerArray: number[]) => innerArray[1] >= 20) 
     if(hasValue) {
 // Taking the new Learn Word
@@ -114,7 +116,8 @@ newArray.push(newWord)
 
     // Fetching user currently words 
     const wordPromises = user.currentlyWords.map(async (wordId: number[]) => {
-        const response = await axios.get(`http://localhost:3000/words/${wordId[0]}`);
+        const response = await axios.get(`http://localhost:3012/api/getwords/${wordId[0]}`);
+        response.data.phrases = JSON.parse(response.data.phrases);
         return response.data;
       });
       const words = await Promise.all(wordPromises); //Await every req and put on a array
