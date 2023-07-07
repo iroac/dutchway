@@ -55,7 +55,7 @@ function Videos() {
   
   useEffect(() => {
       const fetchData = async () => {
-          const res = await axios.get(`http://localhost:3000/contentvideo/`)
+          const res = await axios.get(`http://localhost:3012/api/getvideos`)
           setVideo(res.data)
         }
         fetchData()

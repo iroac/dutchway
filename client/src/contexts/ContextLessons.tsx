@@ -4,7 +4,8 @@ import axios from 'axios'
 
 export interface User {
   id: number;
-  name: string;
+  l_name: string;
+  f_name: string;
   wordsLearned: number[][];
   currentlyWords: number[][];
   addWords: string[];
@@ -109,15 +110,18 @@ const newWord = generateNewWord()
 newArray.push(newWord)
 
 // Put the new User on the database
-      const newUser = {id: user.id, name:user.name, wordsLearned:user.wordsLearned, currentlyWords:newArray} 
-      const response = await axios.put(`http://localhost:3000/users/${user.id}`, newUser);
+      const newWords = {wordsLearned: JSON.stringify(user.wordsLearned), currentlyWords: JSON.stringify(newArray)} 
+      console.log(newWords)
+      const response = await axios.put(`http://localhost:3012/api/updateuser/${user.id}`, newWords); 
       user = response.data
-    }
-
-    // Fetching user currently words 
+      user.currentlyWords = JSON.parse(user.currentlyWords);
+    user.wordsLearned = JSON.parse(user.wordsLearned);
+    } 
+ 
+    // Fetching user currently words  
     const wordPromises = user.currentlyWords.map(async (wordId: number[]) => {
         const response = await axios.get(`http://localhost:3012/api/getwords/${wordId[0]}`);
-        response.data.phrases = JSON.parse(response.data.phrases);
+        response.data.phrases = JSON.parse(response.data.phrases); 
         return response.data;
       });
       const words = await Promise.all(wordPromises); //Await every req and put on a array

@@ -25,7 +25,7 @@ function Post() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get(`http://localhost:3000/contentpost/${postId}`)
+      const res = await axios.get(`http://localhost:3012/api/getposts/${postId}`)
       setPost(res.data)
       setNumPages(Math.ceil(res.data.text.length / pageSize));
     }

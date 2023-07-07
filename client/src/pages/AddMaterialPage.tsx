@@ -25,9 +25,11 @@ const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 const addPost = async (event: any) => {
   event.preventDefault()
   let newPost = { title: textTitle, text: textContent, category: 'mycontent'}
-  await axios.post('http://localhost:3000/contentpost', newPost)
+  await axios.post('http://localhost:3012/api/addpost/', newPost)
   setTextTitle('')
-  setTextContent('')
+  setTextContent('') 
+  setTextAddView(false)
+  setInitialView(true)
 }
 
 
@@ -42,10 +44,12 @@ const addVideo = async (event: any) => {
   let thumbnail = `https://img.youtube.com/vi/${id}/0.jpg`
 
   let newVideo = { title: videoTitle, text: videoContent, url: embedUrl, thumbnail: thumbnail }
-  await axios.post('http://localhost:3000/contentvideo', newVideo)
+  await axios.post('http://localhost:3012/api/addvideo/', newVideo)
   setVideoContent('')
   setTitleVideo('')
   setVideoUrl('')
+  setVideoAddView(false)
+  setInitialView(true)
 }
 
 
@@ -98,7 +102,7 @@ const addVideo = async (event: any) => {
   <textarea maxLength={1200} className=" w-full h-20 border-2 border-solid border-blue-flag " value={videoContent} onChange={(e) => {setVideoContent(e.target.value)}} ></textarea>
   
   <div className='flex flex-row w-full h-fit justify-end items-center' >
-  <button className="text-2xl bg-blue-flag text-white rounded-sm px-2 py-1 mt-8" onClick={addPost} >Post</button>
+  <button className="text-2xl bg-blue-flag text-white rounded-sm px-2 py-1 mt-8" onClick={addVideo} >Post</button>
   </div>
   
   </form>)}

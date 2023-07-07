@@ -78,7 +78,7 @@ const renderedPosts = currentItems.map((p) => {
 
 useEffect(() => {
     const fetchData = async () => {
-        const res = await axios.get(`http://localhost:3000/contentpost/`)
+        const res = await axios.get(`http://localhost:3012/api/getposts`) 
         setPosts(res.data)
       }
       fetchData()
