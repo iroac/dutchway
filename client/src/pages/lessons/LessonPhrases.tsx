@@ -1,6 +1,6 @@
 import {  useContext, useEffect, useState  } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { ContextLessons, User, Word, Phrases } from '../contexts/ContextLessons';
+import { ContextLessons, User, Word, Phrases } from '../../contexts/ContextLessons';
 import axios from 'axios'
 import { IoIosArrowBack } from 'react-icons/io';
 
