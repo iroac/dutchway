@@ -38,7 +38,7 @@ useEffect(() =>  {
     }
   }, 1000); // Check every second for day change
 
-  // fetchdata()
+  // fetchdata()   
   return () => {
     clearInterval(interval); // Cleanup the interval on component unmount
   };
