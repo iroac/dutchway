@@ -95,7 +95,7 @@ app.put('/api/updateuser/:id', (req: Request, res: Response) => {
   const { id } = req.params; // Get the ID from the request parameters
   const { wordsLearned, currentlyWords } = req.body; // Get the updated column values from the request body
 
-  const query = 'UPDATE users SET currentlyWords = ?, wordsLearned = ? WHERE id = ?';  
+  const query = 'UPDATE users SET currentlyWords = ?, wordsLearned = ? WHERE id = ?';   
 
   // Execute the MySQL query with the updated data and ID
   connection.query(query, [currentlyWords, wordsLearned, id], (error, results) => {

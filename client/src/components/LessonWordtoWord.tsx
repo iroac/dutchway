@@ -57,8 +57,9 @@ setWriteText(event.target.value)
   const handleContinueButton = () => {
     if(totalClickQuestions === questions.length * 2) {
       setShowFinalResult(true)
-      axios.put(`http://localhost:3000/users/${user?.id}`, pointUser)
-    } 
+      let putuser = { currentlyWords: JSON.stringify(pointUser?.currentlyWords), wordsLearned: JSON.stringify(pointUser?.wordsLearned) }
+      axios.put(`http://localhost:3012/api/updateuser/${user?.id}`, putuser)
+    }  
 
     if(!showWriteQuestions) {
       if(totalClickQuestions === questions.length) {
