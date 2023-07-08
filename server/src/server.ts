@@ -22,7 +22,7 @@ connection.query('SELECT 1 + 1', (error: mysql.MysqlError | null, results: any[]
 app.use(express.json());
 
 // enable cookies and sessions across domains;
-app.use(cors({ origin: 'http://localhost:3002', credentials: true,  methods: 'GET, POST, PUT, DELETE',  allowedHeaders: 'Content-Type, Authorization' })) // enable cookies and sessions across domains}));
+app.use(cors({ origin: 'http://localhost:3003', credentials: true,  methods: 'GET, POST, PUT, DELETE',  allowedHeaders: 'Content-Type, Authorization' })) // enable cookies and sessions across domains}));
 
 
 

@@ -4,7 +4,6 @@ import {MdRadioButtonUnchecked} from 'react-icons/md';
 import {MdOutlineCheckCircleOutline} from 'react-icons/md';
 import { Link } from "react-router-dom";
 import {useState, useEffect} from 'react'
-import axios from 'axios';
 
 function App() {
 const [currentDay, setCurrentDay] = useState(new Date().getDate());
@@ -24,11 +23,11 @@ const sumTrueValues = doneTasks.reduce((sum, value) => {
 
 useEffect(() =>  {
 
-  const fetchdata = async () => {
-    const datatest = await axios.get('http://localhost:3012/api/getwords/1')  
-    datatest.data.phrases = JSON.parse(datatest.data.phrases)
-  console.log(datatest.data)  
-  }
+  // const fetchdata = async () => {
+  //   const datatest = await axios.get('http://localhost:3012/api/getwords/1')  
+  //   datatest.data.phrases = JSON.parse(datatest.data.phrases)
+  // console.log(datatest.data)  
+  // }
 
 
   const interval = setInterval(() => {
@@ -39,7 +38,7 @@ useEffect(() =>  {
     }
   }, 1000); // Check every second for day change
 
-  fetchdata()
+  // fetchdata()
   return () => {
     clearInterval(interval); // Cleanup the interval on component unmount
   };
@@ -48,7 +47,7 @@ useEffect(() =>  {
       <div className="flex flex-col justify-center items-center h-1/12 w-screen" >
         <div className='flex flex-row justify-center items-center'>
         <h1 className="text-4xl text-blue-flag mt-10 mb-4" >DAILY PLAN</h1>
-        <img src="/utils/svg/startsticker.gif" className='h-16 w-16' />
+        <img src="/utils/svg/startsticker.gif" alt='start sticker' className='h-16 w-16' />
         </div>
 
         <div className='flex flex-row justify-center items-center w-screen gap-2' >
@@ -76,11 +75,11 @@ useEffect(() =>  {
 
         
         <div className="flex flex-row w-full h-48 justify-start items-center px-2 shadow-lg" >
-       <div className="flex justify-center items-center h-36 w-3/12 ml-4"> <img src='/utils/svg/timetolearn.png'  className=' pl-2 h-36 w-36' /> </div>
+       <div className="flex justify-center items-center h-36 w-3/12 ml-4"> <img src='/utils/svg/timetolearn.png' alt='time to learn'  className=' pl-2 h-36 w-36' /> </div>
 <Link to='/lessons' className='flex flex-col h-32 ml-12 w-8/12 items-start'> 
 <h1 className='text-blue-flag text-2xl'>TASK 2</h1> 
 <h1 className='text-blue-flag text-lg' >COMPLETE THE DAILY LESSON</h1>
-</Link>
+</Link> 
 <div className='flex justify-end w-1/12 h-full items-start' >
 {doneTasks[1] ? <MdOutlineCheckCircleOutline className="text-4xl mt-9 mr-5 text-blue-flag"  onClick={() => handleRadioClick(1)} /> : <MdRadioButtonUnchecked className="text-4xl mt-9 mr-5 text-blue-flag"   onClick={() => handleRadioClick(1)} />}
 </div>

@@ -36,7 +36,7 @@ const addPost = async (event: any) => {
 const addVideo = async (event: any) => {
   event.preventDefault()
 
-  const youtubeRegex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const youtubeRegex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|v=)([^#]*).*/;
   const match = videoUrl.match(youtubeRegex);
   const id = match && match[2] ? match[2] : null;
   

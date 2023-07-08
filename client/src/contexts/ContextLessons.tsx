@@ -38,6 +38,7 @@ export const ContextLessons = createContext<MyContextValues>({
 export const MyContextProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | undefined>();
   const [currentlyWords, setCurrentlyWords] = useState<Word[]>([]);
+  const [randomNumber, setRandomNumber] = useState<number>(0);
  
   const fetchData = async () => {
     const response = await axios.get('http://localhost:3012/api/getuser/1');
@@ -45,6 +46,8 @@ export const MyContextProvider = ({ children }: { children: ReactNode }) => {
     user.currentlyWords = JSON.parse(user.currentlyWords);
     user.wordsLearned = JSON.parse(user.wordsLearned);
     const hasValue = user.currentlyWords.some((innerArray: number[]) => innerArray[1] >= 20) 
+
+  // If contains some words with more them 20 point it will generate a new words based on the id.
     if(hasValue) {
 // Taking the new Learn Word
 const learnWord = user.currentlyWords.filter((innerArray: number[]) => innerArray[1] >= 20)
@@ -68,39 +71,39 @@ function containAllWords(arrays: number[][], number: number): boolean {
   return true;
 }
 
-let is100used = containAllWords(user.wordsLearned, 100)
-let is1000used = containAllWords(user.wordsLearned, 1000)
-let randomNumber = Math.floor(Math.random() * 100) + 1; 
-let isWordLearned = user.wordsLearned.some((innerArray: number[]) => innerArray[0] === randomNumber)
-let isWordLearning = newArray.some((innerArray: number[]) => innerArray[0] === randomNumber)  
-
 // All Varibles below
 // First if the learnWord is below 100 (The phrases is only from the 100 words, so it will returns another index below 100)
 // Second if the learnWord is below 100 and all the first 100 words were already learn it will generates > 100 index
 // Third if all the 1000 words were learn then it'll console.log a message for now
 // Fourth if the words it's up to 100 and still has words remaining it'll generate a wordIndex above 100
+let is100used = containAllWords(user.wordsLearned, 100)
+let is1000used = containAllWords(user.wordsLearned, 1000)
+let isWordLearned: boolean;
+let isWordLearning: boolean;
+
+
 if(learnWord[0][0] <= 100 && !is100used) {
-while (isWordLearned || isWordLearning) {             
-  randomNumber = Math.floor(Math.random() * 100) + 1; 
+ do {             
+  setRandomNumber(Math.floor(Math.random() * 100) + 1)
   isWordLearned = user.wordsLearned.some((innerArray: number[]) => innerArray[0] === randomNumber)
   isWordLearning = newArray.some((innerArray: number[]) => innerArray[0] === randomNumber)
-  }   
+  } while (isWordLearned || isWordLearning)
   return [randomNumber, 0]
 } else if (learnWord[0][0] <= 100 && is100used) {
-while (isWordLearned || isWordLearning || randomNumber <= 100) {             
-  randomNumber = Math.floor(Math.random() * 1000) + 1; 
+ do {             
+  setRandomNumber(Math.floor(Math.random() * 100) + 1)
   isWordLearned = user.wordsLearned.some((innerArray: number[]) => innerArray[0] === randomNumber)
   isWordLearning = newArray.some((innerArray: number[]) => innerArray[0] === randomNumber)
-  } 
+  } while (isWordLearned || isWordLearning || randomNumber <= 100)
   return [randomNumber, 0]
 } else if(is1000used) {
 console.log('You finish all the words')
 } else {
-  while (isWordLearned || isWordLearning || randomNumber <= 100) {           
-    randomNumber = Math.floor(Math.random() * 1000) + 1; 
+   do {           
+    setRandomNumber(Math.floor(Math.random() * 1000) + 1)
     isWordLearned = user.wordsLearned.some((innerArray: number[]) => innerArray[0] === randomNumber)
     isWordLearning = newArray.some((innerArray: number[]) => innerArray[0] === randomNumber) 
-    }   
+    } while (isWordLearned || isWordLearning || randomNumber <= 100)
     return [randomNumber, 0]
 }
 }
@@ -129,8 +132,10 @@ newArray.push(newWord)
       setUser(user)
       setCurrentlyWords(words); // Set the Currently Words 
   };
+
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const contextValue: MyContextValues = {

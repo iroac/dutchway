@@ -1,5 +1,5 @@
 import {  useContext, useEffect, useState  } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { ContextLessons, User, Word, Phrases } from '../../contexts/ContextLessons';
 import {IoIosArrowBack} from 'react-icons/io';
 import axios from 'axios'
@@ -10,13 +10,14 @@ const randomWordToWordOrder = () => {let order = ['eng', 'dutch']
   }
 
 function LeassonMain() {
-  const { user, currentlyWords, fetchData } = useContext(ContextLessons);
+  const order = randomWordToWordOrder();
+  const { user, currentlyWords } = useContext(ContextLessons);
   const navigate = useNavigate()
-
+ 
   //STATES
   // Featching states
   const [questions, setQuestions] = useState<Word[]>([]);
-  const [pointUser, setPointUser] = useState<User | undefined>(user)
+  const [pointUser, setPointUser] = useState<User | undefined>()
   const [options, setOptions] = useState<Word[]>([])
   // Change Lesson States
   const [showFinalResult, setShowFinalResult] = useState<boolean>(false);
@@ -24,7 +25,6 @@ function LeassonMain() {
   const [showWriteQuestions, setWriteQuestions] = useState<boolean>(false);
   const [showSideBySide, setSideBySide] = useState<boolean>(false);
   const [showPhases, setShowPhrases] = useState<boolean>(false);
-  const [order, setOrder] = useState<string>(() => randomWordToWordOrder())
 
 // WORD TO WORD
   // WORD TO WORD STATES
@@ -350,11 +350,13 @@ const handleAnimationEnd = () => {
       navigate('/lessons')
     }
     if (currentlyWords.length > 0) {
+      setPointUser(user)
       const shuffledQuestions = shuffleArray(currentlyWords).slice(0, 4);
       const shuffledOptions = shuffleArray(shuffledQuestions);
       setQuestions(shuffledQuestions);
       setOptions(shuffledOptions);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -389,9 +391,9 @@ const handleAnimationEnd = () => {
   <div className={'flex flex-row'} >
 
     <div className={'flex flex-col justify-end items-center mb-16'} >
-  {checkButton && <img src="/utils/svg/thoughtfulhead.gif" className="w-20 h-20" />}
-  {selectAnswerRight && <img src="/utils/svg/yessticker.gif" className="w-20 h-20" />}
-  {selectAnswerWrong && <img src="/utils/svg/nosticker.gif" className="w-20 h-20" />}
+  {checkButton && <img src="/utils/svg/thoughtfulhead.gif" alt='thoughtful head' className="w-20 h-20" />}
+  {selectAnswerRight && <img src="/utils/svg/yessticker.gif" alt='yes sticker' className="w-20 h-20" />}
+  {selectAnswerWrong && <img src="/utils/svg/nosticker.gif" alt='no sticker' className="w-20 h-20" />}
   </div>
   
               <div className={`flex flex-col mx-auto shadow-md h-fit w-fit rounded-xl px-16 py-14 justify-center border-solid border-8 border-blue-flag bg-white text-blue-flag text-4xl items-center cursor-pointer mb-20 ${selectAnswerRight ? 'border-green-500 text-green-500' : ''} ${selectAnswerWrong ? 'bg-red-700 border-red-flag text-red-flag' : ''}`}>
@@ -428,7 +430,7 @@ const handleAnimationEnd = () => {
           ): ""}
   
         {showFinalResult && (<div className="flex flex-col justify-start items-center h-screen w-screen" >
-        <img src="/utils/svg/donelesson.gif"/>
+        <img src="/utils/svg/donelesson.gif" alt='done lesson'/>
   <div className=' text-3xl text-blue-flag'>You final scores is {score}/{totalClickQuestions}</div>
   <Link to='/lessons' className="flex flex-row justify-center items-center rounded-lg text-white bg-blue-flag text-2xl px-1 py-2 mt-2"><IoIosArrowBack />Return lessons</Link>
           </div>
@@ -496,9 +498,9 @@ const handleAnimationEnd = () => {
         <div>
         <div className="flex flex-col justify-center items-center mt-16 ">
           <div className={`flex relative h-1/4 w-fit justify-center items-center shadow-md rounded-xl mb-10 px-10 py-10 border-solid border-4 border-blue-flag bg-white text-blue-flag ${selectAnswerWrong ? 'bg-red-700 border-red-flag' : ''} ${selectAnswerRight ? 'border-green-500' : ''}`}>
-          {checkButton && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/thoughtfulhead.gif" className="w-10 h-10" /></div>}
-          {selectAnswerRight && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/yessticker.gif" className="w-10 h-10" /></div>}
-          {selectAnswerWrong && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/nosticker.gif" className="w-10 h-10" /></div>}
+          {checkButton && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/thoughtfulhead.gif" alt='thoughtful head' className="w-10 h-10" /></div>}
+          {selectAnswerRight && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/yessticker.gif" alt='yes sticker' className="w-10 h-10" /></div>}
+          {selectAnswerWrong && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/nosticker.gif" alt='no sticker' className="w-10 h-10" /></div>}
           { order === 'dutch' ?  <div className={`flex flex-row text-2xl items-center cursor-pointer ${selectAnswerRight ? ' text-green-500' : ''} ${selectAnswerWrong ? 'text-red-500' : ''}`}>{questionsPhrases[currentQuestionIndexPhrase].english.split(' ').map((word, index) => (<span key={index} className={`${ currentlyWords.some((obj) => obj.english === word) ? 'text-red-500' : ''} mr-2 `}>{word} </span>))}</div> : ""}
           { order === 'eng' ?  <div className={`flex flex-row text-2xl items-center cursor-pointer ${selectAnswerRight ? ' text-green-500' : ''} ${selectAnswerWrong ? 'text-red-500' : ''}`}>{questionsPhrases[currentQuestionIndexPhrase].dutch.split(' ').map((word, index) => (<span key={index} className={`${currentlyWords.some((obj) => obj.dutch === word) ? 'text-red-500' : ''} mr-2 `}>{word} </span>))}</div> : ""}
           </div>
@@ -534,7 +536,7 @@ const handleAnimationEnd = () => {
       )}
 
 {showFinalResultPhrases && (<div className="flex flex-col justify-start items-center h-screen w-screen" >
-        <img src="/utils/svg/donelesson.gif"/>
+        <img src="/utils/svg/donelesson.gif" alt='done lesson' />
   <div className=' text-3xl text-blue-flag'>You final scores is {score}/{totalClickQuestions}</div>
   <Link to='/lessons' className="flex flex-row justify-center items-center rounded-lg text-white bg-blue-flag text-2xl px-1 py-2 mt-2"><IoIosArrowBack />Return lessons</Link>
           </div>

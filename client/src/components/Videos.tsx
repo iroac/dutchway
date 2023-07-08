@@ -47,7 +47,7 @@ function Videos() {
     // Rendered CurrentItems
   const renderedvideo = currentItems.map((p) => {   
           return (<Link to={`video/${p.id}`} key={p.id} className="flex flex-col group shadow-md justify-cente h-44 w-48 items-center cursor-pointer rounded-lg border-solid border-4 bg-blue-flag border-blue-flag hover:bg-white " >
-           <div className="flex flex-grow justify-start items-center w-full h-3/4 overflow-hidden" ><img src={p.thumbnail} className="w-full h-44" /></div>
+           <div className="flex flex-grow justify-start items-center w-full h-3/4 overflow-hidden" ><img src={p.thumbnail} className="w-full h-44" alt={`thumbnail of video with id ${p.id}`} /></div>
             <div  className="w-full h-1/4 flex justify-center items-center flex-col text-center text-md text-white group-hover:text-blue-flag">{`${p.title.slice(0, 40)}...`}</div>
           </Link>)              
   })
@@ -59,6 +59,7 @@ function Videos() {
           setVideo(res.data)
         }
         fetchData()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
     return ( <div className="flex flex-col h-screen w-screen justify-start items-center">
       <div className="flex flex-wrap justify-center items-center w-screen h-10/12 gap-5 mt-8" >{renderedvideo}</div>

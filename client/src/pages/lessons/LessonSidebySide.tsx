@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { ContextLessons, Word } from "../contexts/ContextLessons";
+import { ContextLessons, Word } from "../../contexts/ContextLessons";
 import {IoIosArrowBack} from 'react-icons/io';
 
 const LeassonSidebySide = () => {
-  const { user, currentlyWords, fetchData } = useContext(ContextLessons);
+  const { user, currentlyWords } = useContext(ContextLessons);
   const navigate = useNavigate();
-
+ 
   // States
   // Fetching States
   const [questions, setQuestions] = useState<Word[]>([]);
@@ -120,6 +120,7 @@ const LeassonSidebySide = () => {
       setQuestions(shuffledQuestions);
       setOptions(shuffledOptions);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div>
@@ -153,7 +154,7 @@ const LeassonSidebySide = () => {
               <div className="flex flex-col justify-center items-center h-screen w-1/2">
                 {options.map((quest, index) => {
                   return (
-                    <button
+                    <button 
                       key={quest.id}
                       onClick={() =>
                         handleEnglishClick(index, quest.dutch, quest.english)
@@ -180,7 +181,7 @@ const LeassonSidebySide = () => {
 
           {showFinalResult && (
             <div className="flex flex-col justify-start mt-28 items-center h-screen w-screen">
-              <img src="/utils/svg/donelesson.gif" />
+              <img src="/utils/svg/donelesson.gif" alt="done lesson" />
               <div className=' text-3xl text-blue-flag' > You final scores is {totalClickQuestions}/{totalClickQuestions} </div>
               <Link to='/lessons' className="flex flex-row justify-center items-center rounded-lg text-white bg-blue-flag text-2xl px-1 py-2 mt-2"><IoIosArrowBack />Return lessons</Link>
             </div>

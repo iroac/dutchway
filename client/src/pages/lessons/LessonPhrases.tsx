@@ -5,13 +5,13 @@ import axios from 'axios'
 import { IoIosArrowBack } from 'react-icons/io';
 
 function LeassonPhrases() {
-  const { user, currentlyWords, fetchData } = useContext(ContextLessons);
+  const { user, currentlyWords } = useContext(ContextLessons);
   const { order } = useParams()
   const navigate = useNavigate()
 
   // STATES
   // Fetching States
-  const [pointUser, setPointUser] = useState<User | undefined>(user)
+  const [pointUser, setPointUser] = useState<User | undefined>()
   const [options, setOptions] = useState<Phrases[]>([]);
   const [questions, setQuestions] = useState<Phrases[]>([]);
   // Question/Total States
@@ -104,6 +104,7 @@ setTotalQuestions(totalQuestions + 1)
       navigate('/lessons')
     }
     if (currentlyWords.length > 0) {
+      setPointUser(user)
       let shuffledQuestions = shuffleArray(currentlyWords).slice(0, 2);
       let hasPhrases = shuffledQuestions.some((quest) => quest.phrases[1].english === '');
       while(hasPhrases) {
@@ -113,6 +114,7 @@ setTotalQuestions(totalQuestions + 1)
       setQuestions([shuffledQuestions[0].phrases[0], shuffledQuestions[0].phrases[1], shuffledQuestions[1].phrases[0], shuffledQuestions[1].phrases[1]]);
       setOptions([shuffledQuestions[0].phrases[0], shuffledQuestions[0].phrases[1], shuffledQuestions[1].phrases[0], shuffledQuestions[1].phrases[1]]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 
@@ -122,9 +124,9 @@ setTotalQuestions(totalQuestions + 1)
         {questions.length > 0 && !showFinalResult && (
           <>
           <div className={`flex relative h-1/4 w-fit justify-center items-center shadow-md rounded-xl mb-10 px-10 py-10 border-solid border-4 border-blue-flag bg-white text-blue-flag ${selectAnswerWrong ? 'bg-red-700 border-red-flag' : ''} ${selectAnswerRight ? 'border-green-500' : ''}`}>
-          {checkButton && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/thoughtfulhead.gif" className="w-10 h-10" /></div>}
-          {selectAnswerRight && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/yessticker.gif" className="w-10 h-10" /></div>}
-          {selectAnswerWrong && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/nosticker.gif" className="w-10 h-10" /></div>}
+          {checkButton && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/thoughtfulhead.gif" alt="thoughtful head" className="w-10 h-10" /></div>}
+          {selectAnswerRight && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/yessticker.gif" alt="yes sticker" className="w-10 h-10" /></div>}
+          {selectAnswerWrong && <div className='flex absolute bottom-0 left-0 justify-end w-10 h-10'><img src="/utils/svg/nosticker.gif" alt='no sticker' className="w-10 h-10" /></div>}
           { order === 'dutch' ?  <div className={`flex flex-row text-2xl items-center cursor-pointer ${selectAnswerRight ? ' text-green-500' : ''} ${selectAnswerWrong ? 'text-red-500' : ''}`}>{questions[currentQuestionIndex].english.split(' ').map((word, index) => (<span key={index} className={`${ currentlyWords.some((obj) => obj.english === word) ? `text-red-500 ` : ''} mr-2 `}>{word} </span>))}</div> : ""}
           { order === 'eng' ?  <div className={`flex flex-row text-2xl items-center cursor-pointer ${selectAnswerRight ? ' text-green-500' : ''}  ${selectAnswerWrong ? 'text-red-500' : ''}`}>{questions[currentQuestionIndex].dutch.split(' ').map((word, index) => (<span key={index} className={`${currentlyWords.some((obj) => obj.dutch === word) ? 'text-red-500' : ''} mr-2 `}>{word} </span>))}</div> : ""}
           </div>
@@ -158,7 +160,7 @@ setTotalQuestions(totalQuestions + 1)
         )}
 
         {showFinalResult && (<div className="flex flex-col justify-start items-center h-screen w-screen mt-28" >
-        <img src="/utils/svg/donelesson.gif" />
+        <img src="/utils/svg/donelesson.gif" alt='done lesson' />
 <div className=' text-3xl text-blue-flag'>You final scores is {score}/{questions.length}</div>
 <Link to='/lessons' className="flex flex-row justify-center items-center rounded-lg text-white bg-blue-flag text-2xl px-1 py-2 mt-2"><IoIosArrowBack />Return lessons</Link>
         </div>

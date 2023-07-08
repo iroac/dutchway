@@ -5,13 +5,13 @@ import {IoIosArrowBack} from 'react-icons/io';
 import axios from 'axios'
 
 function LessonWordtoWord() {
-  const { user, currentlyWords, fetchData } = useContext(ContextLessons);
+  const { user, currentlyWords } = useContext(ContextLessons);
   const { order } = useParams()
   const navigate = useNavigate()
 
   //STATES
   // Fetch States
-  const [pointUser, setPointUser] = useState<User | undefined>(user)
+  const [pointUser, setPointUser] = useState<User | undefined>()
   const [questions, setQuestions] = useState<Word[]>([]);
   const [options, setOptions] = useState<Word[]>([])
   // Buttons States
@@ -142,11 +142,13 @@ setTotalClickQuestions(totalClickQuestions + 1)
       navigate('/lessons')
     }
     if (currentlyWords.length > 0) {
+      setPointUser(user)
       const shuffledQuestions = shuffleArray(currentlyWords).slice(0, 4);
       const shuffledOptions = shuffleArray(shuffledQuestions);
       setQuestions(shuffledQuestions);
       setOptions(shuffledOptions);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -182,9 +184,9 @@ setTotalClickQuestions(totalClickQuestions + 1)
   <div className={'flex flex-row'} >
 
     <div className={'flex flex-col justify-end items-center mb-16'} >
-  {checkButton && <img src="/utils/svg/thoughtfulhead.gif" className="w-20 h-20" />}
-  {selectAnswerRight && <img src="/utils/svg/yessticker.gif" className="w-20 h-20" />}
-  {selectAnswerWrong && <img src="/utils/svg/nosticker.gif" className="w-20 h-20" />}
+  {checkButton && <img src="/utils/svg/thoughtfulhead.gif" alt="thoughtful head" className="w-20 h-20" />}
+  {selectAnswerRight && <img src="/utils/svg/yessticker.gif" alt="yes stricker" className="w-20 h-20" />}
+  {selectAnswerWrong && <img src="/utils/svg/nosticker.gif" alt="no stricker" className="w-20 h-20" />}
   </div>
   
               <div className={`flex flex-col mx-auto shadow-md h-fit w-fit rounded-xl px-16 py-14 justify-center border-solid border-8 border-blue-flag bg-white text-blue-flag text-4xl items-center cursor-pointer mb-20 ${selectAnswerRight ? 'border-green-500 text-green-500' : ''} ${selectAnswerWrong ? 'bg-red-700 border-red-flag text-red-flag' : ''}`}>
@@ -222,7 +224,7 @@ setTotalClickQuestions(totalClickQuestions + 1)
   
   
         {showFinalResult && (<div className="flex flex-col justify-start items-center h-screen w-screen" >
-        <img src="/utils/svg/donelesson.gif"/>
+        <img src="/utils/svg/donelesson.gif" alt="done lesson" />
   <div className=' text-3xl text-blue-flag'>You final scores is {score}/{totalClickQuestions}</div>
   <Link to='/lessons' className="flex flex-row justify-center items-center rounded-lg text-white bg-blue-flag text-2xl px-1 py-2 mt-2"><IoIosArrowBack />Return lessons</Link>
           </div>

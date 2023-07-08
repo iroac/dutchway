@@ -1,5 +1,3 @@
-import {  useContext, useEffect } from 'react';
-import { ContextLessons } from '../../contexts/ContextLessons';
 import { Link } from "react-router-dom";
 import {WiDayCloudy} from 'react-icons/wi';
 
