@@ -14,6 +14,7 @@ import LessonWordtoWord from './pages/lessons/LessonWordtoWord';
 import GrammarStructures from './pages/grammar/GrammarStructures';
 import LeassonSideBySide from './pages/lessons/LessonSidebySide';
 import SignUp from './pages/auth/SignUp';
+import Login from './pages/auth/Login';
 import VerbTenses from './pages/grammar/VerbTenses';
 import Home from './pages/Home';
 import NavBar from './components/NavBar'
@@ -42,6 +43,7 @@ function App() {
     <Route path="/videos/video/:videoId" element={<Video/>} />
     <>
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/*" element={<><NavBar /><Outlet /></>}/>
     </>
   </Routes>
