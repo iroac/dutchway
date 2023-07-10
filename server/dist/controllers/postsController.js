@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.addPost = exports.getPostById = exports.getAllPosts = void 0;
-const dbconfig_1 = __importDefault(require("../utils/dbconfig"));
+const dbconfig_1 = __importDefault(require("../config/dbconfig"));
 const getAllPosts = (req, res) => {
     const query = 'SELECT * FROM content_post';
     dbconfig_1.default.query(query, (error, results) => {

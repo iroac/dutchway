@@ -5,7 +5,7 @@ import {MdOutlineCheckCircleOutline} from 'react-icons/md';
 import { Link } from "react-router-dom";
 import {useState, useEffect} from 'react'
 
-function Home() {
+function Home() { 
 const [currentDay, setCurrentDay] = useState(new Date().getDate());
 const [doneTasks, setDoneTasks] = useState<boolean[]>([false,false,false])
 const handleRadioClick = (index: number) => {

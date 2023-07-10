@@ -1,4 +1,4 @@
-import connection from '../utils/dbconfig'
+import connection from '../config/dbconfig'
 import { Request, Response } from 'express';
 
 

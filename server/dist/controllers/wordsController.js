@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getwordbyid = exports.getallwords = void 0;
-const dbconfig_1 = __importDefault(require("../utils/dbconfig"));
+const dbconfig_1 = __importDefault(require("../config/dbconfig"));
 const getallwords = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const query = 'SELECT * FROM words';
     dbconfig_1.default.query(query, (error, results) => {

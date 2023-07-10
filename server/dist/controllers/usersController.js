@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateUserById = exports.getUserById = void 0;
-const dbconfig_1 = __importDefault(require("../utils/dbconfig"));
+const dbconfig_1 = __importDefault(require("../config/dbconfig"));
 const getUserById = (req, res) => {
     const { id } = req.params;
     const query = 'SELECT * FROM users WHERE id = ?';

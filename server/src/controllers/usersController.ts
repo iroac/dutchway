@@ -1,4 +1,4 @@
-import connection from '../utils/dbconfig'
+import connection from '../config/dbconfig'
 import { Request, Response } from 'express';
 
 export const getUserById = (req: Request, res: Response) => {
@@ -44,3 +44,5 @@ export const updateUserById = (req: Request, res: Response) => {
       res.json(results[0]);
     });
   };
+
+
