@@ -1,15 +1,20 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom"
 
 function SignUp() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [fName, setFName] = useState('');
     const [lName, setLName] = useState('');
+    const navigate = useNavigate()
 
-const handleSubmit = (e: FormEvent) => {
+const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-    axios.post('http://localhost:3012/api/signup', { email, password, f_name: fName, l_name: lName, wordsLearned: '[]', currentlyWords: '[[101, 0], [1, 0], [2, 0], [102, 0]]'  })
+   const res = await axios.post('http://localhost:3012/api/signup', { email, password, f_name: fName, l_name: lName, wordsLearned: '[]', currentlyWords: '[[101, 0], [1, 0], [2, 0], [102, 0]]'  })
+   if(res) {
+    navigate('/login')
+   }
 }
 
 const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {

@@ -1,4 +1,4 @@
-import { useEffect, useState, ReactNode, createContext } from 'react'
+import { useState, ReactNode, createContext } from 'react'
 import axios from 'axios'
 
 
@@ -41,8 +41,9 @@ export const MyContextProvider = ({ children }: { children: ReactNode }) => {
   const [randomNumber, setRandomNumber] = useState<number>(0);
  
   const fetchData = async () => {
-    const response = await axios.get('http://localhost:3012/api/getuser/1');
-    let user = response.data
+    const auth = await axios.get('http://localhost:3012/api/auth', {withCredentials: true})
+    const response = await axios.get(`http://localhost:3012/api/getuser/${auth.data.id}`, {withCredentials: true});
+    let user = response.data 
     user.currentlyWords = JSON.parse(user.currentlyWords);
     user.wordsLearned = JSON.parse(user.wordsLearned);
     const hasValue = user.currentlyWords.some((innerArray: number[]) => innerArray[1] >= 20) 
@@ -123,7 +124,7 @@ newArray.push(newWord)
  
     // Fetching user currently words  
     const wordPromises = user.currentlyWords.map(async (wordId: number[]) => {
-        const response = await axios.get(`http://localhost:3012/api/getwords/${wordId[0]}`);
+        const response = await axios.get(`http://localhost:3012/api/getwords/${wordId[0]}`, {withCredentials: true});
         response.data.phrases = JSON.parse(response.data.phrases); 
         return response.data;
       });
@@ -132,11 +133,6 @@ newArray.push(newWord)
       setUser(user)
       setCurrentlyWords(words); // Set the Currently Words 
   };
-
-  useEffect(() => {
-    fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const contextValue: MyContextValues = {
     user,

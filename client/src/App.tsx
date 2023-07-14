@@ -19,6 +19,8 @@ import VerbTenses from './pages/grammar/VerbTenses';
 import Home from './pages/Home';
 import NavBar from './components/NavBar'
 import { MyContextProvider} from './contexts/ContextLessons';
+import PublicRoute from './components/PublicRoute'
+import ProtectRoute from './components/ProtectRoute'
 
 function App() {
     return (
@@ -37,24 +39,24 @@ function MainApp() {
     {excludeNavBarRoutes.includes(location.pathname) ? null : <NavBar />}
     <MyContextProvider>
     <Routes>
-    <Route path="/" element={<Home/>} />
-    <Route path="/grammar" element={<GrammarPage/>} />
-    <Route path="/grammar/structure/:structure" element={<GrammarStructures/>} />
-    <Route path="/grammar/:verbtime" element={<VerbTenses/>} />
-    <Route path="/lessons" element={<LessonsPage/>} />
-    <Route path="/dailylesson" element={<LessonMain/>} />
-    <Route path="/phraseslesson/:order" element={<LeassonPhrases/>} />
-    <Route path="/sizetosizelesson" element={<LeassonSideBySide/>} />
-    <Route path="/wordtowordlesson/:order" element={<LessonWordtoWord/>} />
-    <Route path="/dictionary" element={<DictionaryPage/>} />
-    <Route path="/material" element={<MaterialPage/>} />
-    <Route path="/videos" element={<Videos/>} />
-    <Route path="/addmaterial" element={<AddMaterialPage/>} />
-    <Route path="/posts" element={<Posts/>} />
-    <Route path="/posts/post/:postId" element={<Post/>} />
-    <Route path="/videos/video/:videoId" element={<Video/>} />
-      <Route path="/signup" element={<SignUp />} />
-      <Route path="/login" element={<Login />} />  
+    <Route path="/" element={ <ProtectRoute><Home/></ProtectRoute>} />
+    <Route path="/grammar" element={ <ProtectRoute><GrammarPage/></ProtectRoute>} />
+    <Route path="/grammar/structure/:structure" element={ <ProtectRoute><GrammarStructures/></ProtectRoute>} />
+    <Route path="/grammar/:verbtime" element={ <ProtectRoute><VerbTenses/></ProtectRoute>} />
+    <Route path="/lessons" element={ <ProtectRoute><LessonsPage/></ProtectRoute>} />
+    <Route path="/dailylesson" element={ <ProtectRoute><LessonMain/></ProtectRoute>} />
+    <Route path="/phraseslesson/:order" element={ <ProtectRoute><LeassonPhrases/></ProtectRoute>} />
+    <Route path="/sizetosizelesson" element={ <ProtectRoute><LeassonSideBySide/></ProtectRoute>} />
+    <Route path="/wordtowordlesson/:order" element={ <ProtectRoute><LessonWordtoWord/></ProtectRoute>} />
+    <Route path="/dictionary" element={ <ProtectRoute><DictionaryPage/></ProtectRoute>} />
+    <Route path="/material" element={ <ProtectRoute><MaterialPage/></ProtectRoute>} />
+    <Route path="/videos" element={ <ProtectRoute><Videos/></ProtectRoute>} />
+    <Route path="/addmaterial" element={ <ProtectRoute><AddMaterialPage/></ProtectRoute>} />
+    <Route path="/posts" element={ <ProtectRoute><Posts/></ProtectRoute>} />
+    <Route path="/posts/post/:postId" element={<ProtectRoute><Post/></ProtectRoute>} />
+    <Route path="/videos/video/:videoId" element={<ProtectRoute><Video/></ProtectRoute>} />
+      <Route path="/signup" element={ <PublicRoute><SignUp /></PublicRoute>} />
+      <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />  
   </Routes>
   </MyContextProvider>
   </>

@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 import {WiDayCloudy} from 'react-icons/wi';
+import {useContext, useEffect} from 'react'
+import ContextLessons from '../../contexts/ContextLessons';
 
 function LessonsPage() {
+  const {fetchData} = useContext(ContextLessons)
   
+  useEffect(() =>  {  
+    fetchData()  
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+ 
   return <div className="flex flex-col justify-start w-screen h-screen bg-slate-50">
     <div  className="flex flex-row justify-center items-center h-2/4 w-full bg-daily-gradient" >
     <Link to="/dailylesson" className="flex flex-col h-1/2 w-1/2 justify-center items-end cursor-pointer"> <WiDayCloudy className="text-9xl text-white" /></Link>

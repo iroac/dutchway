@@ -7,7 +7,7 @@ function NavBar() {
 
 const handleLogout = async () => {
     try {
-        const res = await axios.get('http://localhost:3012/api/logout')
+        const res = await axios.get('http://localhost:3012/api/logout', {withCredentials: true})
         console.log(res.data)
         navigate('/login')
     } catch(err) {

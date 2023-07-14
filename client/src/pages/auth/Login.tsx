@@ -8,18 +8,20 @@ function Login() {
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
-
     const handleSubmit = async (e: FormEvent) => {
       e.preventDefault()
         try {
             const res = await axios.post('http://localhost:3012/api/login', { email, password }, { withCredentials: true })
-            console.log(res)
-            navigate('/')
+              if(res.data.Status === 'Success') {
+                navigate('/')
+              } else {
+                alert(res.data.message)
+              }
+      
         } catch (err) {
             console.log(err)
         } 
     }
-
     const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
       setEmail(e.target.value);
     };

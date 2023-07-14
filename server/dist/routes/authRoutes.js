@@ -10,4 +10,5 @@ const authController_1 = require("../controllers/authController");
 router.post('/login', authController_1.login);
 router.post('/signup', middleware_1.userExists, authController_1.signup);
 router.get('/logout', authController_1.logout);
+router.get('/auth', authController_1.isAuth);
 module.exports = router;

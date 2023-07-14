@@ -18,7 +18,7 @@ const getUserById = (req, res) => {
             res.status(404).json({ error: 'Row not found' });
             return;
         }
-        res.json(results[0]);
+        res.json({ currentlyWords: results[0].currentlyWords, f_name: results[0].f_name, l_name: results[0].l_name, id: results[0].id, wordsLearned: results[0].wordsLearned });
     });
 };
 exports.getUserById = getUserById;

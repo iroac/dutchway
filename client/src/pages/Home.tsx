@@ -5,11 +5,12 @@ import {MdOutlineCheckCircleOutline} from 'react-icons/md';
 import { Link } from "react-router-dom";
 import {useState, useEffect} from 'react'
 
+
 function Home() { 
 const [currentDay, setCurrentDay] = useState(new Date().getDate());
 const [doneTasks, setDoneTasks] = useState<boolean[]>([false,false,false])
 const handleRadioClick = (index: number) => {
-  let newValue = [ ...doneTasks ]
+  let newValue = [ ...doneTasks ] 
   newValue[index] = !newValue[index]
   setDoneTasks(newValue)
 }
@@ -21,14 +22,7 @@ const sumTrueValues = doneTasks.reduce((sum, value) => {
   return sum;
 }, 0);
 
-useEffect(() =>  {
-
-  // const fetchdata = async () => {
-  //   const datatest = await axios.get('http://localhost:3012/api/getwords/1')  
-  //   datatest.data.phrases = JSON.parse(datatest.data.phrases)
-  // console.log(datatest.data)  
-  // }
-
+useEffect(() =>  {  
 
   const interval = setInterval(() => {
     const newDay = new Date().getDate();
@@ -38,7 +32,7 @@ useEffect(() =>  {
     }
   }, 1000); // Check every second for day change
 
-  // fetchdata()   
+  
   return () => {
     clearInterval(interval); // Cleanup the interval on component unmount
   };

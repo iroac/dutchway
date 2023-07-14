@@ -12,7 +12,7 @@ const customFields = {
     passwordField: 'password',
 };
 const verifyCallback = (email, password, done) => {
-    dbconfig_1.default.query('SELECT * FROM users WHERE email = ? ', [email], (error, results, fields) => {
+    dbconfig_1.default.query('SELECT * FROM users WHERE email = ? ', [email, password], (error, results, fields) => {
         if (error) {
             return done(error);
         }

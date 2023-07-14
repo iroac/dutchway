@@ -2,6 +2,7 @@ import connection from '../config/dbconfig'
 import { Request, Response } from 'express';
 
 export const getUserById = (req: Request, res: Response) => {
+
     const {id} = req.params;
     const query = 'SELECT * FROM users WHERE id = ?';
   
@@ -17,7 +18,7 @@ export const getUserById = (req: Request, res: Response) => {
         return;
       }
   
-      res.json(results[0]);
+      res.json({ currentlyWords: results[0].currentlyWords, f_name: results[0].f_name, l_name: results[0].l_name, id: results[0].id, wordsLearned: results[0].wordsLearned});
   })}
 
 export const updateUserById = (req: Request, res: Response) => {

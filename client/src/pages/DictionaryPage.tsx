@@ -13,7 +13,7 @@ const [words, setWords] = useState<Word[]>([]);
 useEffect(() => {
   const fetchData = async () => {
     if (words.length === 0) {
-      const res = await axios.get<Word[]>('http://localhost:3012/api/getwords');
+      const res = await axios.get<Word[]>('http://localhost:3012/api/getwords', {withCredentials: true});
       setWords(res.data);
     }
   };

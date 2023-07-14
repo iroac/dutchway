@@ -3,9 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.userExists = exports.isAuth = exports.genPassword = exports.validPassword = void 0;
+exports.isAuthMiddleware = exports.userExists = exports.genPassword = exports.validPassword = void 0;
 const dbconfig_1 = __importDefault(require("./config/dbconfig"));
 const crypto_1 = __importDefault(require("crypto"));
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 function validPassword(password, hash, salt) {
     const hashVerify = crypto_1.default.pbkdf2Sync(password, salt, 10000, 60, 'sha512').toString('hex');
     return hash === hashVerify;
@@ -17,15 +18,6 @@ function genPassword(password) {
     return { salt: salt, hash: genhash };
 }
 exports.genPassword = genPassword;
-function isAuth(req, res, next) {
-    if (req.isAuthenticated()) {
-        next();
-    }
-    else {
-        res.redirect('/login');
-    }
-}
-exports.isAuth = isAuth;
 function userExists(req, res, next) {
     dbconfig_1.default.query('Select * from users where email=? ', [req.body.email], function (error, results, fields) {
         if (error) {
@@ -40,3 +32,20 @@ function userExists(req, res, next) {
     });
 }
 exports.userExists = userExists;
+function isAuthMiddleware(req, res, next) {
+    const token = req.cookies.token;
+    if (!token) {
+        return res.json({ message: "User authenticated not" });
+    }
+    else {
+        jsonwebtoken_1.default.verify(token, "our-jsonwebtoken-secret-key", (err, decoded) => {
+            if (err) {
+                return res.json({ message: "User authenticated not", error: err });
+            }
+            else {
+                next();
+            }
+        });
+    }
+}
+exports.isAuthMiddleware = isAuthMiddleware;
