@@ -12,7 +12,9 @@ const videosRoutes = require('./routes/videosRoutes');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
 const app = (0, express_1.default)();
+const helmet = require('helmet');
 // Middlewares             
+app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cookieParser());
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));

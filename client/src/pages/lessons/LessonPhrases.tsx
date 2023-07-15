@@ -42,7 +42,7 @@ function LeassonPhrases() {
     if(totalQuestions === questions.length) {
 setShowFinalResult(true)
 let putuser = { currentlyWords: JSON.stringify(pointUser?.currentlyWords), wordsLearned: JSON.stringify(pointUser?.wordsLearned) }
-axios.put(`http://localhost:3012/api/updateuser/${user?.id}`, putuser)
+axios.put(`http://localhost:3012/api/updateuser/${user?.id}`, putuser, {withCredentials: true})
     } else {
       if (currentQuestionIndex === questions.length - 1) {
         setCurrentQuestionIndex(0);

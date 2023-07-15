@@ -25,7 +25,7 @@ const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 const addPost = async (event: any) => {
   event.preventDefault()
   let newPost = { title: textTitle, text: textContent, category: 'mycontent'}
-  await axios.post('http://localhost:3012/api/addpost/', newPost)
+  await axios.post('http://localhost:3012/api/addpost/', newPost,  {withCredentials: true})
   setTextTitle('')
   setTextContent('') 
   setTextAddView(false)
@@ -44,7 +44,7 @@ const addVideo = async (event: any) => {
   let thumbnail = `https://img.youtube.com/vi/${id}/0.jpg`
 
   let newVideo = { title: videoTitle, text: videoContent, url: embedUrl, thumbnail: thumbnail }
-  await axios.post('http://localhost:3012/api/addvideo/', newVideo)
+  await axios.post('http://localhost:3012/api/addvideo/', newVideo,  {withCredentials: true})
   setVideoContent('')
   setTitleVideo('')
   setVideoUrl('')

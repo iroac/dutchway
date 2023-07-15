@@ -21,7 +21,7 @@ import NavBar from './components/NavBar'
 import { MyContextProvider} from './contexts/ContextLessons';
 import PublicRoute from './components/PublicRoute'
 import ProtectRoute from './components/ProtectRoute'
-
+ 
 function App() {
     return (
         <BrowserRouter>

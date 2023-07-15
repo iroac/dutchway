@@ -7,6 +7,7 @@ exports.isAuth = exports.logout = exports.login = exports.signup = void 0;
 const dbconfig_1 = __importDefault(require("../config/dbconfig"));
 const middleware_1 = require("../middleware");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+require('dotenv').config();
 const signup = (req, res, next) => {
     const saltHash = (0, middleware_1.genPassword)(req.body.password);
     const salt = saltHash.salt;
@@ -31,7 +32,7 @@ const login = (req, res, next) => {
         if (data.length > 0 && isValid) {
             const email = data[0].email;
             const userId = data[0].id;
-            const token = jsonwebtoken_1.default.sign({ email, id: userId }, "our-jsonwebtoken-secret-key", { expiresIn: '1d' });
+            const token = jsonwebtoken_1.default.sign({ email, id: userId }, `${process.env.JWT_SECRET}`, { expiresIn: '1d' });
             res.cookie('token', token);
             return res.json({ Status: 'Success', userId: userId });
         }
@@ -52,7 +53,7 @@ function isAuth(req, res) {
         return res.json({ message: "User not authenticated " });
     }
     else {
-        jsonwebtoken_1.default.verify(token, "our-jsonwebtoken-secret-key", (err, decoded) => {
+        jsonwebtoken_1.default.verify(token, `${process.env.JWT_SECRET}`, (err, decoded) => {
             if (err) {
                 return res.json({ message: "User not authenticated", error: err });
             }

@@ -2,6 +2,7 @@ import connection from '../config/dbconfig'
 import { NextFunction, Request, Response } from 'express';
 import { genPassword, validPassword} from '../middleware'
 import jwt from 'jsonwebtoken'
+require('dotenv').config();
 
 export const signup = (req: Request,res: Response,next: NextFunction)=>{
     const saltHash=genPassword(req.body.password);
@@ -32,7 +33,7 @@ export const login = (req: Request, res: Response, next: NextFunction) => {
       if(data.length > 0 && isValid) {
         const email = data[0].email;
         const userId = data[0].id; 
-        const token = jwt.sign({email, id: userId}, "our-jsonwebtoken-secret-key", {expiresIn: '1d'});
+        const token = jwt.sign({email, id: userId}, `${process.env.JWT_SECRET}`, {expiresIn: '1d'});
         res.cookie('token', token);
         return res.json({Status: 'Success', userId: userId})
       } else {
@@ -52,7 +53,7 @@ export function isAuth(req: Request, res: Response) {
       if (!token) {
         return res.json({ message: "User not authenticated "});
       } else {
-        jwt.verify(token, "our-jsonwebtoken-secret-key", (err: any, decoded: any) => {
+        jwt.verify(token, `${process.env.JWT_SECRET}`, (err: any, decoded: any) => {
           if (err) {
             return res.json({ message: "User not authenticated", error: err });
           } else {
