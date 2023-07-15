@@ -2,12 +2,24 @@ import { Link } from "react-router-dom";
 import {WiDayCloudy} from 'react-icons/wi';
 import {useContext, useEffect} from 'react'
 import ContextLessons from '../../contexts/ContextLessons';
+import { toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 function LessonsPage() {
   const {fetchData} = useContext(ContextLessons)
   
   useEffect(() =>  {  
     fetchData()  
+    toast('🦄 Wow so easy!', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });      
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
  

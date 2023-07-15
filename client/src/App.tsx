@@ -21,6 +21,8 @@ import NavBar from './components/NavBar'
 import { MyContextProvider} from './contexts/ContextLessons';
 import PublicRoute from './components/PublicRoute'
 import ProtectRoute from './components/ProtectRoute'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
  
 function App() {
     return (
@@ -59,6 +61,7 @@ function MainApp() {
       <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />  
   </Routes>
   </MyContextProvider>
+  <ToastContainer position="top-center"autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light"/>
   </>
   )
 }

@@ -8,7 +8,7 @@ const authRoutes = require('./routes/authRoutes')
 const cookieParser = require('cookie-parser'); 
 const app = express(); 
 const helmet = require('helmet')
- 
+  
 // Middlewares             
 app.use(helmet({ contentSecurityPolicy: false }))
 app.use(cookieParser());    

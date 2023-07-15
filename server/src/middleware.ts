@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import connection from './config/dbconfig';
 import crypto from 'crypto'
 import jwt from 'jsonwebtoken'
+require('dotenv').config();
 
 export function validPassword(password: any,hash: any,salt: any){
     const hashVerify=crypto.pbkdf2Sync(password,salt,10000,60,'sha512').toString('hex');
@@ -38,7 +39,7 @@ export function isAuthMiddleware(req: Request, res: Response, next: NextFunction
     if (!token) {
       return res.json({ message: "User authenticated not"});
     } else {
-      jwt.verify(token, "our-jsonwebtoken-secret-key", (err: any, decoded: any) => {
+      jwt.verify(token, `${process.env.JWT_SECRET}`, (err: any, decoded: any) => {
         if (err) {
           return res.json({ message: "User authenticated not", error: err });
         } else {

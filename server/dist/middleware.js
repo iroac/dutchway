@@ -7,6 +7,7 @@ exports.isAuthMiddleware = exports.userExists = exports.genPassword = exports.va
 const dbconfig_1 = __importDefault(require("./config/dbconfig"));
 const crypto_1 = __importDefault(require("crypto"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+require('dotenv').config();
 function validPassword(password, hash, salt) {
     const hashVerify = crypto_1.default.pbkdf2Sync(password, salt, 10000, 60, 'sha512').toString('hex');
     return hash === hashVerify;
@@ -38,7 +39,7 @@ function isAuthMiddleware(req, res, next) {
         return res.json({ message: "User authenticated not" });
     }
     else {
-        jsonwebtoken_1.default.verify(token, "our-jsonwebtoken-secret-key", (err, decoded) => {
+        jsonwebtoken_1.default.verify(token, `${process.env.JWT_SECRET}`, (err, decoded) => {
             if (err) {
                 return res.json({ message: "User authenticated not", error: err });
             }
