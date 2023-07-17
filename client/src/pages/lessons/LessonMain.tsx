@@ -8,9 +8,9 @@ const randomWordToWordOrder = () => {let order = ['eng', 'dutch']
   const i = Math.floor(Math.random() * 2);
   return order[i]
   }
+const order = randomWordToWordOrder();
 
 function LeassonMain() {
-  const order = randomWordToWordOrder();
   const { user, currentlyWords } = useContext(ContextLessons);
   const navigate = useNavigate()
  
