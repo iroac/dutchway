@@ -26,13 +26,39 @@ const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 
 const addPost = async (event: any) => {
   event.preventDefault()
+
+  if(textTitle.length > 100) {
+    toast.error('Long title length, try again', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+      setTextTitle('') 
+    } else {
   let newPost = { title: textTitle, text: textContent, category: 'mycontent'}
-  await axios.post('http://localhost:3012/api/addpost/', newPost,  {withCredentials: true})
+  let res = await axios.post('http://localhost:3012/api/addpost/', newPost,  {withCredentials: true})
+  if(res) {
+    toast.success('Text add successfully', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  } 
   setTextTitle('')
   setTextContent('') 
   setTextAddView(false)
   setInitialView(true)
-}
+}}
 
 
 const addVideo = async (event: any) => {
