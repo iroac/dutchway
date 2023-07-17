@@ -2,6 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import {RxVideo} from 'react-icons/rx';
 import {BiBookBookmark} from 'react-icons/bi';
+import { toast } from 'react-toastify';
 
 function AddMaterialPage() {
 const [textContent, setTextContent] = useState<string>('')
@@ -12,6 +13,7 @@ const [videoUrl, setVideoUrl] = useState<string>('')
 const [textAddView, setTextAddView] = useState<Boolean>(false)
 const [videoAddView, setVideoAddView] = useState<Boolean>(false)
 const [initialView, setInitialView] = useState<Boolean>(true)
+
 
 
 const handleContentChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -36,20 +38,46 @@ const addPost = async (event: any) => {
 const addVideo = async (event: any) => {
   event.preventDefault()
 
-  const youtubeRegex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|v=)([^#]*).*/;
-  const match = videoUrl.match(youtubeRegex);
-  const id = match && match[2] ? match[2] : null;
-  
-  let embedUrl = `https://www.youtube.com/embed/${id}`;
-  let thumbnail = `https://img.youtube.com/vi/${id}/0.jpg`
-
-  let newVideo = { title: videoTitle, text: videoContent, url: embedUrl, thumbnail: thumbnail }
-  await axios.post('http://localhost:3012/api/addvideo/', newVideo,  {withCredentials: true})
-  setVideoContent('')
-  setTitleVideo('')
-  setVideoUrl('')
-  setVideoAddView(false)
-  setInitialView(true)
+  if(videoTitle.length > 100) {
+    toast.error('Long title length, try again', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+      setTitleVideo('')
+    } else {
+      const youtubeRegex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|v=)([^#]*).*/;
+      const match = videoUrl.match(youtubeRegex);
+      const id = match && match[2] ? match[2] : null;
+      
+      let embedUrl = `https://www.youtube.com/embed/${id}`;
+      let thumbnail = `https://img.youtube.com/vi/${id}/0.jpg`
+    
+      let newVideo = { title: videoTitle, text: videoContent, url: embedUrl, thumbnail: thumbnail }
+      let res = await axios.post('http://localhost:3012/api/addvideo/', newVideo,  {withCredentials: true})
+      if(res) {
+        toast.success('Video add successfully', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+      }
+      setVideoContent('')
+      setTitleVideo('')
+      setVideoUrl('')
+      setVideoAddView(false)
+      setInitialView(true)
+    }
 }
 
 

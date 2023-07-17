@@ -2,6 +2,7 @@ import {  useContext, useEffect, useState  } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { ContextLessons, User, Word, Phrases } from '../../contexts/ContextLessons';
 import {IoIosArrowBack} from 'react-icons/io';
+import { toast } from 'react-toastify'; 
 import axios from 'axios'
 
 const randomWordToWordOrder = () => {let order = ['eng', 'dutch'] 
@@ -190,20 +191,34 @@ setContinueButtonPhrase(true)
         setSelectAnswerWrong(true)
         }
     } else {
-      if (order === 'eng' ? writeText.toLowerCase().trim() === questions[currentQuestionIndex].english.toLowerCase() : writeText.toLowerCase() === questions[currentQuestionIndex].dutch.toLowerCase() ) {
-        setContinueButton(true);
-        setSelectAnswerRight(true);
-        setScore(score + 1)
-        let questId = questions[currentQuestionIndex].id
-        const questIndex = pointUser?.currentlyWords.findIndex((innerArray: number[]) => innerArray[0] === questId);
-        if (questIndex !== undefined && questIndex !== -1 && pointUser) {
-          pointUser.currentlyWords[questIndex][1] += 1;
-        }
-        } else {
-        setContinueButton(true)
-        setSelectAnswerWrong(true)
-        }
-        
+      if(order === 'eng' ? writeText.toLowerCase().trim().length > questions[currentQuestionIndex].english.toLowerCase().length + 10 : writeText.toLowerCase().trim().length > questions[currentQuestionIndex].dutch.toLowerCase().length + 10 ) {
+        toast.error('Long response length, try again', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+          setWriteText('')
+          setCheckButton(false)
+      } else {
+        if (order === 'eng' ? writeText.toLowerCase().trim() === questions[currentQuestionIndex].english.toLowerCase().trim() : writeText.toLowerCase().trim() === questions[currentQuestionIndex].dutch.toLowerCase().trim() ) {
+          setContinueButton(true);
+          setSelectAnswerRight(true);
+          setScore(score + 1)
+          let questId = questions[currentQuestionIndex].id
+          const questIndex = pointUser?.currentlyWords.findIndex((innerArray: number[]) => innerArray[0] === questId);
+          if (questIndex !== undefined && questIndex !== -1 && pointUser) {
+            pointUser.currentlyWords[questIndex][1] += 1;
+          }
+          } else {
+          setContinueButton(true)
+          setSelectAnswerWrong(true)
+          }
+      }       
     }
     setCheckButton(false)
   setTotalClickQuestions(totalClickQuestions + 1)

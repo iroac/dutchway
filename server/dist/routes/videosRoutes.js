@@ -9,5 +9,5 @@ const videosController_1 = require("../controllers/videosController");
 const middleware_1 = require("../middleware");
 router.get('/getvideos', middleware_1.isAuthMiddleware, videosController_1.getAllVideos);
 router.get('/getvideos/:id', middleware_1.isAuthMiddleware, videosController_1.getVideoById);
-router.post('addvideo', middleware_1.isAuthMiddleware, videosController_1.addVideo);
+router.post('/addvideo', middleware_1.isAuthMiddleware, videosController_1.addVideo);
 module.exports = router;
