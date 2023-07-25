@@ -10,6 +10,9 @@ const connection = mysql_1.default.createConnection({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
+    ssl: {
+        rejectUnauthorized: false,
+    }
 });
 connection.query('SELECT 1 + 1', (error, results) => {
     if (error) {
