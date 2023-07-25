@@ -5,15 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mysql_1 = __importDefault(require("mysql"));
 require('dotenv').config();
-const connection = mysql_1.default.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    ssl: {
-        rejectUnauthorized: false,
-    }
-});
+const connection = mysql_1.default.createConnection(`mysql:${process.env.DATABASE_URL}`);
 connection.query('SELECT 1 + 1', (error, results) => {
     if (error) {
         console.error('Error executing MySQL query:', error);
