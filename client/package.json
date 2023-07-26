@@ -31,7 +31,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server --watch db.json",
-    "proxy": "http://localhost:3012"
+    "proxy": "https://dutchway.onrender.com"
   },
   "eslintConfig": {
     "extends": [

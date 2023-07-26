@@ -41,8 +41,8 @@ export const MyContextProvider = ({ children }: { children: ReactNode }) => {
   const [randomNumber, setRandomNumber] = useState<number>(0);
  
   const fetchData = async () => {
-    const auth = await axios.get('http://localhost:3012/api/auth', {withCredentials: true})
-    const response = await axios.get(`http://localhost:3012/api/getuser/${auth.data.id}`, {withCredentials: true});
+    const auth = await axios.get('https://dutchway.onrender.com/api/auth', {withCredentials: true})
+    const response = await axios.get(`https://dutchway.onrender.com/api/getuser/${auth.data.id}`, {withCredentials: true});
     let user = response.data 
     user.currentlyWords = JSON.parse(user.currentlyWords);
     user.wordsLearned = JSON.parse(user.wordsLearned);
@@ -116,7 +116,7 @@ newArray.push(newWord)
 // Put the new User on the database
       const newWords = {wordsLearned: JSON.stringify(user.wordsLearned), currentlyWords: JSON.stringify(newArray)} 
       console.log(newWords)
-      const response = await axios.put(`http://localhost:3012/api/updateuser/${user.id}`, newWords); 
+      const response = await axios.put(`https://dutchway.onrender.com/api/updateuser/${user.id}`, newWords); 
       user = response.data
       user.currentlyWords = JSON.parse(user.currentlyWords);
     user.wordsLearned = JSON.parse(user.wordsLearned);
@@ -124,7 +124,7 @@ newArray.push(newWord)
  
     // Fetching user currently words  
     const wordPromises = user.currentlyWords.map(async (wordId: number[]) => {
-        const response = await axios.get(`http://localhost:3012/api/getwords/${wordId[0]}`, {withCredentials: true});
+        const response = await axios.get(`https://dutchway.onrender.com/api/getwords/${wordId[0]}`, {withCredentials: true});
         response.data.phrases = JSON.parse(response.data.phrases); 
         return response.data;
       });

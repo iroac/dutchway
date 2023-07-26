@@ -13,7 +13,7 @@ const ProtectRoute: React.FC<PublicRouteProps> = ({ children }) => {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-             const res = await axios.get('http://localhost:3012/api/auth', { withCredentials: true })
+             const res = await axios.get('https://dutchway.onrender.com/api/auth', { withCredentials: true })
                 if(res.data.id) {
                     setUser(true)
                 } else  {

@@ -41,7 +41,7 @@ const addPost = async (event: any) => {
       setTextTitle('') 
     } else {
   let newPost = { title: textTitle, text: textContent, category: 'mycontent'}
-  let res = await axios.post('http://localhost:3012/api/addpost/', newPost,  {withCredentials: true})
+  let res = await axios.post('https://dutchway.onrender.com/api/addpost/', newPost,  {withCredentials: true})
   if(res) {
     toast.success('Text add successfully', {
       position: "top-right",
@@ -85,7 +85,7 @@ const addVideo = async (event: any) => {
       let thumbnail = `https://img.youtube.com/vi/${id}/0.jpg`
     
       let newVideo = { title: videoTitle, text: videoContent, url: embedUrl, thumbnail: thumbnail }
-      let res = await axios.post('http://localhost:3012/api/addvideo/', newVideo,  {withCredentials: true})
+      let res = await axios.post('https://dutchway.onrender.com/api/addvideo/', newVideo,  {withCredentials: true})
       if(res) {
         toast.success('Video add successfully', {
           position: "top-right",

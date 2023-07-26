@@ -88,7 +88,7 @@ function LeassonMain() {
     if(totalQuestions === questionsPhrases.length) {
       setShowFinalResultPhrases(true)
       let putuser = { currentlyWords: JSON.stringify(pointUser?.currentlyWords), wordsLearned: JSON.stringify(pointUser?.wordsLearned) }
-axios.put(`http://localhost:3012/api/updateuser/${user?.id}`, putuser, {withCredentials: true})
+axios.put(`https://dutchway.onrender.com/api/updateuser/${user?.id}`, putuser, {withCredentials: true})
     } else {
       if (currentQuestionIndexPhrase === questionsPhrases.length - 1) {
         setCurrentQuestionIndexPhrase(0);
@@ -281,7 +281,7 @@ const handleDutchClick = (index: number, english: string, dutch: string) => {
                 setOptionsPhrases([shuffledQuestionsPhrases[0].phrases[0], shuffledQuestionsPhrases[0].phrases[1], shuffledQuestionsPhrases[1].phrases[0], shuffledQuestionsPhrases[1].phrases[1]]);
                   } else {
           let putuser = { currentlyWords: JSON.stringify(pointUser?.currentlyWords), wordsLearned: JSON.stringify(pointUser?.wordsLearned) }
-          axios.put(`http://localhost:3012/api/updateuser/${user?.id}`, putuser, {withCredentials: true})
+          axios.put(`https://dutchway.onrender.com/${user?.id}`, putuser, {withCredentials: true})
           setShowFinalResult(true);
         }
       }
@@ -332,7 +332,7 @@ let shuffledQuestionsPhrases = shuffleArray(currentlyWords).slice(0, 2);
       setOptionsPhrases([shuffledQuestionsPhrases[0].phrases[0], shuffledQuestionsPhrases[0].phrases[1], shuffledQuestionsPhrases[1].phrases[0], shuffledQuestionsPhrases[1].phrases[1]]);
         } else {
           let putuser = { currentlyWords: JSON.stringify(pointUser?.currentlyWords), wordsLearned: JSON.stringify(pointUser?.wordsLearned) }
-          axios.put(`http://localhost:3012/api/updateuser/${user?.id}`, putuser, {withCredentials: true})
+          axios.put(`https://dutchway.onrender.com/api/updateuser/${user?.id}`, putuser, {withCredentials: true})
           setShowFinalResult(true);
         }
       }

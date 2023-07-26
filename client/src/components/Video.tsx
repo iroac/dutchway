@@ -17,7 +17,7 @@ function Video() {
 
     useEffect(() => {
         const fetchData = async () => {
-          const res = await axios.get(`http://localhost:3012/api/getvideos/${videoId}`, {withCredentials: true})
+          const res = await axios.get(`https://dutchway.onrender.com/api/getvideos/${videoId}`, {withCredentials: true})
           setVideo(res.data)
         }
         fetchData()

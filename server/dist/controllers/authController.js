@@ -33,7 +33,7 @@ const login = (req, res, next) => {
             const email = data[0].email;
             const userId = data[0].id;
             const token = jsonwebtoken_1.default.sign({ email, id: userId }, `${process.env.JWT_SECRET}`, { expiresIn: '1d' });
-            res.cookie('token', token);
+            res.cookie('token', token, { sameSite: 'none' });
             return res.json({ Status: 'Success', userId: userId });
         }
         else {

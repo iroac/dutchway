@@ -11,21 +11,22 @@ const postsRoutes = require('./routes/postsRoutes');
 const videosRoutes = require('./routes/videosRoutes');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
-const app = (0, express_1.default)();
 const helmet = require('helmet');
+const app = (0, express_1.default)();
+app.set("trust proxy", 1);
 // Middlewares             
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cookieParser());
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-app.use((0, cors_1.default)({ origin: 'http://localhost:3000', credentials: true, methods: 'GET, POST, PUT, DELETE', allowedHeaders: 'Content-Type, Authorization' })); // enable cookies and sessions across domains}));
+app.use((0, cors_1.default)({ origin: ['http://localhost:3000', 'https://dutchway.vercel.app', 'https://dutchway-iroac.vercel.app', 'https://dutchway-git-main-iroac.vercel.app'], credentials: true, methods: 'GET, POST, PUT, DELETE', allowedHeaders: 'Content-Type, Authorization' })); // enable cookies and sessions across domains}));
 app.use('/api', wordsRoutes, usersRoutes, postsRoutes, videosRoutes, authRoutes);
-// Error handling   
+// Error handling    
 app.use((err, req, res, next) => {
     const { statusCode = 500, message = 'Something went wrong' } = err;
     res.status(statusCode).send(message);
 });
-const port = 3012;
+const port = 3013;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });

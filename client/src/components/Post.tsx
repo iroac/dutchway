@@ -25,7 +25,7 @@ function Post() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get(`http://localhost:3012/api/getposts/${postId}`, {withCredentials: true})
+      const res = await axios.get(`https://dutchway.onrender.com/api/getposts/${postId}`, {withCredentials: true})
       setPost(res.data)
       setNumPages(Math.ceil(res.data.text.length / pageSize));
     }

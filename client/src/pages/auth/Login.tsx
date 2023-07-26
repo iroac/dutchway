@@ -11,7 +11,7 @@ function Login() {
     const handleSubmit = async (e: FormEvent) => {
       e.preventDefault()
         try {
-            const res = await axios.post('http://localhost:3012/api/login', { email, password }, { withCredentials: true })
+            const res = await axios.post('https://dutchway.onrender.com/api/login', { email, password }, { withCredentials: true })
               if(res.data.Status === 'Success') {
                 navigate('/')
               } else {
