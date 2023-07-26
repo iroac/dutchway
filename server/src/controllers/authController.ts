@@ -34,7 +34,7 @@ export const login = (req: Request, res: Response, next: NextFunction) => {
         const email = data[0].email;
         const userId = data[0].id; 
         const token = jwt.sign({email, id: userId}, `${process.env.JWT_SECRET}`, {expiresIn: '1d'});
-        res.cookie('token', token, {sameSite: 'none'}); 
+        res.cookie('token', token, {secure: true, sameSite: 'none'}); 
         return res.json({Status: 'Success', userId: userId})
       } else {
         return res.json({message: 'No authorized'})
