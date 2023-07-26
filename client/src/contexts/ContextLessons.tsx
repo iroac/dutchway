@@ -116,7 +116,7 @@ newArray.push(newWord)
 // Put the new User on the database
       const newWords = {wordsLearned: JSON.stringify(user.wordsLearned), currentlyWords: JSON.stringify(newArray)} 
       console.log(newWords)
-      const response = await axios.put(`https://dutchway.onrender.com/api/updateuser/${user.id}`, newWords); 
+      const response = await axios.put(`https://dutchway.onrender.com/api/updateuser/${user.id}`, newWords, {withCredentials: true}); 
       user = response.data
       user.currentlyWords = JSON.parse(user.currentlyWords);
     user.wordsLearned = JSON.parse(user.wordsLearned);

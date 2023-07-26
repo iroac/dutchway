@@ -44,7 +44,7 @@ export const login = (req: Request, res: Response, next: NextFunction) => {
   };
   
 export const logout = (req: Request, res: Response) => {
-  res.clearCookie('token'); 
+  res.clearCookie('token', {secure: true, sameSite: 'none'}); 
   return res.json({Status: 'Success'})
     };
 

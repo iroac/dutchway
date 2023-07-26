@@ -33,7 +33,7 @@ const login = (req, res, next) => {
             const email = data[0].email;
             const userId = data[0].id;
             const token = jsonwebtoken_1.default.sign({ email, id: userId }, `${process.env.JWT_SECRET}`, { expiresIn: '1d' });
-            res.cookie('token', token, { sameSite: 'none' });
+            res.cookie('token', token, { secure: true, sameSite: 'none' });
             return res.json({ Status: 'Success', userId: userId });
         }
         else {
@@ -43,7 +43,7 @@ const login = (req, res, next) => {
 };
 exports.login = login;
 const logout = (req, res) => {
-    res.clearCookie('token');
+    res.clearCookie('token', { secure: true, sameSite: 'none' });
     return res.json({ Status: 'Success' });
 };
 exports.logout = logout;
