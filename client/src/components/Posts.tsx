@@ -74,7 +74,7 @@ function Posts() {;
 
   // Rendered CurrentItems
 const renderedPosts = currentItems.map((p) => {   
-        return <Link key={p.id} to={`post/${p.id}`} className="flex flex-col shadow-md h-20 w-11/12 justify-center items-center cursor-pointer rounded-lg border-solid border-2 border-blue-flag hover:border-white hover:bg-blue-flag text-2xl text-blue-flag hover:text-white">{`${p.title.slice(0, 40)}...`}</Link>
+        return <Link key={p.id} to={`post/${p.id}`} className="flex flex-col shadow-md h-20 w-11/12 justify-center items-center cursor-pointer text-center rounded-lg border-solid border-2 border-blue-flag hover:border-white hover:bg-blue-flag sm:text-2xl text-lg text-blue-flag hover:text-white">{`${p.title.slice(0, 40)}...`}</Link>
 })
 
 
@@ -93,7 +93,7 @@ useEffect(() => {
 
     <div className="flex flex-col justify-center items-center w-screen h-10/12 gap-5 mt-8" >{renderedPosts}</div>
 
-    <div className=" flex flex-row justify-center items-center gap-10 mt-10" >
+    <div className=" flex flex-row justify-center items-center h-2/12 gap-10 mt-10" >
     <BiFirstPage className={` ${previousPageClassNames} text-4xl text-blue-flag`} onClick={handlePreviousPage} />
 <BiLastPage className={` ${nextPageClassNames} text-4xl text-blue-flag`}onClick={handleNextPage}/>
   

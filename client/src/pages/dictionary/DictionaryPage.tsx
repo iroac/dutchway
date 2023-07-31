@@ -1,24 +1,22 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+import jsonData from './words.json'; // Import your JSON data directly
 
 interface Word {
-  id: string;
-  dutch: string;
-  english: string;
-  phrases: string[];
-}
+    id: number;
+    dutch: string;
+    english: string;
+    phrases: {
+        dutch: string;
+        english: string;
+    }[];
+};
+
 function DictionaryPage() {
 const [words, setWords] = useState<Word[]>([]);
 
+// eslint-disable-next-line react-hooks/exhaustive-deps
 useEffect(() => {
-  const fetchData = async () => {
-    if (words.length === 0) {
-      const res = await axios.get<Word[]>('https://dutchway.onrender.com/api/getwords', {withCredentials: true});
-      setWords(res.data);
-    }
-  };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  fetchData();
+  setWords(jsonData.words);
 })
 
   return (

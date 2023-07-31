@@ -69,7 +69,7 @@ useEffect(() =>  {
 
         
         <div className="flex flex-row w-full h-48 justify-start items-center px-2 shadow-lg" >
-       <div className="flex justify-center items-center h-36 w-3/12 ml-4"> <img src='/utils/svg/timetolearn.png' alt='time to learn'  className=' pl-2 h-36 w-36' /> </div>
+       <div className="flex justify-center items-center h-36 w-4/12 ml-4"> <img src='/utils/svg/timetolearn.png' alt='time to learn'  className=' pl-2 h-32 w-32' /> </div>
 <Link to='/lessons' className='flex flex-col h-32 ml-12 w-8/12 items-start'> 
 <h1 className='text-blue-flag text-2xl'>TASK 2</h1> 
 <h1 className='text-blue-flag text-lg' >COMPLETE THE DAILY LESSON</h1>

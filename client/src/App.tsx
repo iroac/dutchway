@@ -1,7 +1,7 @@
 import { Routes, Route, BrowserRouter, useLocation } from 'react-router-dom';
 import GrammarPage from './pages/grammar/GrammarPage'
 import LessonsPage from './pages/lessons/LessonsPage'
-import DictionaryPage from './pages/DictionaryPage'
+import DictionaryPage from './pages/dictionary/DictionaryPage'
 import MaterialPage from './pages/material/MaterialPage'
 import AddMaterialPage from './pages/material/AddMaterialPage'
 import Post from './components/Post'
