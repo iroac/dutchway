@@ -22,7 +22,7 @@ import { MyContextProvider} from './contexts/ContextLessons';
 import PublicRoute from './components/PublicRoute'
 import ProtectRoute from './components/ProtectRoute'
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify'; 
    
 function App() {
     return (
