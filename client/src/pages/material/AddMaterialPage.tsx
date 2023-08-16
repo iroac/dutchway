@@ -133,7 +133,7 @@ const addVideo = async (event: any) => {
   <input className=" w-full h-9 border-2 border-solid border-blue-flag " value={textTitle} onChange={handleTitleChange}  />
   
   <h1 className="text-2xl text-blue-flag mt-8" >Content</h1>
-  <textarea maxLength={1200} className=" w-full border-2 border-solid border-blue-flag " value={textContent} onChange={handleContentChange} ></textarea>
+  <textarea maxLength={10000} className=" w-full border-2 border-solid border-blue-flag " value={textContent} onChange={handleContentChange} ></textarea>
   
   <div className='flex flex-row w-full h-fit justify-end items-center' >
   <button className="text-2xl bg-blue-flag text-white rounded-sm px-2 py-1 mt-8" onClick={addPost} >Post</button>

@@ -83,6 +83,12 @@ function NavBar() {
             >
               MATERIAL
             </Link>
+            <div
+              className="text-red-flag sm:text-sm text-xs px-4 py-2"
+              onClick={handleLogout}
+            >
+              LOGOUT
+            </div>
           </div>
         </div>
       )}
