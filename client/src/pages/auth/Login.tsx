@@ -33,7 +33,7 @@ function Login() {
   return (
     <div className='flex flex-col h-screen w-screen justify-center items-center bg-no-repeat bg-center bg-daily-gradient'  >
         <img src='/dutchwaylogo-removebg.png' alt='dutchway logo' className=' mb-5 w-60 h-auto'  />
-    <form onSubmit={handleSubmit} className='flex flex-col w-4/12 h-11/12 rounded-md bg-white border-solid border-blue-flag border-4 p-6 pb-4 gap-3 shadow-lg shadow-blue-flag ' >
+    <form onSubmit={handleSubmit} className='flex flex-col w-auto h-11/12 rounded-md bg-white border-solid border-blue-flag border-4 p-6 pb-4 gap-3 shadow-lg shadow-blue-flag ' >
         <label className='text-2xl text-blue-flag' htmlFor='mail'>E-mail</label>
         <input type='email' id='mail' value={email} onChange={handleEmailChange} placeholder='joao@gmail.com' className=' text-lg w-auto focus:border-red-flag focus:ring-red-flag focus:outline-none ' />
 
@@ -44,6 +44,7 @@ function Login() {
         <button type='submit' className=' bg-blue-flag text-2xl rounded-lg text-white px-2 py-1 ' >Login</button>
         </div>
     </form>
+    <a href='/signup' className=' pt-4 text-white hover:text-blue-flag ' > Not yet Registered? Click here to Signup </a>
 </div>
   )
 }

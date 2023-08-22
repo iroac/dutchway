@@ -32,8 +32,8 @@ const handleLNameChange = (e: ChangeEvent<HTMLInputElement>) => {
 
   return (
     <div className='flex flex-col h-screen w-screen justify-center items-center bg-no-repeat bg-center bg-daily-gradient'>
-        <img src='/dutchwaylogo-removebg.png' alt='dutchway logo' className=' mb-5 w-60 h-auto'  />
-        <form onSubmit={handleSubmit} className='flex flex-col w-4/12 h-11/12 rounded-md bg-white border-solid border-blue-flag border-4 p-8 pb-4 gap-3 shadow-lg shadow-blue-flag ' >
+      <a href='/login'>  <img src='/dutchwaylogo-removebg.png' alt='dutchway logo' className=' mb-5 w-60 h-auto'  /> </a>
+        <form onSubmit={handleSubmit} className='flex flex-col w-auto h-11/12 rounded-md bg-white border-solid border-blue-flag border-4 p-8 pb-4 gap-3 shadow-lg shadow-blue-flag ' >
             <label className='text-2xl text-blue-flag' htmlFor='fname' >First Name</label>
             <input type='text' placeholder='John' value={fName} onChange={handleFNameChange} id="fname" className=' w-auto focus:border-red-flag focus:outline-none ' />
 
